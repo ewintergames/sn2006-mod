@@ -1,0 +1,2 @@
+# sn2006-mod
+Skoki Narciarskie 2006: Powrót mistrza to nowy, rozwojowy projekt, który współtworzą gracze dla graczy. Nadszedł czas w jakimś stopniu zdetronizować fińską produkcję i tchnąć na nowo życie w lekko zakurzoną odsłonę polskiej marki. Cele, które postawili sobie twórcy w pierwszej fazie to udostępnienie dla graczy zaktualizowanego sprzętu, w tym: kombinezony, narty, kaski oraz gogle, zaktualizowana lista zawodników, komentarz oraz linie na zeskokach!
