@@ -1,0 +1,88 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 01:07:12
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+gLua(gLua["RegisterClass"], "CLEUserInterfaceButton", "CLEUserInterfaceElement");
+
+function CLEUserInterfaceElement["ForEachElementDo"](self, luaCode)
+	if (luaCode) then
+		local cnt=self(self["GetElementCount"]);
+		if (cnt>0) then
+			local i=IDT_Nil;
+			for i=0, (cnt - 1) do
+				gUIElementCaller=self(self["GetElementByIndex"], i);
+				dostring("local self=gUIElementCaller; "..luaCode);
+				gUIElementCaller=IDT_Nil;
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+
+function CLEUserInterfaceButton["new"](self, standard, pressed)
+	local p=CLEUserInterfaceElement(CLEUserInterfaceElement["new"]);
+	p=tolua["cast"](p, "CLEUserInterfaceButton");
+	p(p["SetTag"], "CLEUserInterfaceButton");
+	p(p["OnInitialize"], standard, pressed);
+	return p;
+	
+
+end
+
+
+function CLEUserInterfaceButton["OnInitialize"](self, standard, pressed)
+	self(self["SetTransparent"], true);
+	self["StandardPicture"]=CLEUserInterfacePicture(CLEUserInterfacePicture["new"], standard);
+	self["StandardPicture"](self["StandardPicture"]["SetFocusable"], false);
+	self(self["AddChild"], self["StandardPicture"]);
+	if (pressed) then
+		self["PressedPicture"]=CLEUserInterfacePicture(CLEUserInterfacePicture["new"], pressed);
+		self["PressedPicture"](self["PressedPicture"]["SetFocusable"], false);
+		self["PressedPicture"](self["PressedPicture"]["Hide"]);
+		self(self["AddChild"], self["PressedPicture"]);
+	end
+	
+	self(self["SetSize"], self["StandardPicture"](self["StandardPicture"]["SizeX"]), self["StandardPicture"](self["StandardPicture"]["SizeY"]));
+
+end
+
+
+function CLEUserInterfaceButton["Blink"](self, blinkTime, doNotRemoveActions)
+	if (self["PressedPicture"]) then
+		if not (doNotRemoveActions) then
+			self["StandardPicture"](self["StandardPicture"]["RemoveAllUIActions"]);
+			self["PressedPicture"](self["PressedPicture"]["RemoveAllUIActions"]);
+		end
+		
+		if not (blinkTime) then
+			blinkTime=0,1;
+		end
+		
+		self["StandardPicture"](self["StandardPicture"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], blinkTime, 1, 1, 1, 0));
+		self["StandardPicture"](self["StandardPicture"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], blinkTime, 1, 1, 1, 1));
+		self["PressedPicture"](self["PressedPicture"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], blinkTime, 1, 1, 1, 1));
+		self["PressedPicture"](self["PressedPicture"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], blinkTime, 1, 1, 1, 0));
+		self["StandardPicture"](self["StandardPicture"]["Show"]);
+		self["PressedPicture"](self["PressedPicture"]["Show"]);
+	end
+	
+
+end
+
+
+function CLEUserInterfaceButton["Reset"](self)
+	self["StandardPicture"](self["StandardPicture"]["RemoveAllUIActions"]);
+	self["StandardPicture"](self["StandardPicture"]["Show"]);
+	self["StandardPicture"](self["StandardPicture"]["SetColor"], 1, 1, 1, 1);
+	self["PressedPicture"](self["PressedPicture"]["RemoveAllUIActions"]);
+	self["PressedPicture"](self["PressedPicture"]["Hide"]);
+	self["PressedPicture"](self["PressedPicture"]["SetColor"], 1, 1, 1, 0);
+
+end
+
+

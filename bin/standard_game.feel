@@ -1,0 +1,326 @@
+settings
+    Name Directories
+    Main_data_directory ..\data
+    Templates_directory Templates
+    Animations_directory Animations
+    Scenes_directory scenes
+    Textures_directory Textures
+    Compressed_textures_directory .
+    Terrain_textures_directory Terrain textures
+    Compressed_terrain_textures_directory .
+    Sounds_directory Sounds
+    Movies_directory Video
+    Lightmap_source_directory Lightmaps
+    Deleted_templates_directory Deleted templates
+    Deleted_textures_directory Deleted textures
+    Deleted_terrain_textures_directory Deleted terrain textures
+    Softimage_bin_directory D:\Softimage\SOFT3D_3.8SP2\3D\bin
+    Globals_directory Globals
+    Import_directory Softimage objects
+    Dialogs_directory Dialogs
+    Screenshots_directory .
+    Backup_directory .
+    Project_name Ski
+    Import_from_current_dir 0
+    Scenes_from_current_dir 0
+end-variables
+
+    Name Editor
+    Capture_focus 0
+    Snap_to_ground 0
+    Show_snap_buttons 1
+    Active_snap_grid 0
+    Grid_size 5 5 5 1
+    Grid_size1 5 5 5 1
+    Grid_size2 5 5 5 1
+    SectorBox_grid_size 0.5 0.5 0.5 1
+    Default_selection_behaviour 3
+    Unselect_before_adding_new_object 1
+    Select_created_object 1
+    Show_properties_window_when_creating_object 0
+    DirectX_Selection_soft_opt 1
+    Rotation_angle_step 5.000000
+    Autosave 0
+    Autosave_frequency 120.000000
+    Show_tips_at_startup 0
+    Snap_textures 1
+    Terrain_horizontal_random_shift_strength 1.000000
+    Diffuse_light_color 1 1 1 1
+    Ambient_light_color 0.300000011920929 0.300000011920929 0.300000011920929 1
+    Specular_light_color 1 1 1 1
+    Wnd_Left 0
+    Wnd_Right 1000
+    Wnd_Top 0
+    Wnd_Bottom 700
+    Drag_brush_size 54
+    Drag_brush_power 16.000000
+    Noise_brush_upper_level 1.000000
+    Noise_brush_lower_level 0.000000
+    Report_loaded_files 1
+    Tips_filepos 8218
+    Tips_stored_time Mon Jun 23 17:08:21 2003
+    SAVE_load_slot_1 scenes\tetno\LEV_4_Screens_01.scene
+    SAVE_load_slot_2 scenes\gim\test1.scene
+    SAVE_load_slot_3 \\archangel\survival\scenes\bb_test\bb_test_alarm.scene
+    SAVE_load_slot_4 \\archangel\survival\scenes\Outro.scene
+    Template_shortcut_1
+    Template_shortcut_2
+    Template_shortcut_3
+    Template_shortcut_4
+    Template_shortcut_5
+    Template_shortcut_6
+    Template_shortcut_7
+    Template_shortcut_8
+    Template_shortcut_9
+end-variables
+
+    Name Engine
+    Use_SSE_extension 1
+    Skeletal_normals_animation 1
+    Save_bin_animations 1
+    Enable_AGP_buffer_mapping 0
+    LUA_gc_call_interval 100
+    Break_on_assert 0
+    Show_console_automatically 1
+    Save_console_to_file 0
+    Unsafe_but_fast_console_saving 1
+    Save_each_console_in_a_separate_file 0
+    Disable_textures 0
+    Textures_memory_buffer_in_MB 1
+    Console_X_coordinate 0.987500
+    Console_Y_coordinate 0.011719
+    Console_width 1.011719
+    Console_height 0.973958
+    Optimize_FSM 1
+    AI_Map_Generation 1
+end-variables
+
+    Name Game
+    Start_game_in_fullscreen 1
+    ScreenWidth 1680.000000
+    ScreenHeight 1050.000000
+    Is16bitOr32bit 1
+    Game_options igPerfOpts.State.SetFiltering="high";igPerfOpts.State.SetAnimationQuality="high";igPerfOpts.State.WaterDetail="high";igPerfOpts.State.DynamicLighting="high";igPerfOpts.State.Decals="high";igPerfOpts.State.Particles="high";igPerfOpts.State.SkyQuality="high";igPerfOpts.State.DetailTextures="high";igPerfOpts.State.FSE="ultrahigh";igPerfOpts.State.PixelShaders="high";igPerfOpts.State.TerrainShaders="high";igPerfOpts.State.SetTextureQuality="high";igPerfOpts.State.ShadowQuality="high";igPerfOpts.State.Set16Bpp="medium";igPerfOpts.State.SceneDetails="high";igPerfOpts.GlobalState="custom";
+    Game_global_graphics custom
+    Gamma_correction 1.000000
+    Show_commercial_screens 0
+    Place_game_window_in_top_left_corner 0
+    First_level_scene _Final_\Start
+    Initial_script_command
+    Initial_marker 0
+    Zip_compatible_packfiles 1
+    JPG_screenshots 1
+    Autosave 0
+    Font_size_dialogs 13.000000
+    Roll_Time 0.330000
+    Keyboard_configuration gKeyboard.CancelAction.Code=92;gKeyboard.CoverFire.Code=53;gKeyboard.QuickLoad.Code=84;gKeyboard.StepRight.Code=4;gKeyboard.QuickSave.Code=81;gKeyboard.StepLeft.Code=1;gKeyboard.SecondAction.Code=18;gKeyboard.SecondInventory.Code=6;gKeyboard.MoveForward.Code=23;gKeyboard.SniperView.Code=0;gKeyboard.SlowDownMovement.Code=3;gKeyboard.EnterTPPMode.Code=41;gKeyboard.Action.Code=141;gKeyboard.FirstAction.Code=17;gKeyboard.QuickUse.Code=5;gKeyboard.MoveBackward.Code=19;gKeyboard.MoveSpecial.Code=53;gKeyboard.SpeedUpMovement.Code=6;gKeyboard.Inventory.Code=66;gKeyboard.TPPMode.Code=0;gKeyboard.Crouch.Code=59;gKeyboard.MovementModifier.Code=0;gKeyboard.Screenshot.Code=93;gKeyboard.Jump.Code=59;gKeyboard.UseItem.Code=41;gKeyboard.HandBrake.Code=41;gKeyboard.Pause.Code=16;gKeyboard.Reload.Code=20;gKeyboard.RemoveWeapon.Code=17;gKeyboard.Pickup.Code=142;gAutoRun=nil;
+    Move_forward 23
+    Move_backward 19
+    Step_left 1
+    Step_right 4
+    Turn_left 0
+    Turn_right 0
+    Jump 59
+    Crouch_modifier 59
+    Run_modifier 53
+    Strafe_modifier 1
+    Action 141
+    UseItem 41
+    Block 0
+    Camera_key 56
+    Inventory_key 66
+    Quick_slot_1 28
+    Quick_slot_2 29
+    Quick_slot_3 30
+    Quick_slot_4 31
+    Quick_slot_5 32
+    Quick_slot_6 33
+    Quick_slot_7 34
+    Quick_slot_8 35
+    Quick_slot_9 36
+    Quick_slot_10 27
+    Camera_up 0
+    Camera_down 0
+    Camera_left 0
+    Camera_right 0
+    Camera_keys_sensitivity 180.000000
+    Quick_save 81
+    Quick_load 84
+    Screenshot 93
+    Quick_slot_use_modifier 5
+    Pickup_key 142
+    Reload_key 20
+    Gear_down_key 0
+    Gear_up_key 0
+    Hand_brake_key 41
+    FirstAction_key 17
+    SecondAction_key 18
+    Cover_action_key 53
+    SpeedUpMovement_key 6
+    SlowDownMovement_key 3
+    Invert_mouse 0
+    Mouse_look 1
+    Mouse_sensitivity 160.000000
+    Analog_joystick 0
+    Analog_run_threshold 1.000000
+    Analog_sneak_threshold 0.250000
+    Analog_turn_threshold 0.000000
+    Dead_zone 0.100000
+    Saturation 0.900000
+    Enable_sound_engine 1
+    Sound_engine_on_high_priority 1
+    Music_volume 0.000000
+    Sounds_volume 0.000000
+    Speech_volume 0.000000
+    Enabled_3D_sound 0
+    Enabled_EAX 0
+    EAX_WallOcclusion 0
+    Subtitle 1
+end-variables
+
+    Name Game debug
+    Ask_before_switching 0
+    Precache_effect3dvis 1
+    Force_freelook 0
+    Report_LUA_gc_stats 0
+    Report_started_animations 0
+    Report_loaded_animations 0
+    Report_movement_params 0
+    Report_movement_modes 0
+    Report_action_modes 0
+    Report_spoken_text 0
+    Report_lightmap_data 0
+    Report_started_effects 0
+    Report_efx3d_visualizations_loading 0
+    Report_pathfinding_information 0
+    Report_pathfinding_information_2 0
+    Report_missing_objects_in_dialogs 0
+    Report_texture_loading 0
+    Report_mesh_optimization 0
+    Report_texture_degradation 0
+    Report_mesh_memory_stats 0
+    Report_loading_sounds 1
+    Report_all_played_sounds 0
+    Report_music_operations 0
+    Report_played_sound_blocks_from_animations 0
+    Report_played_sounds_in_sound_blocks_from_animations 0
+    Report_progress_scheme_blocks_and_comments 0
+    Report_dialog_actions 0
+    Report_agp_memory_access 0
+    Report_hardware_shaders 0
+    Report_generated_events 2
+    Selected_events
+    Report_LUA_validation 1
+    Report_Physics 0
+    Report_PhysicsDebug 0
+    Report_LOSDebug 0
+    Report_mouse_cursor_debug 0
+    Report_AI_map_generation_stats 0
+    Report_Cutscene_actions 0
+    Report_Cutscene_music_synch 0
+    Report_face_collision 0
+    Display_paths 0
+    Display_LOS 0
+    Display_LOS_state 0
+    Display_LOS_boxes 0
+    Display_terrain_bounding_boxes 0
+    Display_character_spheres 0
+    Display_bounding_boxes 0
+    Display_dynamic_lights 0
+    Display_lipsync_lines 0
+    Visible_statistics 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    Display_precise_areamap_surface 0
+    Display_description 0
+    Display_sfx_bounding_boxes 0
+    Display_Null_render_names 0
+    Display_lights 0
+    Display_lights_for_mesh 0
+    Display_virtual_specular_for_mesh 0
+    Display_shadow_planes 0
+    Display_physics_assets 0
+    Display_collision_boxes 0
+    Display_character_origin 0
+    Display_VehicleAI_destination 0
+    Display_Fluid_processed_faces 0
+    Display_AIPath_Blockade 0
+    Display_Mesh_AABBoxTree 0
+    Display_Mesh_smoothing_groups 0
+    Display_Selected_object 0
+    Display_lens_flares 1
+    Display_physics_collision 0
+    Disable_VBO_for_vertices 0
+    Disable_VBO_for_indices 0
+    Use_uncompressed_savegame_format 0
+    Enable_cutscene_skipping 0
+end-variables
+
+    Name Rendering
+    Degrade_to_wireframe_if_fps_is_less_than 30
+    Lightmapped_objects_threshold 1.000000
+    Lightmap_use_AABBoxTree 1
+    Lightmap_supersampling_pases 4
+    Lightmap_softshadow_samples_rand 0.000000
+    Sector_box_wireframe_color 0.699999988079071 0.699999988079071 1 1
+    Sector_box_fill_color 0.5 0.300000011920929 0.300000011920929 0.2000000029802322
+    Sector_box_selected_face_color 0.5 1 0.5 0.800000011920929
+    Draw_compiled_sector_box 0
+    Force_wireframe 0
+    Display_hierarchies_in_wireframe 0
+    Display_normals 1
+    Use_BGRA_extension_if_available 1
+    Use_texture_compression_extension_if_available 1
+    Force_software_texture_compression 0
+    Texture_filtering 0
+    Texture_degradation 0
+    Object_texture_degradation_scale 0
+    Lightmap_degradation_scale 0
+    UI_texture_degradation_scale 0
+    Force_16bpp_lightmaps 0
+    Force_16bpp_textures 0
+    Terrain_wireframe_color 0.800000011920929 0.800000011920929 0.8999999761581421 1
+    Multicolor_terrain_wireframe 1
+    Terrain_upper_height 300.000000
+    Terrain_lower_height -200.000000
+    Terrain_upper_wireframe_color 0.699999988079071 0 0 1
+    Terrain_middle_wireframe_color 0.800000011920929 0.800000011920929 0 1
+    Terrain_lower_wireframe_color 0.2000000029802322 0.4000000059604645 0.2000000029802322 1
+    Terrain_vertices_color 1 0 0 1
+    Selected_terrain_vertices_color 1 1 1 1
+    Terrain_vertices_size 2.000000
+    Allow_terrain_shaders 1
+    Require_ps_20 0
+    Enable_vertex_shaders 1
+    Vertex_shader_profile arbvp1
+    Enable_pixel_shaders 1
+    Pixel_shader_profile arbfp1
+    HLSL_user_vs_profile auto
+    HLSL_user_ps_profile auto
+    Enable_nv_point_sprite_extension 1
+    Front_to_back_sort 0
+    Enable_shaders_in_objects 1
+    Force_hardware_skinning 1
+    Enable_decal_textures 1
+    Point_sprites_enabled 1
+    Particle_rate_multiplicator 1.000000
+    Extra_thousands_of_vertices_for_effects 1
+    Animation_interpolation_time 0.300000
+    Use_mesh_LOD 1
+    Progressive_meshing 0
+    Draw_object_center 0
+    Draw_all_subobjects_in_wireframe 0
+    Enable_grid 0
+    Draw_tiled_bounding_box 0
+    Snap_to_grid 0
+    Grid_size 5 5 5 1
+    Grid_color 0.300000011920929 0.300000011920929 0.300000011920929 1
+    Corrected_light_range 1
+    Corrected_light_endFalloff_inv_min_atten 5.000000
+    Corrected_light_range_inv_min_atten 25.000000
+    Dynamic_shadows 4
+    Draw_action_spheres_for_selected_characters 1
+    Draw_tile_forms_for_selected_characters 1
+    Show_freespacemap_surface 1
+    Draw_walls_for_wallpaths 1
+    Normalize_normals 1
+    GPU_Lightmaps 0
+end-variables

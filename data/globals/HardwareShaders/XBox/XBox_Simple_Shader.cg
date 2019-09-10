@@ -1,0 +1,32 @@
+// #class XBox,Object
+
+struct App2Vert
+{
+    float4 position     : POSITION;
+    float4 normal       : NORMAL;
+    float2 uv0          : TEXCOORD0;
+};
+
+struct Vert2Frag
+{
+    float4 position     : POSITION;
+    float2 uv0          : TEXCOORD0;
+    float4 diffuse      : COLOR0;
+};
+
+void vertex(in App2Vert vin, out Vert2Frag vout,
+        uniform float4x4 ModelViewProjMatrix, uniform float4 VectorParam0_Color,
+        uniform float4 Time, uniform float FloatParam0_Strength,
+        uniform float FloatParam1_Speed
+        )
+{
+    float4 pos=vin.position;
+    float3 normal=normalize(vin.normal.xyz);
+    float scale=1+FloatParam0_Strength*sin(FloatParam1_Speed*Time.x);
+    pos=pos+float4(normal,0)*scale;
+    
+    vout.position = mul(ModelViewProjMatrix, pos);
+    vout.uv0 = vin.uv0;
+    vout.diffuse = float4(1,0,0,1);
+}
+

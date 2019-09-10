@@ -1,0 +1,130 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 00:58:01
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+gLua(gLua["PlayFile"], "Diabolique_Camera");
+gLua(gLua["PlayFile"], "Diabolique_CameraTransition");
+gLua(gLua["PlayFile"], "Diabolique_AICar");
+gLua(gLua["PlayFile"], "Diabolique_AIHelicopter");
+gLua(gLua["PlayFile"], "Diabolique_Motorcycle");
+gLua(gLua["PlayFile"], "Diabolique_SceneController");
+gLua(gLua["PlayFile"], "Diabolique_Player");
+gLua(gLua["PlayFile"], "Diabolique_Player_Contr");
+gLua(gLua["PlayFile"], "Diabolique_player_action");
+gLua(gLua["PlayFile"], "Diabolique_Player_Combat");
+gLua(gLua["PlayFile"], "Diabolique_Player_Teleport");
+gLua(gLua["PlayFile"], "Diabolique_Player_TeleportObject");
+gLua(gLua["PlayFile"], "Diabolique_Ghost");
+gLua(gLua["PlayFile"], "Diabolique_NPC");
+gLua(gLua["PlayFile"], "Diabolique_NPC_Misc");
+gLua(gLua["PlayFile"], "Diabolique_NPC2");
+gLua(gLua["PlayFile"], "Diabolique_NPC3");
+gLua(gLua["PlayFile"], "Diabolique_NPC4");
+gLua(gLua["PlayFile"], "Diabolique_NPC5_Queue");
+gLua(gLua["PlayFile"], "Diabolique_NPC6_HeavyFire");
+gLua(gLua["PlayFile"], "Diabolique_NPC7_Dazzle");
+gLua(gLua["PlayFile"], "Diabolique_NPC8_Items");
+gLua(gLua["PlayFile"], "Diabolique_NPC9_Aggressive");
+gLua(gLua["PlayFile"], "Diabolique_NPC10_Jetpack");
+gLua(gLua["PlayFile"], "Diabolique_NPC_WarMonkBoss");
+gLua(gLua["PlayFile"], "Diabolique_Mesh");
+gLua(gLua["PlayFile"], "Diabolique_ShieldObject");
+gLua(gLua["PlayFile"], "Diabolique_Usable");
+gLua(gLua["PlayFile"], "Diabolique_UsableAnim");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Snow");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Dialog");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_ShowHide");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Fence");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Ladder");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Pipes");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Sound");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_InfoText");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_MotionDetector");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Alarm");
+gLua(gLua["PlayFile"], "Diabolique_TestBox_Damage");
+gLua(gLua["PlayFile"], "Diabolique_ExplosionMesh");
+gLua(gLua["PlayFile"], "Diabolique_Item");
+gLua(gLua["PlayFile"], "Diabolique_Reflector");
+gLua(gLua["PlayFile"], "Diabolique_Jetpack");
+gLua(gLua["PlayFile"], "Diabolique_Destructible");
+gLua(gLua["PlayFile"], "Diabolique_Fence");
+gLua(gLua["PlayFile"], "Diabolique_Ladder");
+gLua(gLua["PlayFile"], "Diabolique_AlarmSystem");
+gLua(gLua["PlayFile"], "Diabolique_LaserSystem");
+gLua(gLua["PlayFile"], "Diabolique_Supply");
+gLua(gLua["PlayFile"], "Diabolique_Platform");
+gLua(gLua["PlayFile"], "Diabolique_Google");
+gLua(gLua["PlayFile"], "Diabolique_QuadVehicle");
+gLua(gLua["PlayFile"], "Diabolique_AIQuadVehicle");
+gLua(gLua["PlayFile"], "Diabolique_NPC_Test");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-KeyPanel");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-InfoText");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Main");
+gLua(gLua["PlayFile"], "UIScreen-Vehicle");
+gLua(gLua["PlayFile"], "UIScreen-Crane");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Menu");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Pause");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-LoadSave");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Cutscene");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Gameover");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Opening");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Google");
+gLua(gLua["PlayFile"], "UIScreen-Diabolique-Test");
+gFontManager(gFontManager["AddFont"], "FEDERATION_SMALL", "SF Automaton Extended Oblique.ttf", 9);
+gFontManager(gFontManager["AddFont"], "FEDERATION_BIG2", "SF Automaton Extended Oblique.ttf", 11);
+gFontManager(gFontManager["AddFont"], "FEDERATION_VERY_BIG", "SF Automaton Extended Oblique.ttf", 16);
+gFontManager(gFontManager["AddFont"], "FEDERATION_VERY_SMALL", "SF Automaton Extended Oblique.ttf", 6);
+gFontManager(gFontManager["AddFont"], "SUBTITLE", "verdanaz.ttf", 10);
+
+function InitProjectSpecificScreens()
+	gInterfaceScreens["GameOver"]=CLEGameOverScreen(CLEGameOverScreen["new"]);
+	gInterfaceScreens["GoogleScreen"]=CLEGoggleScreen(CLEGoggleScreen["new"]);
+
+end
+
+
+function CreateScreenByName(name)
+	if not (name) then
+		do return end;
+		
+	end
+	
+	if (name=="Vehicle") and not (gInterfaceScreens["Vehicle"]) then
+		gInterfaceScreens["Vehicle"]=CLEVehicleScreen(CLEVehicleScreen["new"]);
+	end
+	
+	return gInterfaceScreens[name];
+	
+
+end
+
+
+function GetAmmo()
+	local i=IDT_Nil;
+	for i=1, 10 do
+		gObjectManager(gObjectManager["CreateObject"], "8mm_Bullets-standard", getPlayer(), CVector3["ZERO"]);
+		gObjectManager(gObjectManager["CreateObject"], "UZI-ammo", getPlayer(), CVector3["ZERO"]);
+	end
+	
+	gObjectManager(gObjectManager["CreateObject"], "NinjaStars-Ammo", getPlayer(), CVector3["ZERO"]);
+	local pl=getPlayer();
+	if (i) then
+		i(i["ReloadWeapon"]);
+	end
+	
+	gInterfaceScreens["MainScreen"]["LastAmmoCnt"]=IDT_Nil;
+
+end
+
+
+function GetLife()
+	local pl=getPlayer();
+	if (pl) then
+		pl(pl["SetLife"], pl["MaxLife"]);
+	end
+	
+
+end
+
+

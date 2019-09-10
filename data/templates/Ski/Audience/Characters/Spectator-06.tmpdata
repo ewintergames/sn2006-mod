@@ -1,0 +1,512 @@
+template
+    Type 8
+    Name Straznik_B:9
+    Version 0
+    Format_version 6
+    Last_modified dominik
+    Sound_range 400.000000
+    Sound_small_range_in_perc 15.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 0 0 0 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class NoPhysics
+    Unique 1
+    Special_effects 
+    Never_blend_automatically 1
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    LUA_params_callback self:ClearIconTextureString();\nif self.DefaultIdleBehaviour=="WalkOnPath" then\n    self:AddIconTexture("path");\nelseif self.DefaultIdleBehaviour=="Guard" then\n    self:AddIconTexture("guard");\nelseif self.DefaultIdleBehaviour=="Inactive" then\n    self:AddIconTexture("stop");\nend;\nself:UpdateProperties();\n
+    Group_membership_allowed 1
+    Battle_group_membership_allowed 1
+    Is_tile 0
+    Has_geometry 1
+    Collision_Type 4
+    DC_material 0
+    Collision_with_LOS_only 0
+    Collision_with_NPC_only 0
+    Special_for_charecter 0
+    Disable_collision_with_static_geometry 0
+    Player_can_push 1
+    Freeze_on_init 1
+    Freeze_rotation 0
+    Is_Band 0
+    Bouyancy_type 0
+    Bouyancy_multiplier 65.000000
+    Water_normal_scale 1.000000
+    Mass 100.000000
+    Mass_offset 0 0 0 1
+    Bounce 0.000100
+    Scale_size 1 1 1 1
+    Override_collision_bbox 0
+    Collision_bbox_min 0 0 0 1
+    Collision_bbox_max 0 0 0 1
+    AngularVelocityDamping 10.000000
+    LinearVelocityDamping 0.000000
+    Static_collision_velocity_lose 0.000000
+    Dynamic_collision_velocity_steal 0.000000
+    Explosion_wave_multiplier 0.500000
+    Impulse_multiplier 1.000000
+    Critical_hit_impulse_multiplier 3.000000
+    Critical_hit_extra_vertical_impulse 20.000000
+    Karma_asset_database 
+    Karma_asset_name 
+    Asset_mass 200.000000
+    Asset_angular_velocity_damping 15.000000
+    Asset_linear_velocity_damping 2.000000
+    Asset_impulse_multiplier 1.000000
+    Use_asset_immediatelly 0
+    Fast_moving_body 0
+    Ragdoll 
+    Acceleration 300.000000
+    VelocityLinear 5.000000
+    VelocityRotation 5.000000
+    AliveTime 0.700000
+    Min_hit_impulse 0.350000
+    Enable_hit_callback 0
+    Body_mass_clamp 0.000000
+    Body_inertia_clamp 0.000000
+    Inertia 
+    Change_Inertia_Tensor 0
+    ScaleInertia 1 1 1 1
+    Walkable 0
+    Bridge_restriction 0
+    Ladder_And_Wall_properties 
+    Is_Ladder 0
+    Is_Wall 0
+    Is_SmallWall 0
+    Is_Fence 0
+    AIPath_DynamicBlockade 0
+    Corner_DistanceXmin 5.000000
+    Corner_DistanceXmax 5.000000
+    Corner_DistanceZmin 5.000000
+    Corner_DistanceZmax 5.000000
+    Near_Distance 1.500000
+    Disable_Camera_Collision 0
+    BoundingBox_Camera_Collision 0
+    Lightmap_resolution_x 0
+    Lightmap_resolution_y 0
+    Cast_lightmap_shadow 1
+    Lightmap_shadow_alpha_usage 0
+    Lightmap_shadow_alpha_multiplicator 1.000000
+    Lightmap_shadow_alpha_offset 0.000000
+    Receive_lightmap_shadow 1
+    Received_lightmap_shadow_blur 1
+    Receive_dynamic_shadows 0
+    Dynamic_shadow 1
+    Shadow_gradient_factor 1.000000
+    Dynamic_ambient_multiplicator 1.000000
+    Dynamic_light_multiplicator 1.000000
+    Ignore_uv_mapping 0
+    Optimizable_hierarchy 1
+    Random_destruction_shader 0
+    ImportedFromFile C:\0shared\Sceny\xxxSkijump\dotXSI\Publika\Low\ClosedLowpolyLowbones.xsi
+    Scale 1.000000
+    Distance_blend_start 0.000000
+    Distance_blend_end 0.000000
+    Use_Z_fill_for_blending 1
+    Depth_offset 0.000000
+    Allow_hit_marks 1
+    Collision_geometry_may_be_animated 1
+    Smoothing_groups_max_normal_diff 45.000000
+    Animation_sharing_group_id Test-Enemy
+  end-variables
+animations
+  slot	0
+    File	SKOKI\Widownia\Spect_A.xsi
+    Name	idle:01
+    Time	3.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -7.96038818 -0.10086517 -2.10791087 8.54517269 22.16488838 6.22719860
+    relativeBB -8.29408073 -13.23251534 -2.39032388 8.25021553 9.34338284 6.14107466
+  end-slot
+  slot	1
+    File	SKOKI\Widownia\Spect_B.xsi
+    Name	idle:02
+    Time	3.265625
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.59449673 -0.10489311 -2.05719423 8.65471077 22.80759621 6.99116087
+    relativeBB -9.00731277 -13.23251534 -2.06826997 8.76224136 9.73406982 7.09142351
+  end-slot
+  slot	2
+    File	SKOKI\Widownia\Spect_C.xsi
+    Name	idle:03
+    Time	2.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -7.08894777 -0.22979477 -2.23963737 9.27568150 23.25868988 5.28410912
+    relativeBB -7.43547487 -14.10712528 -2.01280284 8.88723373 9.04676819 5.51023912
+  end-slot
+  slot	3
+    File	SKOKI\Widownia\Spect_D.xsi
+    Name	idle:04
+    Time	4
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.83101892 -0.16307427 -1.62250960 4.26041651 18.89287758 6.53733206
+    relativeBB -3.97874641 -13.13692856 -1.70509374 4.11268902 5.93830204 6.57170153
+  end-slot
+  slot	4
+    File	SKOKI\Widownia\Spect_E.xsi
+    Name	idle:05
+    Time	4.8125
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.76309657 -0.15660727 -1.62713587 4.49305201 22.56947899 7.16367674
+    relativeBB -3.99934483 -13.14206982 -1.90977371 4.25171137 9.57960224 7.36834955
+  end-slot
+  slot	5
+    File	SKOKI\Widownia\Spect_F.xsi
+    Name	idle:06
+    Time	3.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.17973900 -0.09775744 -1.75503182 8.42511845 22.35362625 5.38425064
+    relativeBB -6.45484400 -13.23474216 -1.43728018 8.12949657 9.28460312 5.55250835
+  end-slot
+  slot	6
+    File	SKOKI\Widownia\Spect_G.xsi
+    Name	idle:07
+    Time	2
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.06527710 -0.32411715 -1.78824317 7.24820566 23.16606522 6.49274635
+    relativeBB -5.39666986 -14.09500408 -1.69878602 6.85026646 9.17534256 6.39217472
+  end-slot
+  slot	7
+    File	SKOKI\Widownia\Spect_H.xsi
+    Name	idle:08
+    Time	3.3125
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.17973900 -0.09818556 -1.75503182 8.42511845 22.35362625 5.37746572
+    relativeBB -6.45484400 -13.23596001 -1.43862772 8.12949657 9.28460312 5.54669762
+  end-slot
+  slot	8
+    File	SKOKI\Widownia\Spect_I.xsi
+    Name	idle:09
+    Time	3.59375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.18894100 -0.11641181 -1.64298534 4.11798239 18.98050499 2.35533404
+    relativeBB -3.58255887 -13.27398872 -1.66083896 3.62592030 5.83800888 2.73300290
+  end-slot
+  slot	9
+    File	SKOKI\Widownia\Spect_K.xsi
+    Name	idle:10
+    Time	3.59375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -2.48565149 -0.15723157 -1.61564040 3.45067906 18.92777252 3.60314107
+    relativeBB -2.88531542 -13.15772820 -1.63982594 3.07104897 5.93830204 3.57309246
+  end-slot
+  slot	10
+    File	SKOKI\Widownia\Spect_L.xsi
+    Name	idle:11
+    Time	3.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.54822564 -0.17516811 -1.77076828 2.50665784 19.02151489 2.78444767
+    relativeBB -2.92354298 -13.16289902 -1.40040064 3.08788657 6.03647232 3.12625837
+  end-slot
+  slot	11
+    File	SKOKI\Widownia\Spect_M.xsi
+    Name	idle:12
+    Time	9
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.16735220 -0.21529858 -2.62744236 4.18393850 18.94040871 2.48289800
+    relativeBB -3.88863897 -13.36715794 -1.42232490 3.86469579 5.79244995 3.76717901
+  end-slot
+  slot	12
+    File	SKOKI\Widownia\Spect_flaga_mala.xsi
+    Name	idle:13
+    Time	3.578125
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.05490446 -0.15723322 -2.47743487 4.28797770 18.97158051 1.90111530
+    relativeBB -3.69572496 -13.15263844 -2.18117356 4.50796795 5.97277451 2.19668126
+  end-slot
+end-animations
+
+meshes
+  slot 0
+    file Spectator-06.xsi
+    dist 0
+  end-slot
+meshes-end
+
+material-params
+material-params-version 1
+  material
+    texture-file-name	PWarmShortClose3.tga
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+end-material-params
+
+num-of-associated-cameras 1
+  associated_camera FrontViewCamera 0.108157329261303 12.2311487197876 -0.7877597212791443 -0.3571401834487915 2.678571462631226 0 13.28997421264648 0

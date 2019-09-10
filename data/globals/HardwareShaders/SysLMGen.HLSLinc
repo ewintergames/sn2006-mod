@@ -1,0 +1,17 @@
+
+float depthBias(float dotFactor)
+{
+    return lerp(5,2,abs(dotFactor));
+}
+
+#define DEPTH_SCALE     100000
+
+float depthToBuffer(float d)
+{
+    return max(0,DEPTH_SCALE/d-1);
+}
+
+float bufferToDepth(float d)
+{
+    return DEPTH_SCALE/(1+d);
+}

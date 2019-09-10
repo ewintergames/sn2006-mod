@@ -1,0 +1,3846 @@
+scene
+; file scenes\_Final_\Innsbruck.scene
+; version 0.5
+; date 2005-10-21 12:55
+; user Dyziek
+scene-id 200500100021001200550059
+object-count 114
+Format-version 2
+template-count 55
+using-template Null 2 0 n/a
+using-template PointLight 129 0 n/a
+using-template DirectionalLight 16777217 0 n/a
+using-template Flag 2050 0 n/a
+using-template SceneParametersBox 536871426 0 n/a
+using-template Billboard 131072 0 n/a
+using-template BillboardContainer 65538 0 n/a
+using-template Snieg_Visible_01:13 34 0 n/a
+using-template Snieg_Visible_05_MONO_CRAKS:1 34 0 n/a
+using-template lf1:4 1140850690 0 n/a
+using-template PL_Balon_04:1 8 0 n/a
+using-template PL_Balon_Reklamowy_02:1 8 0 n/a
+using-template PL_Flaga_Austrii:2 8 0 n/a
+using-template PL_Flaga_Czech:2 8 0 n/a
+using-template PL_Flaga_Finlandii:2 8 0 n/a
+using-template PL_Flaga_Francji:2 8 0 n/a
+using-template PL_Flaga_Japonii:2 8 0 n/a
+using-template PL_Flaga_Niemiec:2 8 0 n/a
+using-template PL_Flaga_Polski:2 8 0 n/a
+using-template PL_Flaga_Rosji:2 8 0 n/a
+using-template PL_Flaga_Slowenii:2 8 0 n/a
+using-template PL_Flaga_USA:2 8 0 n/a
+using-template PL_Flaga_Wloch:2 8 0 n/a
+using-template PL_Bramka_Dmuchana:1 8 0 n/a
+using-template PL_Tablica_wynikow:1 8 0 n/a
+using-template antena_2:1 8 0 n/a
+using-template auto_1:1 8 0 n/a
+using-template auto_2:1 8 0 n/a
+using-template KS_Ratrak_01:1 8 0 n/a
+using-template KS_ReflektorDuzy_Typ01_01:1 8 0 n/a
+using-template KS_Van_01:1 8 0 n/a
+using-template KS_Van_02:1 8 0 n/a
+using-template KS_Drzewo_Typ01_01:1 8 0 n/a
+using-template KS_Drzewo_Typ01_02:1 8 0 n/a
+using-template KS_Drzewo_Typ01_03:1 8 0 n/a
+using-template KS_Budynki_sedziowskie_Innsbruck:2 8 0 n/a
+using-template KS_Domek_przy_trybunach_Innsbruck:2 8 0 n/a
+using-template KS_Model_fizyczny_Innsbruck:2 8 0 n/a
+using-template KS_Trybuny_Innsbruck:2 8 0 n/a
+using-template KS_Wieza_Innsbruck:2 8 0 n/a
+using-template KS_Zeskok_Innsbruck:2 8 0 n/a
+using-template KS_Zjazd_01_Innsbruck:1 8 0 n/a
+using-template KS_Zjazd_02_Innsbruck:1 8 0 n/a
+using-template KS_Znicz_olimpijski_Innsbruck:2 8 0 n/a
+using-template Null-AudienceManager:1 2 0 n/a
+using-template techniknotatnik:1 8 0 n/a
+using-template operator:2 8 0 n/a
+using-template ~PL_Dom_02-322 8 0 n/a
+using-template ~PL_Namiot_05-344 8 0 n/a
+using-template ~PL_Barierka2-412 8 0 n/a
+using-template ~KS_ReflektorDuzy_Typ01_02-427 8 0 n/a
+using-template ~KS_ReflektroMaly-554 8 0 n/a
+using-template ~PL_Banda_ASDTTT-671 8 0 n/a
+using-template ~PL_Dom_06-701 8 0 n/a
+using-template ~PL_Banda_Ruhgass-1984 8 0 n/a
+terrain
+	2
+	Snieg_Visible_01:13
+	Snieg_Visible_05_MONO_CRAKS:1
+end-terrain
+AI-map-defined
+layer Default 0 0 1
+object 1
+  based-on-template KS_Wieza_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Wieza_Innsbruck-23
+    Position 3465 0 1965 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -30.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 16946
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 2
+  based-on-template KS_Trybuny_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Trybuny_Innsbruck-12
+    Position 3625 -225 4135 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -30.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 3746
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 3
+  based-on-template KS_Budynki_sedziowskie_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Budynki_sedziowskie_Innsbruck-14
+    Position 2950 490 2890 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -30.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 18885
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 4
+  based-on-template KS_Znicz_olimpijski_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Znicz_olimpijski_Innsbruck-18
+    Position 3195 -15 5010 1
+    Rotation 359.0770263671875 339.9653930664063 0.399505615234375 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -60.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 7516
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 5
+  based-on-template KS_Domek_przy_trybunach_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Domek_przy_trybunach_Innsbruck-22
+    Position 3100 -115 4830 1
+    Rotation 9.1552734375e-005 15.00091552734375 0.001495361328125 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -60.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 2381
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 6
+  based-on-template PL_Flaga_Austrii:2
+  parent 0
+  variables
+    Name PL_Flaga_Austrii-308
+    Position 3700 -20 5275 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 16037
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 7
+  based-on-template PL_Flaga_Finlandii:2
+  parent 0
+  variables
+    Name PL_Flaga_Finlandii-310
+    Position 3750 -20 5270 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 30397
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 8
+  based-on-template PL_Flaga_Japonii:2
+  parent 0
+  variables
+    Name PL_Flaga_Japonii-312
+    Position 3795 -20 5255 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -1530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 1289
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 9
+  based-on-template PL_Flaga_Niemiec:2
+  parent 0
+  variables
+    Name PL_Flaga_Niemiec-314
+    Position 3830 -20 5240 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -1560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 14181
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 10
+  based-on-template PL_Flaga_Polski:2
+  parent 0
+  variables
+    Name PL_Flaga_Polski-316
+    Position 3870 -20 5225 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 11662
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 11
+  based-on-template PL_Flaga_Rosji:2
+  parent 0
+  variables
+    Name PL_Flaga_Rosji-318
+    Position 3910 -20 5205 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 7563
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 21
+  based-on-template PL_Balon_04:1
+  parent 0
+  variables
+    Name PL_Balon_04-330
+    Position 2535 595 5330 1
+    Rotation 0 180 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -1560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 18161
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 22
+  based-on-template PL_Tablica_wynikow:1
+  parent 0
+  variables
+    Name PL_Tablica_wynikow-334
+    Position 2725 -55 4500 1
+    Rotation 180.0006103515625 75.00009155273438 180.0020751953125 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -1590.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 28235
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 27
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-351
+    Position 3585 -25 5360 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1620.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 14465
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 28
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-352
+    Position 3980 10 4790 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1620.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 27280
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 29
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-353
+    Position 4130 -15 5375 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1620.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 16770
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 30
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-354
+    Position 4150 70 4555 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1620.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 16824
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 31
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-357
+    Position 4325 10 5000 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1650.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 20465
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 32
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-358
+    Position 2895 -140 4675 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1650.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 13480
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 33
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-359
+    Position 2950 -25 4970 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1650.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 2276
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 34
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-362
+    Position 4275 100 4460 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1650.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 12129
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 35
+  based-on-template KS_Drzewo_Typ01_02:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_02-364
+    Position 4190 90 4335 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -1650.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 528
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 36
+  based-on-template KS_Drzewo_Typ01_02:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_02-368
+    Position 3320 -25 5305 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 4460
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 37
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-370
+    Position 3905 680 2335 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 24287
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 38
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-371
+    Position 3720 550 2515 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 10618
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 39
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-372
+    Position 3755 665 2105 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 17529
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 40
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-373
+    Position 3205 685 2055 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 16249
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 41
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-375
+    Position 3310 555 2655 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -1680.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 11230
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 42
+  based-on-template KS_Drzewo_Typ01_02:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_02-378
+    Position 3975 920 1890 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1710.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 19882
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 43
+  based-on-template KS_Drzewo_Typ01_02:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_02-379
+    Position 3330 745 1900 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1710.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 12250
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 44
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-382
+    Position 3290 640 2310 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1710.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 11747
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 45
+  based-on-template KS_Van_01:1
+  parent 0
+  variables
+    Name KS_Van_01-384
+    Position 2815 -110 4540 1
+    Rotation 180.0013427734375 65.00027465820313 180.0014038085938 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1710.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 14109
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 46
+  based-on-template KS_Van_02:1
+  parent 0
+  variables
+    Name KS_Van_02-386
+    Position 3885 5 4925 1
+    Rotation 174.3500366210938 303.6943359375 187.1284790039063 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -1710.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 10484
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 47
+  based-on-template auto_2:1
+  parent 0
+  variables
+    Name KS_Auto_02-396
+    Position 4220 10 5305 1
+    Rotation 180.0003662109375 325.00048828125 180.00048828125 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1740.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 30868
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 48
+  based-on-template auto_1:1
+  parent 0
+  variables
+    Name KS_Auto_01-398
+    Position 2980 -95 4750 1
+    Rotation 185.0032958984375 315.002685546875 180.0014038085938 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -1740.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 30098
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 49
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-401
+    Position 2910 -169.9235229492188 4395 1
+    Rotation 0 110.0003051757813 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -1770.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 8263
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 50
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-402
+    Position 2950 -168.0472106933594 4615 1
+    Rotation 180.0001831054688 50.00006103515625 180.0000610351563 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -1770.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 6529
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 51
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-404
+    Position 2790 -64.12297058105469 4210 1
+    Rotation 180.0004272460938 80.00006103515625 180.000244140625 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -1770.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 2867
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 52
+  based-on-template PL_Bramka_Dmuchana:1
+  parent 0
+  variables
+    Name PL_Bramka_Dmuchana-406
+    Position 3470.814453125 -216.3137664794922 4879.046875 1
+    Rotation 0 180 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -1770.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 17571
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 62
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-575
+    Position 3380 635 2350 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2520.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 18383
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 63
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-576
+    Position 3380 585 2535 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -2520.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 25411
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 64
+  based-on-template KS_ReflektorDuzy_Typ01_01:1
+  parent 0
+  variables
+    Name KS_ReflektorDuzy_Typ01_01-577
+    Position 3380 655 2165 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -2550.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 28504
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 65
+  based-on-template PL_Flaga_USA:2
+  parent 0
+  variables
+    Name PL_Flaga_USA-582
+    Position 4090 15 5015 1
+    Rotation 0 315.0003051757813 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2550.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 4595
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 66
+  based-on-template PL_Flaga_Wloch:2
+  parent 0
+  variables
+    Name PL_Flaga_Wloch-584
+    Position 4140 20 4950 1
+    Rotation 0 325.0001831054688 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -2550.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 12224
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 67
+  based-on-template PL_Flaga_Slowenii:2
+  parent 0
+  variables
+    Name PL_Flaga_Slowenii-586
+    Position 4195 40 4870 1
+    Rotation 0 330.0001220703125 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -2580.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 20996
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 68
+  based-on-template PL_Flaga_Rosji:2
+  parent 0
+  variables
+    Name PL_Flaga_Rosji-588
+    Position 4250 45 4790 1
+    Rotation 0 330.0001220703125 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -2580.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 18900
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 69
+  based-on-template PL_Flaga_Francji:2
+  parent 0
+  variables
+    Name PL_Flaga_Francji-590
+    Position 4295 50 4695 1
+    Rotation 0 330.0001220703125 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -2580.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 30635
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 70
+  based-on-template PL_Flaga_Czech:2
+  parent 0
+  variables
+    Name PL_Flaga_Czech-592
+    Position 4320 55 4600 1
+    Rotation 0 335.0001220703125 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -2580.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 20804
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 71
+  based-on-template KS_Ratrak_01:1
+  parent 0
+  variables
+    Name KS_Ratrak_01-603
+    Position 4250 75 4110 1
+    Rotation 190.00048828125 325.001220703125 180.001220703125 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -2610.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 22418
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 72
+  based-on-template KS_Drzewo_Typ01_03:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_03-624
+    Position 4710 250 3470 1
+    Rotation 0 270 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -2700.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 9807
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 73
+  based-on-template KS_Drzewo_Typ01_02:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_02-626
+    Position 4605 125 3790 1
+    Rotation 0 270 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2700.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 1894
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 74
+  based-on-template KS_Drzewo_Typ01_01:1
+  parent 0
+  variables
+    Name KS_Drzewo_Typ01_01-629
+    Position 4215 230 3765 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -2730.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 7027
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 75
+  based-on-template antena_2:1
+  parent 0
+  variables
+    Name KS_Antena_02-661
+    Position 4075 225 3540 1
+    Rotation 0 90 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -2790.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 24893
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 76
+  based-on-template PL_Balon_Reklamowy_02:1
+  parent 0
+  variables
+    Name PL_Balon_Reklamowy_02-664
+    Position 3635 560 2650 1
+    Rotation 180.0004272460938 55.00003051757813 180.000244140625 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -2820.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 19551
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 92
+  based-on-template KS_Zjazd_01_Innsbruck:1
+  parent 0
+  variables
+    Name KS_Zjazd_01_Innsbruck-535
+    Position 3465 0 1965 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -2910.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 23874
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 93
+  based-on-template KS_Zjazd_02_Innsbruck:1
+  parent 0
+  variables
+    Name KS_Zjazd_02_Innsbruck-540
+    Position 3465 -2 1945 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -2910.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 17179
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 94
+  based-on-template KS_Zeskok_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Zeskok_Innsbruck-512
+    Position 3465 0 1965 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 18263
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 95
+  based-on-template KS_Model_fizyczny_Innsbruck:2
+  parent 0
+  variables
+    Name KS_Model_fizyczny_Innsbruck-523
+    Position 3465 0 1965 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 2169
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 96
+  based-on-template Null
+  parent 0
+  variables
+    Name Skoczek-Kamera
+    Position 5410 43.43976974487305 6025 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Render_text 
+  end-variables
+object 97
+  based-on-template DirectionalLight
+  parent 0
+  variables
+    Name DirectionalLight-529
+    Position 905.757080078125 2167.456787109375 2810.97705078125 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 1
+    Affects_characters 1
+    Affects_lightmaps 1
+    Casts_dynamic_shadows 1
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.8549020290374756 0.8509804606437683 0.8117647767066956 1
+    Specular_source 0
+    Cast_shadows 1
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 1.000000
+    End_falloff 1.000000
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 103
+  based-on-template PointLight
+  parent 0
+  variables
+    Name PointLight-536
+    Position 3970.75 218.9133911132813 4407.01611328125 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 210.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 1
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.5372549295425415 0.5490196347236633 0.5098039507865906 1
+    Specular_source 0
+    Cast_shadows 1
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.318110
+    End_falloff 415.220215
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 107
+  based-on-template Flag
+  parent 0
+  variables
+    Name Skoczek-PozycjaKoncowa
+    Position 3400.390625 -214.9266815185547 4247.3505859375 1
+    Rotation 0 315 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -30.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Render_text 
+    Play_script 
+    Flags 0
+  end-variables
+object 108
+  based-on-template Null-AudienceManager:1
+  parent 0
+  variables
+    Name Null-AudienceManager-0
+    Position 3460 0 4875 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -240.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Render_text 
+  end-variables
+object 583
+  based-on-template DirectionalLight
+  parent 0
+  variables
+    Name DirectionalLight-530
+    Position 4989.935546875 758.1220092773438 5934.6806640625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 90.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 1
+    Affects_characters 1
+    Affects_lightmaps 1
+    Casts_dynamic_shadows 1
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.2392157018184662 0.3098039329051971 0.3450980484485626 1
+    Specular_source 0
+    Cast_shadows 1
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 1.000000
+    End_falloff 1.000000
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 587
+  based-on-template PointLight
+  parent 0
+  variables
+    Name PointLight-543
+    Position 3480.455322265625 -143.0191040039063 4809.31298828125 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 210.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 1
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.6509804129600525 0.658823549747467 0.4000000357627869 1
+    Specular_source 1
+    Cast_shadows 1
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 1.349102
+    End_falloff 196.531052
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 589
+  based-on-template Flag
+  parent 0
+  variables
+    Name LightingFlag-3
+    Position 3185.912841796875 -164.2232208251953 4390.20361328125 1
+    Rotation 0 85 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -15330.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer self.AmbientMult=1.41\nself.LightingMult=1.41
+    LUA_params 
+    Icon_string 
+    Render_text 
+    Play_script 
+    Flags 0
+  end-variables
+object 590
+  based-on-template Flag
+  parent 0
+  variables
+    Name LightingFlag-2
+    Position 3859.464599609375 -48.70037078857422 4190.32470703125 1
+    Rotation 0 275.0000610351563 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 210.000000
+    Schematic_position_Y -15330.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer self.AmbientMult=1.41\nself.LightingMult=1.41
+    LUA_params 
+    Icon_string 
+    Render_text 
+    Play_script 
+    Flags 0
+  end-variables
+object 591
+  based-on-template Flag
+  parent 0
+  variables
+    Name LightingFlag-1
+    Position 3434.37109375 -12.02935218811035 5089.46923828125 1
+    Rotation 180 0 180 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -15330.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer self.AmbientMult=1.41\nself.LightingMult=1.41
+    LUA_params 
+    Icon_string 
+    Render_text 
+    Play_script 
+    Flags 0
+  end-variables
+object 645
+  based-on-template SceneParametersBox
+  parent 0
+  variables
+    Name FSE_DOF
+    Position 2525 0 4470 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Boundingbox_epsilon 0.000000
+    Sector_box 0
+    Battle_box 0
+    Size 20 10 20 1
+    Send_events_to_parent_object 0
+    Check_for_player_only 0
+    Integrate_with_parent 1
+    Soft_edge 0.000000
+    EAX_Environment 0
+    Affects_shaders 1
+    Restore_shaders_on_exit 1
+    Override_local_ambient 0
+    Attack_time 0.000000
+    Attack_interpolation 1
+    Release_time 0.000000
+    Release_interpolation 1
+    Affects_lightmap_lights 1
+    Affects_lightmap_ambient 1
+    Affects_dynamic_lights 1
+    Affects_dynamic_ambient 1
+    Dynamic_attack_time 1.000000
+    Dynamic_release_time 1.000000
+    Crap_align 0
+    Disable_AI_Map 0
+    Scene_ambient_color 0.08235294371843338 0.04313725605607033 0.2000000178813934 1
+    Game_ambient_color 0.1372549086809158 0.1529411822557449 0.2196078598499298 1
+    No_lightmap_ambient_color 0.1372549086809158 0.1607843190431595 0.2470588386058807 1
+    Fog_mode 1
+    Fog_color 0.6823529601097107 0.7411764860153198 0.7764706611633301 1
+    Linear_fog_start -2111.000000
+    Linear_fog_end 21000.000000
+    Visibility_end 15000.000000
+    Aiming_limit 1000.000000
+    Lightmap_blur_radius 3.000000
+    Lightmap_soft_samples_scale 0.500000
+    Terrain_lightmap_size 256
+    Lightmap_compression 1
+    Screen_tesselation_factor 1
+    Effect_color 0.8901961445808411 0.8784314393997192 0.9137255549430847 0.5
+    Glow_detection_shader FSE_GlowDetection
+    Glow_detection_shader:Alpha_test_level 0.200000
+    Glow_detection_shader:Glow_detection_factor 0.699999988079071 0 0 0
+    Sep0 
+    Number_of_glow_passes 2
+    Glow_blur_shader FSE_Gauss
+    Glow_blur_shader:Alpha_test_level 0.000000
+    Glow_blur_shader:Glow_filter_factor 1.000000
+    Glow_blur_shader:Horizontal_filter_start_direction 0.699999988079071 0 0 0
+    Glow_blur_shader:Horizontal_filter_delta 1 0 0 0
+    Glow_blur_shader:Vertical_filter_start_direction 0 0.699999988079071 0 0
+    Glow_blur_shader:Vertical_filter_delta 0 1 0 0
+    Sep2 
+    Full_screen_shader FSE_SimpleDOF_NoRef
+    Full_screen_shader:Alpha_test_level 0.200000
+    Full_screen_shader:Out_focus_glow_scale 1.000000
+    Full_screen_shader:In_focus_glow_steal 0.770000
+    Full_screen_shader:Texture4_Color_lookup Fse\Violet__01_NoCompressionClampNoFilterNoMipMaps copy.tga
+    Full_screen_shader:GlowFactor 1 1 0 0
+    Full_screen_shader:Lookup_intensity 0.25 0.9100000262260437 0 0
+    Visible_terrain_size 16
+    Terrain_degradation_factor 1
+    Terrain_cell_size 100.000000
+    Shadow_color 0 0 0 0.9568628072738648
+    EAX_Manager_Database eaxmanager.eal
+    Background_color 0.140625 0.265625 0.5390625 0
+    Alternative_background_color 0 0 0 1
+    Render_sky 1
+    Sky_cylinder_down_limit -3.400000
+    Sky_cylinder_up_limit 6.400000
+    Sky_cylinder_down_radius 8.000000
+    Sky_cylinder_up_radius 11.000000
+    Sep1 
+    Sky_cylinder_basic_shader #Sky-Basic
+    Sky_cylinder_basic_shader:Alpha_test_level 0.200000
+    Sky_cylinder_basic_shader:Texture_1 Skies\Innsbruck\KS_Tlo_Innsbruck_V4.tga
+    Sky_cylinder_basic_shader:Texture_1_scale 5 1 0 0
+    Sky_cylinder_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_1_drift 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2 Skies\Alpy\Alpy_Top_02_Clouds_Dark_01.tga
+    Sky_cylinder_basic_shader:Texture_2_scale 3 1 0 0
+    Sky_cylinder_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2_drift 0.00570000009611249 0 0 0
+    Sep2 
+    Sky_ceiling_level 1.210000
+    Sky_ceiling_inner_radius 4.000000
+    Sky_ceiling_outer_radius 7.000000
+    Sep3 
+    Sky_ceiling_basic_shader #Sky-Basic
+    Sky_ceiling_basic_shader:Alpha_test_level 0.200000
+    Sky_ceiling_basic_shader:Texture_1 Skies\Niebo_Tile_02_V2_Blue.tga
+    Sky_ceiling_basic_shader:Texture_1_scale 3 3 0 0
+    Sky_ceiling_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_1_drift -0.004999999888241291 0.004999999888241291 0 0
+    Sky_ceiling_basic_shader:Texture_2 Skies\Niebo_Tile_01_V3_Blue.tga
+    Sky_ceiling_basic_shader:Texture_2_scale 2 2 0 0
+    Sky_ceiling_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_2_drift 0.009999999776482582 0.009999999776482582 0 0
+    SAVE_maximized_viewport 1
+    SAVE_central_point_X 50.000000
+    SAVE_central_point_Y 50.000000
+    SAVE_visibleRolledView 0
+    SAVE_left_docking_window_size 194
+    SAVE_rolledViewsVisible 0
+    Lightmap_shadowing 1
+    Lightmap_soft_shadowing 1
+    Lightmap_soft_shadow_scale_samples_nr 0
+    Lightmap_terrain_shadowing 0
+    Lightmap_dust 1
+    Lightmap_supersampling 1
+    Lightmap_blur 0
+    Initial_X_position_on_Schematic_View 0.000000
+    Initial_Y_position_on_Schematic_View 0.000000
+  end-variables
+object 646
+  based-on-template lf1:4
+  parent 0
+  variables
+    Name Lens_Flare_SMALL_01-9730
+    Position 3110 1790.170288085938 554.8228759765625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Flare_animation_sync_id -1
+  end-variables
+object 647
+  based-on-template Billboard
+  parent 0
+  variables
+    Name Billboard-9732
+    Position 3110 1790.170288085938 554.8228759765625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Align_marker -1
+    Advanced_shader 
+    Texture_file Bilboards\DIAB_Bilboard_Dot_Fade_Linear_01.tga
+    Reflection_texture_file 
+    Face_camera 1
+    Two_sided 0
+    Color 1 1 1 1
+    Tiles 1.000000
+    Size 91.000000
+    Aspect 1.000000
+    Offset 0.000000
+    Alpha_test 1
+    Alpha_write 0
+    Color_write 1
+    Alpha_test_level 0.010000
+    Fogged 1
+    Depth_test 1
+    Depth_write 0
+    Clamp_texture 1
+    Forced_sort_mode 0
+    Blend_function 2
+    Use_y_angle_only 0
+    Ignore_face_camera_in_nodes 0
+    Node_1_angle 90.000000
+    Node_1_color 1 1 1 1
+    Node_2_angle 90.000000
+    Node_2_color 1 1 1 0
+    Texture_center_U 0.500000
+    Texture_center_V 0.500000
+    Special_blend_mode 0
+    Cast_lightmap_shadow 0
+    Reflection_source_distance 5.000000
+    Reflection_rectangle_aspect 1.000000
+    Reflection_texture_size 1.000000
+    Reflection_texture_aspect 1.000000
+    Reflection_texture_Uofs 0.000000
+    Reflection_texture_Vofs 0.000000
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Delay_time_after_cycle 0.000000
+    Delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+    Texture_U_drift 0.000000
+    Texture_V_drift 0.000000
+    Texture_U_repeat 0
+    Texture_V_repeat 0
+    Texture_animation_cycles 0.000000
+    Vertex_anim 
+    Vertex_Animation_X_Speed 0.000000
+    Vertex_Animation_X_Amplitude 0.000000
+    Vertex_Animation_Y_Speed 0.000000
+    Vertex_Animation_Y_Amplitude 0.000000
+    Vertex_Animation_Z_Speed 0.000000
+    Vertex_Animation_Z_Amplitude 0.000000
+    Center_blend_start 0.000000
+    Center_blend_end 0.000000
+    Distance_blend_start 0.000000
+    Distance_blend_end 0.000000
+    Flare_animation_sync_id 0
+  end-variables
+object 648
+  based-on-template operator:2
+  parent 0
+  variables
+    Name technik_kamera_dwn-9734
+    Position 3482.871826171875 1116.264282226563 1770.904418945313 1
+    Rotation 0 305.0003662109375 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 29424
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 649
+  based-on-template techniknotatnik:1
+  parent 0
+  variables
+    Name technik_notatnik-9737
+    Position 3480.217041015625 1100.664916992188 1792.3095703125 1
+    Rotation 0 330.000244140625 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2940.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 5894
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 650
+  based-on-template DirectionalLight
+  parent 0
+  variables
+    Name DirectionalLight-531
+    Position 2623.41845703125 966.6119384765625 5910.28369140625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 0
+    Affects_characters 0
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.6235294342041016 0.7058823704719544 0.7411764860153198 1
+    Specular_source 1
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 1.000000
+    End_falloff 1.000000
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1256
+  based-on-template PointLight
+  parent 0
+  variables
+    Name PointLight-546
+    Position 3773.21337890625 39.10292816162109 5034.1650390625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -2970.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 0
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 0.5372549295425415 0.5490196347236633 0.5098039507865906 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.318110
+    End_falloff 415.220215
+    Light_animation_mode 0
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 1.000000
+    Light_delay_time_after_cycle 0.000000
+    Light_delay_time_after_cycle_rnd 0.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 1 1 1 0.1000000014901161
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1922
+  based-on-template ~PL_Dom_02-322
+  parent 0
+  variables
+    Name ~PL_Dom_02-322
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10080.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 15132
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1923
+  based-on-template ~PL_Namiot_05-344
+  parent 0
+  variables
+    Name ~PL_Namiot_05-344
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10080.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 9273
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1924
+  based-on-template ~PL_Barierka2-412
+  parent 0
+  variables
+    Name ~PL_Barierka2-412
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10080.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 15573
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1925
+  based-on-template ~KS_ReflektorDuzy_Typ01_02-427
+  parent 0
+  variables
+    Name ~KS_ReflektorDuzy_Typ01_02-427
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10110.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 13526
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1926
+  based-on-template ~KS_ReflektroMaly-554
+  parent 0
+  variables
+    Name ~KS_ReflektroMaly-554
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10110.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 3653
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1927
+  based-on-template ~PL_Banda_ASDTTT-671
+  parent 0
+  variables
+    Name ~PL_Banda_ASDTTT-671
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10110.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 26837
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1928
+  based-on-template ~PL_Dom_06-701
+  parent 0
+  variables
+    Name ~PL_Dom_06-701
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10110.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 25342
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+object 1929
+  based-on-template PointLight
+  parent 0
+  variables
+    Name FLASHKI
+    Position 3756.836181640625 -146.5617218017578 3980.280029296875 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 1
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 1 1 1 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.600820
+    End_falloff 232.196564
+    Light_animation_mode 1
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 0.100000
+    Light_delay_time_after_cycle 2.000000
+    Light_delay_time_after_cycle_rnd 2.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 0 0 0 0
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1930
+  based-on-template PointLight
+  parent 0
+  variables
+    Name FLASHKI-0
+    Position 3838.296875 -108.7628555297852 4179.43701171875 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 30.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 1
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 1 1 1 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.600820
+    End_falloff 232.196564
+    Light_animation_mode 1
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 0.100000
+    Light_delay_time_after_cycle 2.000000
+    Light_delay_time_after_cycle_rnd 2.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 0 0 0 0
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1931
+  based-on-template PointLight
+  parent 0
+  variables
+    Name FLASHKI-1
+    Position 3612.85498046875 -89.86341094970703 4467.56201171875 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 1
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 1 1 1 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.600820
+    End_falloff 232.196564
+    Light_animation_mode 1
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 0.100000
+    Light_delay_time_after_cycle 2.000000
+    Light_delay_time_after_cycle_rnd 2.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 0 0 0 0
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1932
+  based-on-template PointLight
+  parent 0
+  variables
+    Name FLASHKI-2
+    Position 3254.428466796875 -91.55695343017578 4293.95947265625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 90.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 1
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 1 1 1 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.600820
+    End_falloff 232.196564
+    Light_animation_mode 1
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 0.100000
+    Light_delay_time_after_cycle 2.000000
+    Light_delay_time_after_cycle_rnd 2.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 0 0 0 0
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1933
+  based-on-template PointLight
+  parent 0
+  variables
+    Name FLASHKI-3
+    Position 3001.067626953125 -97.48438262939453 4515.2900390625 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Dynamic_light 1
+    Prioritize_light 0
+    Affects_characters 1
+    Affects_lightmaps 0
+    Casts_dynamic_shadows 0
+    Light_mode 0
+    Dynamic_light_mode 0
+    Color 1 1 1 1
+    Specular_source 0
+    Cast_shadows 0
+    Soft_shadow_range 2.000000
+    Soft_shadow_rangeXmult 1.500000
+    Soft_shadow_range_samples 2
+    Soft_shadow_blur_range 1.500000
+    Light_model_mode 0
+    Start_falloff 0.600820
+    End_falloff 232.196564
+    Light_animation_mode 1
+    Light_animation_square_fill 0.500000
+    Light_animation_cycle_time 0.100000
+    Light_delay_time_after_cycle 2.000000
+    Light_delay_time_after_cycle_rnd 2.000000
+    Light_animation_time_offset 0.000000
+    Light_animation_sync_id -1
+    Light_secondary_color 0 0 0 0
+    Flare_color 1 1 1 0.1000000014901161
+    Flare_size 1.000000
+    Flare_offset 0.000000
+    Flare_texture_file 
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Flare_delay_time_after_cycle 0.000000
+    Flare_delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+  end-variables
+object 1966
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~SpectatorBillboard-05-584
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10440.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1967
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~SpectatorBillboard-12-920
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10440.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1968
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Flash_01-5147
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10440.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 1
+    Special_blend_mode 0
+  end-variables
+object 1969
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Flash_01-5105
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 1
+    Special_blend_mode 0
+  end-variables
+object 1970
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~SpectatorBillboard-03-551
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1971
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Flash_01-5100
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 1
+    Special_blend_mode 0
+  end-variables
+object 1972
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Zwykly_Glow_23-9695
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1973
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1079
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1974
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1111
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10470.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1975
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1181
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1976
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1230
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1977
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1252
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1978
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1273
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1979
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1419
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1980
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1455
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10500.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1981
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1343
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1982
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1399
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1983
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1475
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1984
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1659
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1985
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1556
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1986
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1600
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10530.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1987
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Billboard-1730
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1988
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Billboard-1736
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 60.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1989
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~KS_Drzewo_2D_02-1690
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 120.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1990
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Snow_Branch_01-727
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 180.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1991
+  based-on-template BillboardContainer
+  parent 0
+  variables
+    Name ~Snow_Branch_01-785
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 240.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Animated 0
+    Special_blend_mode 0
+  end-variables
+object 1992
+  based-on-template ~PL_Banda_Ruhgass-1984
+  parent 0
+  variables
+    Name ~PL_Banda_Ruhgass-1984
+    Position 0 0 0 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 2
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 300.000000
+    Schematic_position_Y -10560.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Mesh_random_number 24924
+    Fogged 1
+    Cast_shadow 1
+    Receive_shadow 1
+    Obstacle 2
+    Destroyed 0
+    Is_Band 0
+  end-variables
+
+
+Object-sets-begin
+version 1
+0
+Object-sets-end
+cameras
+   camera 0 0 2
+    cameraType 2
+    cameraKind 2
+    camPosition 3584.0478515625 -207.2710571289063 4668.5556640625 1
+    camRotation -90 0 0 1
+    camZoom 40.521938
+    width 423
+    height 253
+    aspect 1.671937
+    renderMode 0
+    drawMode 33282
+end-variables
+   camera 1 0 4
+    cameraType 4
+    cameraKind 7
+    camPosition 2993.00146484375 -517.2923583984375 4283.8388671875 1
+    camRotation -31.04226303100586 442.5293273925781 0 -3035699
+    camZoom 901.115845
+    width 765
+    height 614
+    aspect 1.245928
+    renderMode 7
+    drawMode 49699
+    camFOV 0.523599
+end-variables
+   camera 2 0 2
+    cameraType 2
+    cameraKind 4
+    camPosition 3584.0478515625 -207.2710571289063 4668.5556640625 1
+    camRotation 0 90 0 1
+    camZoom 40.521938
+    width 423
+    height 339
+    aspect 1.247788
+    renderMode 0
+    drawMode 49187
+end-variables
+   camera 3 0 4
+    cameraType 4
+    cameraKind 7
+    camPosition 3584.0478515625 -207.2710571289063 4668.5556640625 1
+    camRotation -14.86793422698975 8122.9169921875 0 -14402879
+    camZoom 40.521938
+    width 694
+    height 614
+    aspect 1.130293
+    renderMode 4
+    drawMode 18083
+    camFOV 0.523599
+end-variables
+end-cameras
+Freespace-map-defined
+settings
+    Name Current scene
+    Disable_AI_Map 0
+    Scene_ambient_color 0.0941176563501358 0.07843137532472611 0.1607843190431595 1
+    Game_ambient_color 0.1372549086809158 0.1529411822557449 0.2196078598499298 1
+    No_lightmap_ambient_color 0.1372549086809158 0.1607843190431595 0.2470588386058807 1
+    Fog_mode 1
+    Fog_color 0.6823529601097107 0.7411764860153198 0.7764706611633301 1
+    Linear_fog_start -2111.000000
+    Linear_fog_end 21000.000000
+    Visibility_end 15000.000000
+    Aiming_limit 1000.000000
+    Lightmap_blur_radius 3.000000
+    Lightmap_soft_samples_scale 0.500000
+    Terrain_lightmap_size 512
+    Lightmap_compression 1
+    Screen_tesselation_factor 1
+    Effect_color 0.9803922176361084 0.9372549653053284 0.7803922295570374 0.5
+    Glow_detection_shader FSE_GlowDetection_Lookup
+    Glow_detection_shader:Alpha_test_level 0.000000
+    Glow_detection_shader:BeforeLookupMultiplier 1.000000
+    Glow_detection_shader:Texture1_intensity_lookup Fse\Gradient_Fse_Alpy_04_V3.tga
+    Glow_detection_shader:LookupMultiplier 0.2700000107288361 0.2700000107288361 0.2700000107288361 0
+    Sep0 
+    Number_of_glow_passes 2
+    Glow_blur_shader FSE_Gauss
+    Glow_blur_shader:Alpha_test_level 0.000000
+    Glow_blur_shader:Glow_filter_factor 1.000000
+    Glow_blur_shader:Horizontal_filter_start_direction 1 0 0 0
+    Glow_blur_shader:Horizontal_filter_delta 1 0 0 0
+    Glow_blur_shader:Vertical_filter_start_direction 0 1 0 0
+    Glow_blur_shader:Vertical_filter_delta 0 1 0 0
+    Sep2 
+    Full_screen_shader FSE_Highway2_LookupNoRef
+    Full_screen_shader:Alpha_test_level 0.200000
+    Full_screen_shader:SpeedFactor 0.004100
+    Full_screen_shader:Texture2_SpeedMask sfx\FSE_Speed_Alpha_02.tga
+    Full_screen_shader:Texture4_Color_lookup Fse\Violet__01_NoCompressionClampNoFilterNoMipMaps copy.tga
+    Full_screen_shader:AlphaFactor 0.4399999976158142 0.8100000023841858 0 0
+    Full_screen_shader:Lookup_intensity 0.25 0.9100000262260437 0 0
+    Visible_terrain_size 16
+    Terrain_degradation_factor 1
+    Terrain_cell_size 100.000000
+    Shadow_color 0 0 0 0.9568628072738648
+    EAX_Manager_Database eaxmanager.eal
+    Background_color 0.140625 0.265625 0.5390625 0
+    Alternative_background_color 0 0 0 1
+    Render_sky 1
+    Sky_cylinder_down_limit -3.400000
+    Sky_cylinder_up_limit 6.400000
+    Sky_cylinder_down_radius 8.000000
+    Sky_cylinder_up_radius 11.000000
+    Sep1 
+    Sky_cylinder_basic_shader #Sky-Basic
+    Sky_cylinder_basic_shader:Alpha_test_level 0.200000
+    Sky_cylinder_basic_shader:Texture_1 Skies\Innsbruck\KS_Tlo_Innsbruck_V4.tga
+    Sky_cylinder_basic_shader:Texture_1_scale 5 1 0 0
+    Sky_cylinder_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_1_drift 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2 Skies\Alpy\Alpy_Top_02_Clouds_Dark_01.tga
+    Sky_cylinder_basic_shader:Texture_2_scale 3 1 0 0
+    Sky_cylinder_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2_drift 0.00570000009611249 0 0 0
+    Sep2 
+    Sky_ceiling_level 1.210000
+    Sky_ceiling_inner_radius 4.000000
+    Sky_ceiling_outer_radius 7.000000
+    Sep3 
+    Sky_ceiling_basic_shader #Sky-Basic
+    Sky_ceiling_basic_shader:Alpha_test_level 0.200000
+    Sky_ceiling_basic_shader:Texture_1 Skies\Niebo_Tile_02_V2_Blue.tga
+    Sky_ceiling_basic_shader:Texture_1_scale 3 3 0 0
+    Sky_ceiling_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_1_drift -0.004999999888241291 0.004999999888241291 0 0
+    Sky_ceiling_basic_shader:Texture_2 Skies\Niebo_Tile_01_V3_Blue.tga
+    Sky_ceiling_basic_shader:Texture_2_scale 2 2 0 0
+    Sky_ceiling_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_2_drift 0.009999999776482582 0.009999999776482582 0 0
+    SAVE_maximized_viewport 1
+    SAVE_central_point_X 50.000000
+    SAVE_central_point_Y 50.000000
+    SAVE_visibleRolledView 0
+    SAVE_left_docking_window_size 257
+    SAVE_rolledViewsVisible 1
+    Lightmap_shadowing 1
+    Lightmap_soft_shadowing 1
+    Lightmap_soft_shadow_scale_samples_nr 0
+    Lightmap_terrain_shadowing 0
+    Lightmap_dust 1
+    Lightmap_supersampling 1
+    Lightmap_blur 0
+    Initial_X_position_on_Schematic_View 0.000000
+    Initial_Y_position_on_Schematic_View -10590.000000
+end-variables
+
+end-settings

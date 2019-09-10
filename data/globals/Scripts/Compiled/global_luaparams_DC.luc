@@ -1,0 +1,137 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 01:04:24
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+true=1;
+false=IDT_Nil;
+
+function gObjectManager["GameClose"](self) end
+
+
+function ParseLuaParamsDef()
+	gConsole(gConsole["print"], "ParseLuaParamsDef");
+	if not (Editor["GetLuaParamsDef"]()) then
+		local paramsDef="";
+	end
+	
+	local defString="gParamsDefTable={"..paramsDef.."}";
+	defString=gsub(defString, "\\n", " ");
+	gConsole(gConsole["print"], "DEFSTRING:"..defString);
+	dostring(defString);
+	local defTable=gParamsDefTable;
+	if not (defTable) then
+		gConsole(gConsole["print"], COLOR_RED, "Error: null lua params definition table");
+		do return end;
+		
+	end
+	
+	for i=1, getn(defTable) do
+		local propsTable=defTable[i];
+		param=propsTable["param"];
+		gConsole(gConsole["print"], "param="..param);
+		if (propsTable) then
+			if (type(propsTable)=="table") then
+				Editor["AddLuaParam"](param, tostring(propsTable["type"]));
+				for prop, val in propsTable do
+					if (type(val)=="table") then
+						for v=1, getn(val) do
+							Editor["SetLuaParamProp"](param, prop, tostring(val[v]));
+						end
+						
+					else
+						Editor["SetLuaParamProp"](param, prop, tostring(val));
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+
+function ParamsValTagSetTable(tbl, index, value)
+	gParamsValAccesedFields[index]=true;
+	rawset(tbl, index, value);
+
+end
+
+
+function ParseLuaParamsVal()
+	gConsole(gConsole["print"], "ParseLuaParamsVal");
+	if not (Editor["GetLuaParamsVal"]()) then
+		local paramsVal="";
+	end
+	
+	gParamsValTable={};
+	gParamsValAccesedFields={};
+	local valTableTag=newtag();
+	settag(gParamsValTable, valTableTag);
+	settagmethod(valTableTag, "settable", ParamsValTagSetTable);
+	local valString="self=gParamsValTable; "..paramsVal;
+	valString=gsub(valString, "\\n", " ");
+	gConsole(gConsole["print"], "VALSTRING:"..valString);
+	dostring(valString);
+	local valTable=gParamsValTable;
+	for param, v in gParamsValAccesedFields do
+		local val=valTable[param];
+		gConsole(gConsole["print"], param.."="..tostring(val));
+		Editor["SetLuaParamProp"](param, "value", tostring(val));
+	end
+	
+
+end
+
+
+function CBaseObject["SetLuaParamsDefaultValues"](self, paramsDef)
+	paramsDef= gsub(paramsDef, "\\n", [[
+]]);
+	local chunk="CBaseObject.CallTmp={"..paramsDef.."}";
+	dostring(chunk, "Build Lua Params definition table for "..self["Name"]);
+	for i=1, getn(CBaseObject["CallTmp"]) do
+		local pdef=CBaseObject["CallTmp"][i];
+		if not (pdef["param"]) or (pdef["defVal"]) then
+			self[pdef["param"]]=pdef["defVal"];
+		end
+		
+	end
+	
+	CBaseObject["CallTmp"]=IDT_Nil;
+
+end
+
+
+function CBaseObject["LuaParamsCallback"](self)
+	local ini=self(self["GetStringTemplateAttribute"], "LUA_params_def");
+	if not (ini) or (ini~="") then
+		self(self["SetLuaParamsDefaultValues"], ini);
+	end
+	
+	local ini=self(self["GetStringObjectAttribute"], "LUA_params");
+	if not (ini) or (ini~="") then
+		ini= gsub(ini, "\\n", [[
+]]);
+		CBaseObject["CallTmp"]=self;
+		dostring("local self = CBaseObject.CallTmp; "..ini, "Initializer (params) for "..self["Name"]);
+		CBaseObject["CallTmp"]=IDT_Nil;
+	end
+	
+	local ini=self(self["GetStringTemplateAttribute"], "LUA_params_callback");
+	if not (ini) or (ini~="") then
+		ini= gsub(ini, "\\n", [[
+]]);
+		CBaseObject["CallTmp"]=self;
+		dostring("local self = CBaseObject.CallTmp; "..ini, "Initializer (params) for "..self["Name"]);
+		CBaseObject["CallTmp"]=IDT_Nil;
+	end
+	
+
+end
+
+gConsole(gConsole["print"], "Lua params env loaded.");
+

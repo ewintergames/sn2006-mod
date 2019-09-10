@@ -1,0 +1,40 @@
+template
+    Type 34
+    Name Snieg_Visible_01:1
+    Version 0
+    Format_version 3
+    Last_modified tetno
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Wireframe_color 1 0 0 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 0
+    Special_effects 
+    Never_blend_automatically 0
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    Texture Terrain\Snieg\Snieg_Visible_01.tga
+    Environment_material Snow
+    Size_x 2
+    Size_y 2
+    Single_texture_shader SpecularForStaticObjectsBumpLM
+    Single_texture_shader:Alpha_test_level 0.000000
+    Single_texture_shader:Texture2_NormalMap Terrain\Snieg\Snieg_01_NORMAL.tga
+    Single_texture_shader:SpecularExponent 32.000000
+    Single_texture_shader:SpecularScale 0.400000
+    Single_texture_shader:SpecularAdd 0.000000
+    Separator1 
+    Dual_texture_shader 
+  end-variables

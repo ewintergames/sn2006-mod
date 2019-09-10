@@ -1,0 +1,1708 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-18-2018 Time: 23:48:09
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+if not (gEditorLoaded) then
+	gEditorLoaded=true;
+end
+
+AUTOFILL_TPLS={"Sullivan",
+	"Protezowany",
+	"Afro",
+	"General",
+	"General-Color",
+	"NsulivOutro",
+	"Sullivan-Intro",
+	"Trainer"};
+SUBST_FIELDS={"Type",
+	"Name",
+	"ImportedFromFile",
+	"MeshScale",
+	"LUA_initializer"};
+if (getProjectName()=="Diabolique") then
+	SRC_TEMPLATE={"Test-Enemy",
+		"Hero-Normal"};
+	SUBST_TEMPLATES={{"Aniol1restaurant",
+		"Aniol2restaurant",
+		"Aniol3restaurant",
+		"AniolRestaurant-Roof1",
+		"AniolRestaurant-Roof2",
+		"KelnerRestaurant",
+		"BarmanRestaurant",
+		"Peasant",
+		"WarMonk1",
+		"WarMonk2",
+		"WarMonk3",
+		"OrdMonk1",
+		"OrdMonk2",
+		"OrdMonk3",
+		"WarMonkBoss",
+		"Aniol1restaurantGLASS",
+		"Aniol2restaurantGLASS",
+		"Aniol3restaurantGLASS",
+		"AkolitaBodyPasy",
+		"AkolitaBodyPasyBlack",
+		"OrdMonkHoodOn",
+		"OrdMonkHoodOff",
+		"Rafguard",
+		"RafguardJet"},
+		{"Hero-GarniturKamizelkaPalmRamie",
+		"Hero-GarniturKamizelka",
+		"Hero-GarniturKamizelkaPalmPasek"}};
+	SUBST_EXTRA_FIELDS={WarMonkBoss={"LUA_class"}};
+else
+	if (getProjectName()=="Ski") then
+		SRC_TEMPLATE={"Spectator-01"};
+		SUBST_TEMPLATES={{"Spectator-02",
+			"Spectator-03",
+			"Spectator-04",
+			"Spectator-05",
+			"Spectator-06"}};
+		SUBST_EXTRA_FIELDS={};
+	end
+	
+end
+
+
+function listTemplatesAV(attribute, kind, value)
+	local tplList={};
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj=si(si["Next"]);
+	local cValue=IDT_Nil;
+	while (obj) do
+		if (kind=="b") then
+			cValue=obj(obj["GetBoolTemplateAttribute"], attribute);
+		elseif (kind=="s") then
+			cValue=obj(obj["GetStringTemplateAttribute"], attribute);
+		elseif (kind=="f") or (kind=="n") then
+			cValue=obj(obj["GetFloatTemplateAttribute"], attribute);
+		end
+		
+		if (cValue==value) then
+			local tplName=obj(obj["GetTemplateName"]);
+			if not (tfind(tplList, tplName)) then
+				tinsert(tplList, tplName);
+			end
+			
+		end
+		
+		obj=si(si["Next"]);
+	wf_print("Templates with "..tostring(attribute).." = "..tostring(value));
+	for i, v in tplList do
+		wf_print(" "..i);
+	end
+	
+
+end
+
+
+function listTemplatesA(attribute, kind)
+	local tplList={};
+	local valList={};
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj=si(si["Next"]);
+	local cValue=IDT_Nil;
+	while (obj) do
+		if (kind=="b") then
+			cValue=obj(obj["GetBoolTemplateAttribute"], attribute);
+		elseif (kind=="s") then
+			cValue=obj(obj["GetStringTemplateAttribute"], attribute);
+		elseif (kind=="f") or (kind=="n") then
+			cValue=obj(obj["GetFloatTemplateAttribute"], attribute);
+		end
+		
+		if not (value) then
+			local tplName=obj(obj["GetTemplateName"]);
+			if not (tfind(tplList, tplName)) then
+				tinsert(tplList, tplName);
+				tinsert(valList, tostring(cValue));
+			end
+			
+		end
+		
+		obj=si(si["Next"]);
+	wf_print("Value of attribute "..tostring(attribute)..": ");
+	for i, v in tplList do
+		wf_print(" "..i.." --- "..valList[(table)]);
+	end
+	
+
+end
+
+
+function forEachObject(script)
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj=si(si["Next"]);
+	while (obj) do
+		gForEachObjectCaller=obj;
+		dostring("local self=gForEachObjectCaller; "..script);
+		gForEachObjectCaller=IDT_Nil;
+		obj=si(si["Next"]);
+	end
+	
+
+end
+
+
+function forEachSelectedObject(script)
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		gForEachObjectCaller=obj;
+		dostring("local self=gForEachObjectCaller; "..script);
+		obj=si(si["Next"]);
+	end
+	
+	gForEachObjectCaller=IDT_Nil;
+
+end
+
+
+function conditionalSelect(cond, fromAlreadySelected, downTree)
+	if (cond) then
+		local mask=IDT_Nil;
+		if (downTree) then
+			mask=SELMODE_DOWNTREE;
+		else
+			mask=0;
+		end
+		
+		local si=IDT_Nil;
+		if (fromAlreadySelected) then
+			si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+		else
+			si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+		end
+		
+		local obj=si(si["Next"]);
+		while (obj) do
+			gCondSelCaller=obj;
+			if (dostring("local self=gCondSelCaller; return "..cond)) then
+				obj(obj["Select"], bor(SELMODE_SELECT, mask));
+			else
+				obj(obj["Select"], bor(SELMODE_UNSELECT, mask));
+			end
+			
+			obj=si(si["Next"]);
+		end
+		
+		gCondSelCaller=IDT_Nil;
+	end
+	
+	Editor["RedrawAllViewports"]();
+
+end
+
+
+function selectObjectsOutsideTheUniverse()
+	conditionalSelect("self:GetCenterUsingMarkers().x<0 or self:GetCenterUsingMarkers().x>10200 or self:GetCenterUsingMarkers().z<0 or self:GetCenterUsingMarkers().z>10200");
+
+end
+
+
+function findBrokenTemplates()
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj=si(si["Next"]);
+	while (obj) do
+		if not (obj(obj["ValidateOptimizedObject"])) then
+			gConsole(gConsole["print"], COLOR_RED, obj["Name"].." has a broken optimized template");
+		end
+		
+		obj=si(si["Next"]);
+	end
+	
+
+end
+
+
+function compressTextures()
+	file=openfile("c:\\adddistreport.txt", "r");
+	wnd=CLEUserInterfacePicture(CLEUserInterfacePicture["new"], IDT_Nil);
+	while (true) do
+		t=read(file, "*l");
+		while not (t) do
+		end
+		
+		gConsole(gConsole["print"], t);
+		t2=strfind(t, ".texture", 1, 1);
+		if (t2) then
+			gConsole(gConsole["print"], t2);
+			t=strsub(t, 42, t2).."tga";
+			wnd(wnd["SetTexture"], t, 0, TEXTURE_OBJECT);
+			gConsole(gConsole["print"], COLOR_YELLOW, t);
+		wnd(wnd["delete"]);
+		closefile(file);
+
+end
+
+
+function parentToNearestMesh()
+	gConsole(gConsole["Show"], true);
+	local selectedObjects={};
+	local meshes={};
+	iter1=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj1=iter1(iter1["Next"]);
+	while (obj1) do
+		tinsert(selectedObjects, obj1);
+		obj1=iter1(iter1["Next"]);
+	end
+	
+	iter1=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj1=iter1(iter1["Next"]);
+	while (obj1) do
+		local opt=obj1(obj1["GetFloatObjectAttribute"], "Optimized");
+		if not not (opt(opt["IsOptimizationResult"])) or (opt~=OPT_SOURCE) then
+			if (band(obj1(obj1["GetType"]), TYPE_MESH)~=0) then
+				tinsert(meshes, obj1);
+			end
+			
+		end
+		
+		obj1=iter1(iter1["Next"]);
+	end
+	
+	local i=IDT_Nil;
+	local j=IDT_Nil;
+	for i=1, getn(selectedObjects) do
+		local src=selectedObjects[j];
+		local pos=(step)((step)["LocalToGlobalCoordinates3"]);
+		local best=IDT_Nil;
+		local minDist=10000000;
+		for j=1, getn(meshes) do
+			local o=meshes[minDist];
+			if ((step)~=(step)) then
+				local way=((step)((step)["LocalToGlobalCoordinates3"]) - src);
+				local dist=o(o["length"]);
+				if (way<best) then
+					best=way;
+					pos=(step);
+				end
+				
+			end
+			
+		end
+		
+		if (pos) then
+			wf_print("Linking "..(step)["Name"].." to "..pos["Name"]);
+			(step)((step)["ChangeParent"], pos);
+		end
+		
+	end
+	
+
+end
+
+
+function selectDuplicates()
+	iter1=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local allObjects={};
+	local obj1=iter1(iter1["Next"]);
+	local tmpObjs={};
+	while (obj1) do
+		local tmpl=obj1(obj1["GetTemplateID"]);
+		if not (tmpObjs[tmpl]) then
+			tmpObjs[tmpl]={};
+		end
+		
+		tinsert(tmpObjs[tmpl], obj1);
+		tinsert(allObjects, obj1);
+		obj1=iter1(iter1["Next"]);
+	end
+	
+	local p1=Vector(Vector["instance"]);
+	local p2=Vector(Vector["instance"]);
+	local tid=IDT_Nil;
+	local objects=IDT_Nil;
+	for tid, objects in tmpObjs do
+		local i=IDT_Nil;
+		local j=IDT_Nil;
+		local cnt=getn(tid);
+		for i=1, j do
+			obj1=tid[cnt];
+			wf_print(obj1["Name"]);
+			if not (obj1["IsDuplicate"]) then
+				local t=obj1(obj1["GetTemplateID"]);
+				for j=(cnt + 1), j do
+					obj2=tid[t];
+					if not (obj2["IsDuplicate"]) then
+						obj1["renderMatrix"](obj1["renderMatrix"]["DecomposeLocationMatrix"], tmpl, p1, r1);
+						obj2["renderMatrix"](obj2["renderMatrix"]["DecomposeLocationMatrix"], s1, p2, r2);
+						p1(p1["CorrectRotation"]);
+						p2(p2["CorrectRotation"]);
+						if (tmpl(tmpl["equalXYZ"], s1, 0,01)) then
+							if (p1(p1["equalXYZ"], p2, 0,01)) then
+								if (r1(r1["equalXYZ"], r2, 0,01)) then
+									wf_print("Duplicate! : "..obj2["Name"]);
+									obj2["IsDuplicate"]=true;
+								end
+								
+							end
+							
+						end
+						
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i=1, getn(allObjects) do
+		(table)=allObjects[tid];
+		if ((table)["IsDuplicate"]) then
+			(table)["IsDuplicate"]=IDT_Nil;
+			(table)((table)["Select"], SELMODE_SELECT);
+		else
+			(table)((table)["Select"], SELMODE_UNSELECT);
+		end
+		
+	end
+	
+	Editor["RedrawAllViewports"]();
+
+end
+
+
+function objectStats()
+	gConsole(gConsole["Show"], true);
+	
+	function compareTmpEntries(a, b)
+		if not (a) or (b) then
+			if (a["Count"]>b["Count"]) then
+				return true;
+				
+			else
+				return false;
+				
+			end
+			
+		else
+			return false;
+			
+		end
+		
+
+	end
+
+	local objCount={};
+	gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		if (obj(obj["GetFloatObjectAttribute"], "Optimized")~=OPT_SOURCE) then
+			local tmpId=obj(obj["GetTemplateID"]);
+			if (objCount[tmpId]) then
+				objCount[tmpId]=(objCount[tmpId] + 1);
+			else
+				objCount[tmpId]=1;
+			end
+			
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+	end
+	
+	local tmpTable={};
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i, v in objCount do
+		tinsert(tmpId, {Tmpl=(table),
+		Count=i});
+	end
+	
+	sort(tmpId, compareTmpEntries);
+	local cnt=0;
+	for i=1, getn(tmpId) do
+		i=tmpId[(table)];
+		local name=gTemplateManager(gTemplateManager["GetTemplateName"], i["Tmpl"]);
+		local fileName=gTemplateManager(gTemplateManager["GetTemplateFileName"], i["Tmpl"]);
+		gConsole(gConsole["print"], format("%04d", i["Count"]).." -> "..cnt.." ("..i..")");
+		v=(v + i["Count"]);
+	end
+	
+	gConsole(gConsole["print"], COLOR_YELLOW, "Total object count: "..v);
+
+end
+
+
+function findObjectWithFaceCollision()
+	if not (tmpMarker) then
+		tmpMarker={};
+	end
+	
+	gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	local optType=obj(obj["GetFloatObjectAttribute"], "Optimized");
+	while (obj) do
+		local tmpId=obj(obj["GetTemplateID"]);
+		if not (tmpMarker[tmpId]) then
+			tmpMarker[tmpId]=1;
+			if (band(obj(obj["GetType"]), TYPE_MESH)~=0) and (optType~=OPT_RESULT) then
+				if (obj(obj["GetFloatTemplateAttribute"], "Collision_Type")==3) then
+					local name=gTemplateManager(gTemplateManager["GetTemplateName"], tmpId);
+					local matCnt=obj(obj["GetMaterialCount"]);
+					local triangles=obj(obj["GetMeshTriangleCount"]);
+					local col=obj(obj["HasCollidingTexture"]);
+					local desc=format("%-60s", name).." Mat count: "..format("%2d", matCnt).." Triangles: "..format("%3d", triangles);
+					if not (obj(obj["HasCollidingTexture"])) and (triangles<20) then
+					else
+						gConsole(gConsole["print"], COLOR_RED, desc);
+						tmpMarker[tmpId]=triangles;
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+	end
+	
+
+end
+
+
+function FaceCollisionStats()
+	if not (sceneList) then
+		sceneList="c:\\1\\sceneList.txt";
+	end
+	
+	tmpMarker={};
+	ForAllScenes(sceneList, "findObjectWithFaceCollision()", false);
+	local file=openfile("FaceCollisionStats.txt", "w");
+	for i=1, getn(tmpMarker) do
+		if (tmpMarker[i]) then
+			if (tmpMarker[i]>1) then
+				local filename=gTemplateManager(gTemplateManager["GetTemplateFileName"], i);
+				local name=gTemplateManager(gTemplateManager["GetTemplateName"], i);
+				write(file, filename.." "..name.." Triangles: "..format("%d", tmpMarker[i])..[[
+]]);
+			end
+			
+		end
+		
+	end
+	
+	closefile(file);
+
+end
+
+
+function PrintMovableWithLightmaps()
+	local templates={};
+	local collisionTypes={1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		1};
+	local allOk=true;
+	gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		local id=obj(obj["GetTemplateID"]);
+		if not (templates[id]) then
+			if not (obj(obj["GetBoolTemplateAttribute"], "Cast_lightmap_shadow")) and (obj(obj["GetBoolTemplateAttribute"], "Receive_lightmap_shadow")) then
+				local cindex=(obj(obj["GetFloatTemplateAttribute"], "Collision_Type") + 1);
+				local movable=collisionTypes[cindex];
+				if not (movable) then
+					gConsole(gConsole["print"], COLOR_RED, "obj "..obj["Name"].." has unsupported collision type");
+				elseif (movable>0) then
+					gConsole(gConsole["print"], COLOR_YELLOW, "Warning: lightmaps on movable:"..gTemplateManager(gTemplateManager["GetTemplateFileName"], id));
+					allOk=false;
+				end
+				
+			end
+			
+			templates[id]=true;
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+	if (allOk) then
+		gConsole(gConsole["print"], COLOR_GREEN, "All templates ok");
+	end
+	
+
+end
+
+
+function TemplatesStats()
+	gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		local optType=obj(obj["GetFloatObjectAttribute"], "Optimized");
+		if (band(obj(obj["GetType"]), TYPE_MESH)~=0) and (optType~=OPT_RESULT) then
+			local templID=obj(obj["GetTemplateID"]);
+			local templInfo=gTemplStats[templID];
+			if not (templInfo) then
+				templInfo={};
+				do
+					local name=gTemplateManager(gTemplateManager["GetTemplateFileName"], templID);
+					templInfo["FileName"]=name;
+					if (templInfo["FileName"]) then
+						local ind=strfind(templInfo["FileName"], "\", 1, 1);
+						if (ind) then
+							templInfo["FileName"]=strsub(templInfo["FileName"], (ind + 1));
+						end
+						
+						ind=strfind(templInfo["FileName"], ".tmpdata");
+						if (ind) then
+							templInfo["FileName"]=strsub(templInfo["FileName"], 1, (ind - 1));
+						end
+						
+					end
+					
+					local done=false;
+					while not (ind) do
+						local ind=strfind(name, "\", 1, 1);
+						if (done) then
+							name=strsub(name, (done + 1));
+						else
+							ind=true;
+						end
+						
+					end
+					
+					local ind=strfind(name, ".tmpdata");
+					if (done) then
+						name=strsub(name, 1, (done - 1));
+					end
+					
+					templInfo["Name"]=name;
+					templInfo["OptimizedInstances"]=0;
+					templInfo["StandaloneInstances"]=0;
+					templInfo["StandaloneScenes"]={};
+					templInfo["Triangles"]=obj(obj["GetMeshTriangleCount"]);
+					templInfo["NeverBlendAutomatically"]=obj(obj["GetBoolTemplateAttribute"], "Never_blend_automatically");
+					templInfo["SpecialBlendMode"]=obj(obj["GetBoolTemplateAttribute"], "Special_blend_mode");
+					templInfo["AllowHitMarks"]=obj(obj["GetBoolTemplateAttribute"], "Allow_hit_marks");
+					templInfo["CollisionType"]=obj(obj["GetCollisionTypeString"]);
+					templInfo["HasCollisionGeometry"]=obj(obj["HasCollisionGeometry"]);
+					local assetDB=obj(obj["GetStringTemplateAttribute"], "Karma_asset_database");
+					local assetName=obj(obj["GetStringTemplateAttribute"], "Karma_asset_name");
+					if not (ind) or (ind) then
+						templInfo["KarmaAsset"]=ind.."/"..ind;
+					else
+						templInfo["KarmaAsset"]="null";
+					end
+					
+					templInfo["MeshTexturesStatus"]=obj(obj["CheckMeshTextures"]);
+					gTemplStats[templID]=templInfo;
+				end
+				
+				if (optType==OPT_SOURCE) then
+					templInfo["OptimizedInstances"]=(templInfo["OptimizedInstances"] + 1);
+				else
+					templInfo["StandaloneInstances"]=(templInfo["StandaloneInstances"] + 1);
+					if (igCurrentScene) then
+						if not (templInfo["StandaloneScenes"][igCurrentScene]) then
+							templInfo["StandaloneScenes"][igCurrentScene]=true;
+						end
+						
+					end
+					
+				end
+				
+			end
+			
+			obj=gSceneIterator(gSceneIterator["Next"]);
+		end
+		
+
+end
+
+
+function Bool2Str(b)
+	if (b) then
+		return "true ";
+		
+	else
+		return "false";
+		
+	end
+	
+
+end
+
+
+function ScenesTemplateStats(sceneList, outFile)
+	if not (outFile) then
+		outFile="c:\\TemplatesStats.txt";
+	end
+	
+	local outFile=openfile(outFile, "w");
+	if (outFile) then
+		write(outFile, "Template ".."Standalone Optimized Triangles Never_blend_automatically Special_blend_mode Allow_hit_marks "..[[Collision Has_collision_geometry Karma_asset Textures_status File_name
+]]);
+	else
+		gConsole(gConsole["print"], COLOR_RED, "can't open stats file.");
+	end
+	
+	gTemplStats={};
+	if not (sceneList) then
+		TemplatesStats();
+	else
+		ForAllScenes(sceneList, "TemplatesStats()", false);
+	end
+	
+	for id, info in gTemplStats do
+		gConsole(gConsole["print"], format("%-50s: Stand %4d, Opt %4d, triangles %6d, NBA=%s,SBM=%s,AHM=%s, colli=%-15s, colliGeom=%s, texturesStatus=%s, fileName=%s", info["Name"], info["StandaloneInstances"], info["OptimizedInstances"], info["Triangles"], Bool2Str(info["NeverBlendAutomatically"]), Bool2Str(info["SpecialBlendMode"]), Bool2Str(info["AllowHitMarks"]), info["CollisionType"], Bool2Str(info["HasCollisionGeometry"]), info["MeshTexturesStatus"], info["FileName"]));
+		local sceneInfoString="";
+		local i=IDT_Nil;
+		local v=IDT_Nil;
+		for i, v in info["StandaloneScenes"] do
+			sceneInfoString=sceneInfoString..i..", ";
+		end
+		
+		if (outFile) then
+			write(outFile, format("%-65s ", info["Name"])..format("%4d ", info["StandaloneInstances"])..format("%4d ", info["OptimizedInstances"])..format("%6d ", info["Triangles"])..Bool2Str(info["NeverBlendAutomatically"]).." "..Bool2Str(info["SpecialBlendMode"]).." "..Bool2Str(info["AllowHitMarks"]).." "..format("%-40s ", info["CollisionType"])..Bool2Str(info["HasCollisionGeometry"]).." "..format("%-50s ", info["KarmaAsset"])..format("%-80s ", info["MeshTexturesStatus"])..sceneInfoString..[[
+]]);
+		end
+		
+	end
+	
+	closefile(outFile);
+	gTemplStats=IDT_Nil;
+
+end
+
+
+function templateStatsHelper(templates, tmpMarker, standaloneCount, standaloneMarker, sceneId)
+	gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		local tmpId=obj(obj["GetTemplateID"]);
+		local optType=obj(obj["GetFloatObjectAttribute"], "Optimized");
+		if not (tmpMarker[tmpId]) then
+			tmpMarker[tmpId]=1;
+			standaloneCount[tmpId]=0;
+			standaloneMarker[tmpId]={};
+			if (band(obj(obj["GetType"]), TYPE_MESH)~=0) and (optType~=OPT_RESULT) then
+				local triangles=obj(obj["GetMeshTriangleCount"]);
+				local collision="none";
+				if (obj(obj["GetFloatTemplateAttribute"], "Has_static_collisions")>0) then
+					if (obj(obj["GetFloatTemplateAttribute"], "Has_dynamic_collisions")>0) then
+						collision="both";
+					else
+						collision="static";
+					end
+					
+				elseif (obj(obj["GetFloatTemplateAttribute"], "Has_dynamic_collisions")>0) then
+					collision="dynamic";
+				end
+				
+				local optimizable=IDT_Nil;
+				if (obj(obj["GetFloatTemplateAttribute"], "Optimizable_hierarchy")>0) then
+					optimizable="enable";
+				else
+					optimizable="disable";
+				end
+				
+				local bbCol=IDT_Nil;
+				if (obj(obj["GetFloatTemplateAttribute"], "FSM_uses_BB")>0) then
+					bbCol="true";
+				else
+					bbCol="false";
+				end
+				
+				local noBlend=IDT_Nil;
+				if (obj(obj["GetBoolTemplateAttribute"], "Never_blend_automatically")) then
+					noBlend="true";
+				else
+					noBlend="false";
+				end
+				
+				local textureSize=(obj(obj["GetTotalTextureSize"]) / (1024 * 1024));
+				local matCnt=obj(obj["GetMaterialCount"]);
+				local desc="Tri: "..format("%6d", triangles).." TexNo: "..format("%2d", matCnt).." Tex (MB): "..format("%6.2f", textureSize).." Col: "..format("%-7s", collision).." Opt: "..format("%-5s", optimizable).." BB col: "..format("%-5s", bbCol).." NoBlend: "..format("%-5s", noBlend);
+				local type=IDT_Nil;
+				if (obj(obj["IsCharacter"])) then
+					type="character";
+				elseif (obj(obj["IsItem"])) then
+					type="item";
+				else
+					type="mesh";
+				end
+				
+				tinsert(templates, {ID=tmpId,
+				Type=type,
+				Desc=desc});
+			elseif (obj(obj["IsParticle"])) then
+				local spawn=obj(obj["GetFloatTemplateAttribute"], "Spawning_rate");
+				local life=obj(obj["GetFloatTemplateAttribute"], "Life_time");
+				tinsert(templates, {ID=tmpId,
+				Type="particle",
+				Desc="Tri: "..format("%6d", (triangles * collision))});
+			else
+				tmpMarker[tmpId]=(tmpMarker[tmpId] + 1);
+			end
+			
+		end
+		
+		if (optType~=OPT_SOURCE) then
+			standaloneCount[tmpId]=(standaloneCount[tmpId] + 1);
+			if not (tfind(standaloneMarker[tmpId], sceneId)) then
+				tinsert(standaloneMarker[tmpId], sceneId);
+			end
+			
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+
+end
+
+
+function templateStats(sceneListFile)
+	local templates={};
+	local tmpMarker={};
+	local standaloneCount={};
+	local standaloneMarker={};
+	if (sceneListFile) then
+		local file=openfile(sceneListFile, "r");
+		if not (file) then
+			do return end;
+			
+		end
+		
+		local finish=false;
+		while not (finish) do
+			local line=read(file);
+			if (line) then
+				if (strlen(line)>0) then
+					Editor["LoadScene"]("\\archangel\survival\scenes\"..line);
+					templateStatsHelper(templates, tmpMarker, standaloneCount, standaloneMarker, line);
+				else
+					finish=true;
+				end
+				
+			end
+			
+		end
+		
+		closefile(file);
+	else
+		templateStatsHelper(templates, tmpMarker, standaloneCount, standaloneMarker, "current");
+	end
+	
+	local file=openfile("TemplateStats.txt", "w");
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i=1, getn(templates) do
+		line=templates[file];
+		local name=gTemplateManager(gTemplateManager["GetTemplateFileName"], line["ID"]);
+		local done=false;
+		while not ((limit)) do
+			local ind=strfind(i, "\", 1, 1);
+			if ((step)) then
+				i=strsub(i, ((step) + 1));
+			else
+				(limit)=true;
+			end
+			
+		end
+		
+		local ind=strfind(i, ".tmpdata");
+		if ((step)) then
+			i=strsub(i, 1, ((step) - 1));
+		end
+		
+		if (standaloneCount[line["ID"]]~=0) then
+			local desc=(standaloneCount[line["ID"]]==tmpMarker[line["ID"]]);
+			done=done..strrep(" ", (256 - strlen(done)));
+			if (standaloneCount[line["ID"]]>0) then
+				local std=(standaloneCount[line["ID"]]==tmpMarker[line["ID"]]);
+				local j=(standaloneCount[line["ID"]]==tmpMarker[line["ID"]]);
+				for j=1, getn(ind) do
+					done=done..ind[ok]..",";
+				end
+				
+			end
+			
+			write(file, done..[[
+]]);
+			if (name) then
+				gConsole(gConsole["print"], done);
+			else
+				gConsole(gConsole["print"], COLOR_YELLOW, done);
+			end
+			
+		end
+		
+		closefile(file);
+		gConsole(gConsole["Show"], true);
+
+end
+
+
+function findTemplatesWithoutMaterial()
+	local templateMarker={};
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj=si(si["Next"]);
+	while (obj) do
+		local tp=obj(obj["GetType"]);
+		if (band(tp, TYPE_MESH)~=0) then
+			if (band(tp, bor(TYPE_BASE_CHARACTER, TYPE_ITEM))==0) then
+				local tmpl=obj(obj["GetTemplateID"]);
+				if not (templateMarker[tmpl]) then
+					templateMarker[tmpl]=obj;
+				end
+				
+			end
+			
+		end
+		
+		obj=si(si["Next"]);
+	end
+	
+	gConsole(gConsole["print"], COLOR_GREEN, "Templates with missing material definition:");
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i, v in templateMarker do
+		local ok=true;
+		local cnt=(table)((table)["GetMaterialCount"]);
+		local j=IDT_Nil;
+		for j=0, (v - 1) do
+			local mat=(table)((table)["GetEnvMaterialNameSlow"], cnt);
+			if ((limit)=="n/a") then
+				i=false;
+			else
+			end
+			
+		end
+		
+		if not (i) then
+			gConsole(gConsole["print"], gTemplateManager(gTemplateManager["GetTemplateFileName"], v));
+		end
+		
+	end
+	
+
+end
+
+
+function selectByTemplateListFile(listFile)
+	if (listFile) then
+		local file=openfile(listFile, "r");
+		if (file) then
+			local tmpID={};
+			local finish=false;
+			while not (finish) do
+				local line=read(file);
+				if (line) then
+					wf_print(line);
+					do
+						local id=gTemplateManager(gTemplateManager["FindTemplateByFileName"], line);
+						tmpID[id]=true;
+					else
+						finish=true;
+					end
+					
+				end
+				
+				closefile(file);
+				gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+				local o=gSceneIterator(gSceneIterator["Next"]);
+				while (line) do
+					if (tmpID[line(line["GetTemplateID"])]) then
+						line(line["Select"], SELMODE_SELECT);
+					end
+					
+					line=gSceneIterator(gSceneIterator["Next"]);
+				end
+				
+			end
+			
+		end
+		
+		Editor["RedrawAllViewports"]();
+
+end
+
+
+function selectOptimized(o)
+	if (o) then
+		local opt=o(o["GetFloatObjectAttribute"], "Optimized");
+		if (opt==OPT_SOURCE) then
+			local src=o(o["GetFloatObjectAttribute"], "Optimized_source");
+			local o=gObjectManager(gObjectManager["FindObjectByID"], src);
+			if (o) then
+				o(o["Select"], SELMODE_SELECT);
+			end
+			
+		else
+			o(o["Select"], SELMODE_SELECT);
+		end
+		
+	end
+	
+
+end
+
+
+function selectOptimizedByTemplateListFile(listFile)
+	if (listFile) then
+		local file=openfile(listFile, "r");
+		if (file) then
+			local tmpID={};
+			local finish=false;
+			while not (finish) do
+				local line=read(file);
+				if (line) then
+					wf_print(line);
+					do
+						local id=gTemplateManager(gTemplateManager["FindTemplateByFileName"], line);
+						tmpID[id]=true;
+					else
+						finish=true;
+					end
+					
+				end
+				
+				closefile(file);
+				gSceneIterator(gSceneIterator["Restart"], GS_ALLNODES);
+				local o=gSceneIterator(gSceneIterator["Next"]);
+				while (line) do
+					if (tmpID[line(line["GetTemplateID"])]) then
+						selectOptimized(line);
+					end
+					
+					line=gSceneIterator(gSceneIterator["Next"]);
+				end
+				
+			end
+			
+		end
+		
+		Editor["RedrawAllViewports"]();
+
+end
+
+
+function newBuffer()
+	return {n=0};
+	
+
+end
+
+
+function addString(stack, s)
+	tinsert(stack, s);
+	for i=(stack["n"] - 1), 1, -1 do
+		if (strlen(stack[i])>strlen(stack[(i + 1)])) then
+		else
+			stack[i]=stack[i]..tremove(stack);
+		end
+		
+	end
+	
+
+end
+
+
+function toString(stack)
+	for i=(stack["n"] - 1), 1, -1 do
+		stack[i]=stack[i]..tremove(stack);
+	end
+	
+	return stack[1];
+	
+
+end
+
+
+function read_mdata(tfn, substFields)
+	local data={Meshes=newBuffer(),
+	Fields={}};
+	if not (substFields) then
+	end
+	
+	substFields=SUBST_FIELDS;
+	local f=openfile(tfn, "r");
+	if not (f) then
+		wf_print("Cannot open file "..tfn);
+	end
+	
+	local block="main";
+	local l=read(f, "*l");
+	while (l) do
+		if (block=="main") then
+			for i, v in substFields do
+				local _, _, name=strfind(l, "^ "..v.." (.+)");
+				if (name) then
+					data["Fields"][v]=name;
+				end
+				
+			end
+			
+			if (l=="meshes") then
+				block="mesh";
+			elseif (block=="mesh") then
+				if ("num-of-associated-cameras"(1, 1)) then
+					block="cameras";
+				end
+				
+			end
+			
+		end
+		
+		if (block=="mesh") then
+			addString(data["Meshes"], l..[[
+]]);
+		end
+		
+		l=read(f, "*l");
+	closefile(f);
+	data["Meshes"]=toString(data["Meshes"]);
+	return data;
+	
+
+end
+
+
+function subst_tmpdata(tfn, data, substFields)
+	if not (substFields) then
+	end
+	
+	substFields=SUBST_FIELDS;
+	local f=openfile(tfn, "r");
+	local current=newBuffer();
+	local block="main";
+	local l=read(f, "*l");
+	while (l) do
+		if (block=="main") then
+			for i, v in substFields do
+				if (strfind(l, " "..v.." ")) then
+					if (data["Fields"][v]) then
+						l=" "..v.." "..data["Fields"][v];
+					else
+						l=" "..v.." ";
+					end
+					
+				else
+				end
+				
+			end
+			
+			if (l=="meshes") then
+				addString(current, data["Meshes"]..[[
+]]);
+				block="mesh";
+			else
+				addString(current, l..[[
+]]);
+			end
+			
+		elseif (block=="mesh") then
+			if (strfind(l, "num-of-associated-cameras", 1, 1)) then
+				block="cameras";
+				addString(current, l..[[
+]]);
+			elseif (block=="cameras") then
+				addString(current, l..[[
+]]);
+			end
+			
+		end
+		
+		l=read(f, "*l");
+	closefile(f);
+	toString(current);
+
+end
+
+
+function prepare_subs_fields(templateName)
+	local fields=tdup(SUBST_FIELDS);
+	if (SUBST_EXTRA_FIELDS) then
+		if (type(SUBST_EXTRA_FIELDS[templateName])=="table") then
+			local extra=SUBST_EXTRA_FIELDS[templateName];
+			for k, v in extra do
+				tinsert(fields, v);
+			end
+			
+		end
+		
+	end
+	
+	return fields;
+	
+
+end
+
+
+function subst_chars(start_no, stop_no)
+	local res=Editor["MessageBox"]("This will modify character templates. Proceed only if you are sure you want to do it.");
+	if (res~=Editor["IDOK"]) then
+		do return end;
+		
+	end
+	
+	gConsole(gConsole["Show"]);
+	if not (start_no) then
+		start_no=1;
+	end
+	
+	if not (stop_no) then
+		stop_no=getn(SRC_TEMPLATE);
+	end
+	
+	local tmpNo=IDT_Nil;
+	for tmpNo=start_no, stop_no do
+		local afro_id=gTemplateManager(gTemplateManager["FindTemplateByFileName"], SRC_TEMPLATE[tmpNo]);
+		local pth=gTemplateManager(gTemplateManager["GetEditorTemplatePath"]);
+		pth=strsub(pth, 1, (strlen(pth) - 9));
+		local afro_fn=pth..gTemplateManager(gTemplateManager["GetTemplateFileName"], afro_id);
+		for i, v in SUBST_TEMPLATES[tmpNo] do
+			local tid=gTemplateManager(gTemplateManager["FindTemplateByFileName"], v);
+			local tfn=pth..gTemplateManager(gTemplateManager["GetTemplateFileName"], tid);
+			wf_print("Reading "..tfn);
+			local substFields=prepare_subs_fields(v);
+			local data=read_mdata(tfn, substFields);
+			wf_print("Substituting "..afro_fn);
+			local res=subst_tmpdata(afro_fn, data, substFields);
+			local f=openfile(tfn, "w");
+			write(f, res);
+			closefile(f);
+		end
+		
+	end
+	
+
+end
+
+
+function CopyTemplate(src, dst)
+	if not (src) or (dst) then
+		local src_id=gTemplateManager(gTemplateManager["FindTemplateByFileName"], src);
+		local pth=gTemplateManager(gTemplateManager["GetEditorTemplatePath"]);
+		pth=strsub(pth, 1, (strlen(pth) - 9));
+		local src_fn=pth..gTemplateManager(gTemplateManager["GetTemplateFileName"], src_id);
+		local tid=gTemplateManager(gTemplateManager["FindTemplateByFileName"], dst);
+		local tfn=pth..gTemplateManager(gTemplateManager["GetTemplateFileName"], tid);
+		local data=read_mdata(tfn);
+		local res=subst_tmpdata(src_fn, data);
+		local f=openfile(tfn, "w");
+		write(f, res);
+		closefile(f);
+		gTemplateManager(gTemplateManager["UnloadTemplate"], tid);
+		gTemplateManager(gTemplateManager["GetTemplate"], tid);
+	end
+	
+
+end
+
+
+function countSelected()
+	local cnt=0;
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj1=si(si["Next"]);
+	while (obj1) do
+		cnt=(cnt + 1);
+		obj1=si(si["Next"]);
+	end
+	
+	wf_print("Selected object count: "..cnt);
+
+end
+
+
+function autofill_all()
+	local res=Editor["MessageBox"]("This will modify character templates. Proceed only if you are sure you want to do it.");
+	if (res~=Editor["IDOK"]) then
+		do return end;
+		
+	end
+	
+	for i=1, getn(AUTOFILL_TPLS) do
+		Editor["AutoFillAnimations"](AUTOFILL_TPLS[i]);
+	end
+	
+
+end
+
+
+function copyfile(fnfr, fnto)
+	local fr=openfile(fnfr, "r");
+	local to=openfile(fnto, "w");
+	local _fr=read(fr, "*a");
+	write(to, _fr);
+	closefile(fr);
+	closefile(to);
+
+end
+
+
+function remove_optsrc()
+	Editor["RemoveEditorObjects"]();
+
+end
+
+
+function markDynamicLights()
+	local cnt=0;
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+	local obj1=si(si["Next"]);
+	while (obj1) do
+		if (obj1(obj1["GetFloatObjectAttribute"], "Dynamic_light")==1) then
+			cnt=(cnt + 1);
+			obj1(obj1["SetObjectAttribute"], "Wireframe_color", "0 1 0 1");
+			obj1(obj1["UpdateProperties"]);
+			obj1(obj1["Select"], SELMODE_SELECT);
+		end
+		
+		obj1=si(si["Next"]);
+	end
+	
+	wf_print("Dynamic lights: "..cnt);
+
+end
+
+
+function enemyOnlyCount()
+	local cnt=0;
+	local civCnt=0;
+	local chr=gObjectManager["Characters_first"];
+	while (chr) do
+		if (chr["IsCivilian"]) then
+			if (chr(chr["IsCivilian"])) then
+				civCnt=(civCnt + 1);
+			elseif (chr(chr["IsEnemy"])) then
+				cnt=(cnt + 1);
+			end
+			
+			chr=chr["Characters_next"];
+		wf_print("Enemies: "..cnt);
+		wf_print("Civilians: "..civCnt);
+
+end
+
+
+function replaceSelectedObjectsWith(object, noHierarchy)
+	if (type(object)=="string") then
+		object=obj(object);
+	end
+	
+	if (object) then
+		local objects={};
+		local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+		local obj=si(si["Next"]);
+		while (obj) do
+			tinsert(objects, obj);
+			obj=si(si["Next"]);
+		end
+		
+		local i=IDT_Nil;
+		local j=IDT_Nil;
+		local topObjectsToDelete={};
+		local objMarker={};
+		if not (noHierarchy) then
+			for i=1, getn(objects) do
+				local obj=objects[i];
+				obj(obj["Select"], bor(SELMODE_SELECT, SELMODE_DOWNTREE));
+			end
+			
+			objects={};
+			gConsole(gConsole["print"], "Objects to replace: ");
+			local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+			local obj=i(i["Next"]);
+			while ((limit)) do
+				if ((limit)["belongsTo"]) and not (objMarker[(limit)["belongsTo"]]) then
+					tinsert(topObjectsToDelete, (limit));
+					gConsole(gConsole["print"], (limit)["Name"]);
+				end
+				
+				objMarker[(limit)]=true;
+				(limit)=i(i["Next"]);
+			end
+			
+		else
+			topObjectsToDelete=objects;
+		end
+		
+		for j=1, getn(topObjectsToDelete) do
+			local objToDel=topObjectsToDelete[i];
+			local newObj=object(object["DuplicateMeAndChildren"]);
+			if (si) then
+				si(si["ChangeParent"], obj["belongsTo"]);
+				si(si["Teleport3"], obj(obj["GetPosition"]), obj(obj["GetRotation"]));
+				si(si["SetScale"], obj(obj["GetScale"]));
+				while (noHierarchy) do
+					while (obj["objfirst"]) do
+						obj["objfirst"](obj["objfirst"]["ChangeParent"], si);
+					end
+					
+					gObjectManager(gObjectManager["DeleteObject"], obj);
+					si(si["UpdateLocation"]);
+					si(si["UpdateProperties"]);
+				end
+				
+			end
+			
+		end
+		
+
+end
+
+
+function reversePath(pathName)
+	local path=obj(pathName);
+	if not (path) then
+		gConsole(gConsole["print"], COLOR_RED, "Can't find path: "..pathName);
+		do return end;
+		
+	end
+	
+	local i=0;
+	local flagsTable={};
+	local flag=path(path["GetFirstFlag"]);
+	while (flag) do
+		local fi={};
+		fi["Flag"]=flag;
+		fi["Pos"]=CVector3(CVector3["instance"], flag(flag["GetPosition"]));
+		flagsTable[i]=fi;
+		i=(i + 1);
+		flag=flag(flag["GetNextFlag"]);
+	end
+	
+	for k=0, (i - 1) do
+		local first=flagsTable[fi];
+		local second=flagsTable[((i - 1) - fi)];
+		(step)["Flag"]((step)["Flag"]["SetPosition"], first["Pos"]);
+		first["Flag"](first["Flag"]["SetPosition"], (step)["Pos"]);
+	end
+	
+
+end
+
+
+function alignSelectedObjects(posGrid, rotGrid)
+	if (posGrid) and (posGrid<=0) then
+		posGrid=1;
+	end
+	
+	if (rotGrid) and (rotGrid<=0) then
+		rotGrid=1;
+	end
+	
+	local objects={};
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		tinsert(objects, obj);
+		obj=si(si["Next"]);
+	end
+	
+	local i=IDT_Nil;
+	local o=IDT_Nil;
+	for i=1, getn(objects) do
+		o=objects[i];
+		o["OldParent"]=o["belongsTo"];
+		o(o["ChangeParent"], IDT_Nil);
+	end
+	
+	local pos=CVector3(CVector3["instance"]);
+	local rot=CVector3(CVector3["instance"]);
+	for i=1, getn(objects) do
+		o=objects[(step)];
+		i(i["Set"], o(o["GetPosition"]));
+		(limit)((limit)["Set"], o(o["GetRotation"]));
+		i["x"]=round(i["x"], posGrid);
+		i["y"]=round(i["y"], posGrid);
+		i["z"]=round(i["z"], posGrid);
+		(limit)["x"]=round((limit)["x"], rotGrid);
+		(limit)["y"]=round((limit)["y"], rotGrid);
+		(limit)["z"]=round((limit)["z"], rotGrid);
+		o(o["Teleport3"], i, (limit));
+	end
+	
+	for i=1, getn(objects) do
+		o=objects[(step)];
+		o(o["ChangeParent"], o["OldParent"]);
+		o["OldParent"]=IDT_Nil;
+	end
+	
+
+end
+
+
+function setAttributeForSelectedObjects(attribute, value)
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		obj(obj["SetObjectAttribute"], attribute, value);
+		obj=si(si["Next"]);
+	end
+	
+
+end
+
+
+function listOptimizedObjects()
+	local objects={};
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		if (obj(obj["IsOptimizationResult"])) then
+			tinsert(objects, obj);
+		else
+			gConsole(gConsole["print"], obj["Name"].." is not an optimized object");
+		end
+		
+		obj=si(si["Next"]);
+	end
+	
+	local i=IDT_Nil;
+	local o=IDT_Nil;
+	for i=1, getn(objects) do
+		o=objects[i];
+		local id=o(o["GetId"]);
+		gConsole(gConsole["print"], COLOR_YELLOW, o["Name"]..":");
+		local si=CSceneIterator(CSceneIterator["instance"], GS_ALLNODES);
+		local obj=si(si["Next"]);
+		while (obj) do
+			if (obj(obj["OptimizationResult"])==id) then
+				gConsole(gConsole["print"], " "..obj["Name"]);
+			end
+			
+			obj=si(si["Next"]);
+		end
+		
+	end
+	
+
+end
+
+
+function activateSelectedSector()
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		if (band(obj(obj["GetType"]), TYPE_SCENE_PARAMETERS_BOX)~=0) then
+			obj(obj["SetAsActiveParams"], true);
+		else
+			obj=si(si["Next"]);
+	end
+	
+	if not (obj) then
+		CSceneParamsBoxObject(CSceneParamsBoxObject["SelectStandardSceneParams"]);
+	end
+	
+	Editor["RedrawAllViewports"]();
+
+end
+
+
+function ReportDistributedFiles()
+	ReportSpeeches();
+
+end
+
+
+function SelectObject(obj, objType, selectMode)
+	if (obj) and (objType) and (selectMode) then
+		if (band(obj(obj["GetType"]), objType)~=0) then
+			obj(obj["Select"], selectMode);
+		end
+		
+	end
+	
+
+end
+
+
+function PrintSelection(outFileName)
+	if not (outFileName) then
+	end
+	
+	outFileName="c:/selection.txt";
+	local outFile=openfile(outFileName, "w");
+	if not (outFile) then
+		gConsole(gConsole["print"], "Can't open file "..outFileName);
+		do return end;
+		
+	end
+	
+	write(outFile, "{");
+	local si=CSceneIterator(CSceneIterator["instance"], GS_ALLSELECTED);
+	local obj=si(si["Next"]);
+	while (obj) do
+		write(outFile, [["]]..obj["Name"]..[[", ]]);
+		obj=si(si["Next"]);
+	end
+	
+	write(outFile, "}");
+	closefile(outFile);
+	gConsole(gConsole["print"], COLOR_GREEN, "Selection saved to file "..outFileName);
+
+end
+
+
+function ForAllScenes(sceneListFile, sceneScript, saveScene)
+	gConsole(gConsole["print"], "ForAllScenes( listFile="..tostring(sceneListFile)..", script="..tostring(sceneScript)..", saveScene="..tostring(saveScene));
+	if (sceneListFile) and not (sceneScript) then
+		do return end;
+		
+	end
+	
+	local inFile=openfile(sceneListFile, "r");
+	if not (inFile) then
+		gConsole(gConsole["print"], COLOR_RED, "Can't open file "..sceneListFile);
+		do return end;
+		
+	end
+	
+	local eof=false;
+	while not (eof) do
+		local line=read(inFile);
+		if (line) then
+			if (strlen(line)>0) then
+				gConsole(gConsole["print"], "Loading scene "..line);
+				igCurrentScene=line;
+				Editor["LoadScene"]("scenes\"..line);
+				gConsole(gConsole["print"], "Executing scene script "..sceneScript);
+				dostring(sceneScript);
+				if (saveScene) then
+					gConsole(gConsole["print"], "Saving scene "..line);
+					Editor["SaveScene"]("scenes\"..line);
+				end
+				
+				igCurrentScene=IDT_Nil;
+			else
+				eof=true;
+			end
+			
+		end
+		
+	end
+	
+	closefile(inFile);
+
+end
+
+
+function SelectBillboardContainer()
+	SelectObject(gForEachObjectCaller, TYPE_BILLBOARD_CONTAINER, SELMODE_SELECT);
+
+end
+
+
+function SelectBillboard()
+	SelectObject(gForEachObjectCaller, bor(TYPE_BILLBOARD, TYPE_BILLBOARD_SYSTEM), SELMODE_SELECT);
+
+end
+
+
+function UnselectObject()
+	gForEachObjectCaller(gForEachObjectCaller["Select"], SELMODE_UNSELECT);
+
+end
+
+
+function RegroupBillboards()
+	gConsole(gConsole["print"], "Unselecting all");
+	forEachObject("UnselectObject()");
+	gConsole(gConsole["print"], "Selecting billboards containers");
+	forEachObject("SelectBillboardContainer()");
+	gConsole(gConsole["print"], "Removing optimalizations");
+	gObjectManager(gObjectManager["RemoveOptimization"], true);
+	gConsole(gConsole["print"], "Selecting billboards");
+	forEachObject("SelectBillboard()");
+	gConsole(gConsole["print"], "Optimizing billboards");
+	gObjectManager(gObjectManager["OptimizeScene"], true);
+
+end
+
+
+function RegroupBillboardsInScenes(sceneList)
+	if not (sceneList) then
+		sceneList="c:\\diabolique\\sceneList.txt";
+	end
+	
+	ForAllScenes(sceneList, "RegroupBillboards()", true);
+
+end
+
+
+function AddToObjectRotation()
+	if not (gForEachObjectCaller) or (gTmpRotation) then
+		local pos=CVector3(CVector3["instance"], gForEachObjectCaller(gForEachObjectCaller["LocalToGlobalCoordinates"]));
+		local rot=CVector3(CVector3["instance"], (gForEachObjectCaller(gForEachObjectCaller["GetRotation"]) + gTmpRotation));
+		gForEachObjectCaller(gForEachObjectCaller["Teleport3"], pos, rot);
+	end
+	
+
+end
+
+
+function ForSelectedAddToRotation(x, y, z)
+	gTmpRotation=CVector3(CVector3["instance"], x, y, z);
+	forEachSelectedObject("AddToObjectRotation()");
+	gTmpRotation=IDT_Nil;
+
+end
+
+
+function SetObjectRotation()
+	if not (gForEachObjectCaller) or (gTmpRotation) then
+		local pos=CVector3(CVector3["instance"], gForEachObjectCaller(gForEachObjectCaller["LocalToGlobalCoordinates"]));
+		local rot=CVector3(CVector3["instance"], gTmpRotation);
+		gForEachObjectCaller(gForEachObjectCaller["Teleport3"], pos, rot);
+	end
+	
+
+end
+
+
+function ForSelectedSetRotation(x, y, z)
+	gTmpRotation=CVector3(CVector3["instance"], x, y, z);
+	forEachSelectedObject("SetObjectRotation()");
+	gTmpRotation=IDT_Nil;
+
+end
+
+
+function SetObjectAttribute()
+	if (gForEachObjectCaller) and (gTmpAtr) and (gTmpVal) then
+		gForEachObjectCaller(gForEachObjectCaller["SetObjectAttribute"], gTmpAtr, gTmpVal);
+	end
+	
+
+end
+
+
+function ForSelectedSetAttribute(atr, val)
+	if not (atr) or (val) then
+		gTmpAtr=atr;
+		gTmpVal=val;
+		forEachSelectedObject("SetObjectAttribute()");
+	end
+	
+
+end
+
+gLua(gLua["PlayFile"], "Editor2");
+gMacros={Select duplicates=selectDuplicates,
+Object stats=objectStats,
+Template stats=templateStats,
+Dispatch animations=subst_chars,
+Autofill animation types=autofill_all,
+Remove source objects=remove_optsrc,
+Lua Debugger=Editor["Debug"],
+Parent to nearest mesh=parentToNearestMesh,
+Mark dynamic lights=markDynamicLights,
+Templates w/o material=findTemplatesWithoutMaterial,
+Activate selected sector=activateSelectedSector,
+Objects with face collision stats=findObjectWithFaceCollision,
+Movable with lightmaps=PrintMovableWithLightmaps,
+Print selection to file=PrintSelection};
+

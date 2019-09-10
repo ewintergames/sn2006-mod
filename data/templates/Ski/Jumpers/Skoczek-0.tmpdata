@@ -1,0 +1,3878 @@
+template
+    Type 8
+    Name Butla:2
+    Version 0
+    Format_version 6
+    Last_modified dominik
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 0 0 0 1
+    LUA_initializer 
+    LUA_class CSkiJumper
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 0
+    Special_effects 
+    Never_blend_automatically 1
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    LUA_params_callback 
+    Group_membership_allowed 1
+    Battle_group_membership_allowed 1
+    Is_tile 0
+    Has_geometry 1
+    Collision_Type 4
+    DC_material 0
+    Collision_with_LOS_only 0
+    Collision_with_NPC_only 0
+    Special_for_charecter 0
+    Disable_collision_with_static_geometry 0
+    Player_can_push 1
+    Freeze_on_init 1
+    Freeze_rotation 0
+    Is_Band 0
+    Bouyancy_type 0
+    Bouyancy_multiplier 1.000000
+    Water_normal_scale 1.000000
+    Mass 10.000000
+    Mass_offset 0 0 0 1
+    Bounce 0.200000
+    Scale_size 1 1 1 1
+    Override_collision_bbox 0
+    Collision_bbox_min 0 0 0 1
+    Collision_bbox_max 0 0 0 1
+    AngularVelocityDamping 0.020000
+    LinearVelocityDamping 0.010000
+    Static_collision_velocity_lose 0.000000
+    Dynamic_collision_velocity_steal 0.000000
+    Explosion_wave_multiplier 1.000000
+    Impulse_multiplier 1.000000
+    Critical_hit_impulse_multiplier 2.000000
+    Critical_hit_extra_vertical_impulse 0.000000
+    Karma_asset_database 
+    Karma_asset_name 
+    Asset_mass 50.000000
+    Asset_angular_velocity_damping 0.020000
+    Asset_linear_velocity_damping 0.010000
+    Asset_impulse_multiplier 1.000000
+    Use_asset_immediatelly 0
+    Fast_moving_body 0
+    Ragdoll 
+    Acceleration 3.000000
+    VelocityLinear 5.000000
+    VelocityRotation 5.000000
+    AliveTime 0.700000
+    Min_hit_impulse 0.000000
+    Enable_hit_callback 0
+    Body_mass_clamp 0.000000
+    Body_inertia_clamp 0.000000
+    Inertia 
+    Change_Inertia_Tensor 0
+    ScaleInertia 1 1 1 1
+    Walkable 0
+    Bridge_restriction 0
+    Ladder_And_Wall_properties 
+    Is_Ladder 0
+    Is_Wall 0
+    Is_SmallWall 0
+    Is_Fence 0
+    AIPath_DynamicBlockade 0
+    Corner_DistanceXmin 5.000000
+    Corner_DistanceXmax 5.000000
+    Corner_DistanceZmin 5.000000
+    Corner_DistanceZmax 5.000000
+    Near_Distance 1.500000
+    Disable_Camera_Collision 0
+    BoundingBox_Camera_Collision 0
+    Lightmap_resolution_x 0
+    Lightmap_resolution_y 0
+    Cast_lightmap_shadow 1
+    Lightmap_shadow_alpha_usage 0
+    Lightmap_shadow_alpha_multiplicator 1.000000
+    Lightmap_shadow_alpha_offset 0.000000
+    Receive_lightmap_shadow 1
+    Received_lightmap_shadow_blur 1
+    Receive_dynamic_shadows 0
+    Dynamic_shadow 4
+    Shadow_bounding_box_min -15 -10 -15 0
+    Shadow_bounding_box_max 15 10 15 0
+    Shadow_gradient_factor 1.000000
+    Dynamic_ambient_multiplicator 1.000000
+    Dynamic_light_multiplicator 1.000000
+    Ignore_uv_mapping 0
+    Optimizable_hierarchy 1
+    Random_destruction_shader 0
+    ImportedFromFile \\Dominik\Backup Sceny\xxxSkijump\dotXSI\SkoczekZNartami\SkoczekZNartami_zaczepyCutHalf2.xsi
+    Scale 1.000000
+    Distance_blend_start 0.000000
+    Distance_blend_end 0.000000
+    Use_Z_fill_for_blending 1
+    Depth_offset 0.000000
+    Allow_hit_marks 1
+    Collision_geometry_may_be_animated 1
+    Smoothing_groups_max_normal_diff 45.000000
+    Animation_sharing_group_id 
+  end-variables
+animations
+  slot	0
+    File	SKOKI\Lot_high.xsi
+    Name	Lot_high
+    Time	3
+    Interp-time	0.4000000059604645
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.14144087 1.75010300 -0.87195790 3.75327611 16.06603432 13.75039291
+    relativeBB -4.00877428 -10.51015377 -9.12910175 3.71434212 3.79327011 5.49557495
+  end-slot
+  slot	1
+    File	SKOKI\Lot_low.xsi
+    Name	Lot_low
+    Time	3
+    Interp-time	0.4000000059604645
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.37435150 0.83504266 -1.36957884 3.81685543 10.38691902 17.48978806
+    relativeBB -4.39257717 -5.94206953 -12.85200882 3.70023346 3.36057377 6.03792381
+  end-slot
+  slot	2
+    File	SKOKI\Odbicie_z_belki_A.xsi
+    Name	Odbicie_z_belki_A
+    Time	2.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.35940838 0.16120048 -8.16822338 4.19937372 12.76042843 15.64535713
+    relativeBB -4.28590918 -6.84644842 -4.84438181 4.27271748 6.33477592 22.27473831
+  end-slot
+  slot	3
+    File	SKOKI\Belka_idle_01.xsi
+    Name	Belka_idle_01
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.93581414 0.32519230 -8.18749332 3.98121786 11.16070557 15.64535713
+    relativeBB -3.82298136 -4.63668728 -1.55713749 4.11809206 6.20267105 22.27582169
+  end-slot
+  slot	4
+    File	SKOKI\Belka_idle_02.xsi
+    Name	Belka_idle_02
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.93546438 0.29678813 -8.18812561 3.98210406 12.12810898 2.05089474
+    relativeBB -3.82335639 -4.65557146 -1.55772829 4.11834383 7.17275810 8.65900230
+  end-slot
+  slot	5
+    File	SKOKI\Belka_idle_03.xsi
+    Name	Belka_idle_03
+    Time	8.25
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.94979858 0.32464123 -8.57749748 4.10608053 10.96713829 2.05950713
+    relativeBB -4.85905790 -4.63549423 -1.89620638 4.19972229 6.00686550 8.78455257
+  end-slot
+  slot	6
+    File	SKOKI\Najazd_high.xsi
+    Name	Najazd_high
+    Time	3.1875
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -2.78622699 0.35266134 -6.44940424 3.10565948 11.17743492 3.94030952
+    relativeBB -2.74833179 -7.67227650 -4.38554478 3.08694911 3.19736671 5.76223755
+  end-slot
+  slot	7
+    File	SKOKI\Najazd_low.xsi
+    Name	Najazd_low
+    Time	3.1875
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.01177216 0.35265833 -4.39037514 3.11463356 8.81285095 5.90120411
+    relativeBB -2.94706178 -5.18630219 -4.35373545 3.09837222 3.32056856 5.70128107
+  end-slot
+  slot	8
+    File	SKOKI\Najazd_mid.xsi
+    Name	Najazd_mid
+    Time	3.1875
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.01177239 0.35264879 -5.90768147 3.10271549 9.55056763 4.97781467
+    relativeBB -2.94377756 -6.37976599 -4.79759789 3.08613658 2.86455536 5.82274818
+  end-slot
+  slot	9
+    File	SKOKI\Wyjscie_z_progu_A.xsi
+    Name	Wyjscie_z_progu_A
+    Time	0.69921875
+    Interp-time	0.300000011920929
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.46082425 -0.06268895 -6.29893398 3.83807921 17.04241371 13.70887947
+    relativeBB -3.48023295 -12.54502487 -14.00642776 3.81601930 4.61569643 6.01516342
+  end-slot
+  slot	10
+    File	SKOKI\Lot_mid.xsi
+    Name	Lot_mid
+    Time	3
+    Interp-time	0.4000000059604645
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.25881767 1.67102849 -0.84450364 3.77677798 13.61648273 15.79641914
+    relativeBB -4.19958830 -8.93674660 -10.77529335 3.65302014 2.90619850 5.87455845
+  end-slot
+  slot	11
+    File	SKOKI\Wejscie_na_belke_A_l.xsi
+    Name	Wejscie_na_belke_A_l
+    Time	3.65625
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.98228621 0.20832761 -11.27804852 15.23832703 16.29446983 14.28890991
+    relativeBB -14.34032822 -11.39374733 -3.91329670 6.06156731 7.72955513 21.65857887
+  end-slot
+  slot	12
+    File	SKOKI\Wejscie_na_belke_B_l.xsi
+    Name	Wejscie_na_belke_B_l
+    Time	4.25
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.95114255 -0.04523632 -11.32992077 15.39397621 16.51808929 14.28890991
+    relativeBB -14.38777351 -11.78394127 -3.93216896 5.53911972 7.90081501 21.68977547
+  end-slot
+  slot	13
+    File	SKOKI\Lot_left.xsi
+    Name	Lot_left
+    Time	3.296875
+    Interp-time	0.4000000059604645
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.77280664 1.34525335 -0.84220338 4.69387865 14.21219635 15.19629860
+    relativeBB -6.91107225 -9.34315491 -10.58091259 3.32333231 3.59269714 5.47865105
+  end-slot
+  slot	14
+    File	SKOKI\Lot_right.xsi
+    Name	Lot_right
+    Time	3.296875
+    Interp-time	0.4000000059604645
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.61375999 1.25091326 -0.91121459 5.71637774 14.60261917 15.16986465
+    relativeBB -3.66956711 -9.28922844 -10.65463161 6.67187405 3.72486782 5.47273827
+  end-slot
+  slot	15
+    File	SKOKI\Lot_left_falling.xsi
+    Name	Lot_left_falling
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -10.29773521 -0.26997980 -1.40280831 9.97536182 20.59875107 17.77786827
+    relativeBB -9.39217663 -11.94543934 -11.18242264 9.72580910 8.82761765 8.93114471
+  end-slot
+  slot	16
+    File	SKOKI\Belka_idle_04.xsi
+    Name	Belka_idle_04
+    Time	7.46875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.98988342 0.32159650 -9.44806957 3.98431516 11.11702061 2.44161963
+    relativeBB -4.03695869 -4.81933022 -2.61837626 4.09744692 5.99808931 9.04819393
+  end-slot
+  slot	17
+    File	SKOKI\Belka_idle_05.xsi
+    Name	Belka_idle_05
+    Time	6.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.41451693 0.32387647 -9.65388584 4.18272161 11.09294891 1.98286200
+    relativeBB -4.31505728 -4.62367916 -2.78001976 4.28313828 6.24864006 8.85396957
+  end-slot
+  slot	18
+    File	SKOKI\Belka_idle_06.xsi
+    Name	Belka_idle_06
+    Time	7.25
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.36983681 0.32499641 -9.32287025 4.15081024 10.96383762 1.78368628
+    relativeBB -4.27054787 -4.64726782 -2.37982368 4.25017595 5.99755287 8.74268913
+  end-slot
+  slot	19
+    File	SKOKI\Belka_idle_07.xsi
+    Name	Belka_idle_07
+    Time	4.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.10438442 0.29662219 -8.16824818 3.99223232 11.07335567 2.09573913
+    relativeBB -4.26342297 -5.10354710 -1.53993130 4.13669252 5.97295380 8.41294098
+  end-slot
+  slot	20
+    File	SKOKI\Wejscie_na_belke_C_l.xsi
+    Name	Wejscie_na_belke_C_l
+    Time	4.125
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.75246382 0.09998732 -11.27440357 15.23616695 16.29203606 3.78291416
+    relativeBB -14.53144646 -11.53834534 -3.90473509 6.37053394 5.99868679 10.70236778
+  end-slot
+  slot	21
+    File	SKOKI\Wejscie_na_belke_A_r.xsi
+    Name	Wejscie_na_belke_A_r
+    Time	3.65625
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -15.23128510 -0.02048130 -11.34454155 3.98581791 16.24404907 3.41661310
+    relativeBB -6.11532116 -11.64578819 -3.97887993 14.29581070 5.95265436 10.00542545
+  end-slot
+  slot	22
+    File	SKOKI\Wejscie_na_belke_B_r.xsi
+    Name	Wejscie_na_belke_B_r
+    Time	4.25
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -15.41356945 -0.41228965 -11.39636326 4.02272797 16.46771622 2.83401060
+    relativeBB -5.32084894 -11.79227924 -3.99846935 14.34325600 5.97098589 9.65685368
+  end-slot
+  slot	23
+    File	SKOKI\Wejscie_na_belke_C_r.xsi
+    Name	Wejscie_na_belke_C_r
+    Time	4.125
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -15.20934677 -1.09683311 -11.34096146 5.68291903 16.24164963 3.78908801
+    relativeBB -6.32545376 -11.74181271 -3.97129440 14.29581070 5.99676704 10.71712494
+  end-slot
+  slot	24
+    File	SKOKI\Odbicie_z_belki_B.xsi
+    Name	Odbicie_z_belki_B
+    Time	2.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.72293091 -0.00946868 -8.16822338 4.22587585 12.77312946 4.82361841
+    relativeBB -4.65811920 -6.91136932 -5.31409836 4.29564667 5.98663235 8.41342831
+  end-slot
+  slot	25
+    File	SKOKI\Odbicie_z_belki_C.xsi
+    Name	Odbicie_z_belki_C
+    Time	2.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.20742130 0.16124488 -8.16822338 4.19809961 12.76734447 4.82325506
+    relativeBB -4.12827730 -6.88841629 -5.31457090 4.26890039 5.98798466 8.41255951
+  end-slot
+  slot	26
+    File	SKOKI\Odbicie_z_belki_D.xsi
+    Name	Odbicie_z_belki_D
+    Time	2.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.18018198 0.15656309 -8.16822338 4.16827059 12.50643158 5.34960318
+    relativeBB -4.11955833 -6.80478334 -5.86711788 4.23043919 5.98798466 8.41265106
+  end-slot
+  slot	27
+    File	SKOKI\Wyjscie_z_progu_B.xsi
+    Name	Wyjscie_z_progu_B
+    Time	0.69921875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	0
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -3.45416665 -0.06268895 -6.58394384 3.62109780 17.05028152 13.63615227
+    relativeBB -3.45749998 -12.55668926 -14.73847389 3.60817337 3.62028503 6.01516438
+  end-slot
+  slot	28
+    File	SKOKI\Lot_right_falling.xsi
+    Name	Lot_right_falling
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	1
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.95970821 -0.27189687 -1.39063799 10.36436844 20.51875687 17.79758835
+    relativeBB -9.73727703 -11.94756126 -11.17157555 9.45198250 8.74762249 8.99759102
+  end-slot
+  slot	29
+    File	SKOKI\Hamowanie_neutralne_A.xsi
+    Name	Hamowanie_neutralne_A
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55769920 0.05848829 -6.43042803 9.20436859 18.30960464 14.27796650
+    relativeBB -8.44020844 -12.51876354 -4.96985245 8.76810837 5.73203850 16.16157532
+  end-slot
+  slot	30
+    File	SKOKI\Hamowanie_neutralne_B.xsi
+    Name	Hamowanie_neutralne_B
+    Time	9.5
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55588150 0.03653535 -8.85026073 9.10601044 18.19316673 14.27796650
+    relativeBB -8.43659973 -12.48142719 -6.32038641 8.76809692 5.73204422 17.49163628
+  end-slot
+  slot	31
+    File	SKOKI\Hamowanie_neutralne_C.xsi
+    Name	Hamowanie_neutralne_C
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.75592899 0.09586073 -7.12105608 9.31373882 18.29928398 14.27796650
+    relativeBB -9.07026291 -12.41860867 -6.64581156 8.80957508 5.73136425 15.44160652
+  end-slot
+  slot	32
+    File	SKOKI\Hamowanie_neutralne_D.xsi
+    Name	Hamowanie_neutralne_D
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.64975166 0.03338932 -6.42782068 9.20543385 18.29303551 14.27796650
+    relativeBB -8.61809063 -12.54221153 -4.96223879 8.57928562 5.73409653 16.16646385
+  end-slot
+  slot	33
+    File	SKOKI\Hamowanie_happy_A.xsi
+    Name	Hamowanie_happy_A
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27134037 0.02666909 -6.43027544 8.32429123 21.54428101 7.83628559
+    relativeBB -8.19866753 -12.41802883 -4.96961212 8.73107815 9.68633747 7.79610348
+  end-slot
+  slot	34
+    File	SKOKI\Hamowanie_happy_B.xsi
+    Name	Hamowanie_happy_B
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27180290 0.02680576 -6.44710398 9.26317978 22.40515518 7.83849669
+    relativeBB -8.19916439 -12.53444195 -5.46297836 9.19930458 10.53810883 7.69636393
+  end-slot
+  slot	35
+    File	SKOKI\Hamowanie_happy_C.xsi
+    Name	Hamowanie_happy_C
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27218723 0.02986873 -6.43031883 8.63072586 22.04242706 7.84023952
+    relativeBB -8.20105362 -12.41802788 -5.52845955 8.59799099 9.78928375 7.61074400
+  end-slot
+  slot	36
+    File	SKOKI\ladowanie\ladowanie_no_tel_poprawne_0.xsi
+    Name	ladowanie_no_tel_poprawne_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.12290001 0.28905866 -2.01197696 9.55263519 19.05967712 15.74858952
+    relativeBB -9.10792923 -11.71952343 -10.23499107 9.58567810 6.78112411 7.43714142
+  end-slot
+  slot	37
+    File	SKOKI\ladowanie\ladowanie_no_tel_poprawne_40.xsi
+    Name	ladowanie_no_tel_poprawne_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.12292480 -1.58021522 -0.32365295 9.55262184 18.61985779 16.18998909
+    relativeBB -9.10792828 -12.50698185 -10.43998241 9.58567810 7.83473778 6.02404785
+  end-slot
+  slot	38
+    File	SKOKI\ladowanie\ladowanie_tel_poprawne_0.xsi
+    Name	ladowanie_tel_poprawne_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.5
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27128029 0.25119898 -3.02107501 9.61050987 18.23947144 15.70077896
+    relativeBB -9.27861977 -12.23727894 -10.24774837 9.52354431 5.69259739 14.53043365
+  end-slot
+  slot	39
+    File	SKOKI\ladowanie\ladowanie_tel_poprawne_40.xsi
+    Name	ladowanie_tel_poprawne_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.5
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27127552 -3.90582442 -1.72176981 9.61004066 16.21469116 15.70077896
+    relativeBB -9.27861977 -12.65054512 -10.85846615 9.52328205 7.50954485 8.56348228
+  end-slot
+  slot	40
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_C_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_C_0
+    Time	3
+    Interp-time	0.6000000238418579
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.64509010 -0.59838742 -3.92549777 9.27287483 17.71008110 15.82178307
+    relativeBB -9.28797531 -11.94243908 -10.23495960 9.36160851 9.51808357 8.17480278
+  end-slot
+  slot	41
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_C_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_C_40
+    Time	3
+    Interp-time	0.6000000238418579
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.64517975 -2.21912456 -0.37765542 9.27229023 16.83686829 15.83690357
+    relativeBB -9.28797531 -11.97964096 -10.23496532 9.36160755 10.75630474 6.07721329
+  end-slot
+  slot	42
+    File	SKOKI\Hamowanie_unhappy_A.xsi
+    Name	Hamowanie_unhappy_A
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.77139759 0.02959529 -6.43027210 9.33483601 18.30960464 7.24192858
+    relativeBB -8.45323277 -12.52475929 -4.96957016 8.76883125 5.85338020 7.67616701
+  end-slot
+  slot	43
+    File	SKOKI\Hamowanie_unhappy_B.xsi
+    Name	Hamowanie_unhappy_B
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.88210201 0.02959529 -6.43027544 8.80127811 18.30960464 7.22231627
+    relativeBB -8.45004082 -12.52488136 -4.96961212 8.76943398 5.85907173 7.66411686
+  end-slot
+  slot	44
+    File	SKOKI\Upadki\Upadek_totalny_A.xsi
+    Name	Upadek_totalny_A
+    Time	8.75
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	4
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -14.35147953 -2.27227306 -11.75599003 42.17927933 20.93726349 16.07190895
+    relativeBB -13.86317921 -12.17732430 -13.02491856 44.90056229 14.79327488 13.55533218
+  end-slot
+  slot	45
+    File	SKOKI\Upadki\Upadek_totalny_B.xsi
+    Name	Upadek_totalny_B
+    Time	10.5
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	1
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -25.45768547 -3.36968088 -11.44757652 22.54336166 20.89397621 14.95217705
+    relativeBB -27.57773399 -12.93666267 -13.85813427 27.46419525 14.65104389 13.70389366
+  end-slot
+  slot	46
+    File	SKOKI\Ladowanie_idle\ladowane_idle_0.xsi
+    Name	ladowane_idle_0
+    Time	3.578125
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.90502739 0.34118277 -1.18308544 8.96424770 18.07151413 5.60597658
+    relativeBB -8.90616989 -12.31695366 -2.03002882 8.96124744 5.44937515 4.78499794
+  end-slot
+  slot	47
+    File	SKOKI\Ladowanie_idle\ladowane_idle_40.xsi
+    Name	ladowane_idle_40
+    Time	3.578125
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.29201508 -1.54634261 0.20988952 9.28437042 15.21982479 14.57601261
+    relativeBB -9.31524086 -10.75233555 -8.53926659 9.26369381 6.39383221 5.88413811
+  end-slot
+  slot	48
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_A_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_A_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.06622982 -0.50887972 -2.25602722 9.19217682 19.20238686 15.85815716
+    relativeBB -9.04750729 -12.00356483 -10.24075413 9.21089935 9.94252586 5.98257828
+  end-slot
+  slot	49
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_A_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_A_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.32122612 -1.59819353 -2.47649431 9.08448982 18.21433067 15.85815716
+    relativeBB -9.28609657 -12.44341755 -10.24074745 9.10203743 10.73295498 6.36154938
+  end-slot
+  slot	50
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_B_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_B_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.37657833 0.17242806 -2.27482247 9.58793068 17.70453835 17.14610672
+    relativeBB -9.48454094 -11.46901131 -10.24820137 9.54393482 7.67643547 7.63524628
+  end-slot
+  slot	51
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_B_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_B_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.37787056 -1.62420774 -0.39089119 9.58793068 15.21982479 17.55604172
+    relativeBB -9.48450756 -10.38531017 -10.24820137 9.54393482 10.47975540 6.06105614
+  end-slot
+  slot	52
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_D_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_D_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.30675793 -0.11760250 -3.66166067 9.42780685 19.07324219 15.84213257
+    relativeBB -9.42628574 -11.66690445 -10.23500252 9.59957504 10.07536411 6.51112270
+  end-slot
+  slot	53
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_D_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_D_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.30675793 -3.10311961 -1.73882985 9.42775345 18.25398254 15.84297371
+    relativeBB -9.42628574 -12.02633762 -10.23500061 9.59957409 11.21760178 7.01821756
+  end-slot
+  slot	54
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_E_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_E_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27665329 0.24373725 -3.09157848 9.38363838 18.18174934 15.83753204
+    relativeBB -9.29615307 -11.64202881 -10.24379444 9.37783241 10.06239510 5.84665966
+  end-slot
+  slot	55
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_E_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_E_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27834415 -2.18251133 -1.00578928 9.38215065 17.16265106 15.84883499
+    relativeBB -9.29668236 -11.28824043 -10.24379826 9.37728500 11.39927483 6.07375240
+  end-slot
+  slot	56
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_F_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_F_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27463722 0.19613902 -3.46114802 9.38815594 19.05731392 15.83976173
+    relativeBB -9.46840286 -11.62694931 -10.24379730 9.33392525 10.07062721 6.74242973
+  end-slot
+  slot	57
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_F_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_F_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.27543259 -2.95192719 -1.33802831 9.38692570 17.87945557 15.84899521
+    relativeBB -9.46828175 -11.31539249 -10.24379539 9.33342075 11.25741386 7.43281651
+  end-slot
+  slot	58
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_G_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_G_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.16295910 -0.71539634 -3.51559448 9.51789379 17.31871605 15.82098579
+    relativeBB -9.27877235 -11.84016228 -10.24383354 9.40208054 9.49717331 5.89480305
+  end-slot
+  slot	59
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_G_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_G_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.16453552 -2.22528958 -0.38651806 9.51635838 15.91380978 15.82942963
+    relativeBB -9.27916813 -11.90540504 -10.24382877 9.40172577 10.82896042 6.07859802
+  end-slot
+  slot	60
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_A_0.xsi
+    Name	ladowanie_tel_niepoprawne_A_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.26434135 0.28149474 -3.05381393 10.12927723 18.09253311 15.70077896
+    relativeBB -9.49830914 -12.26395893 -10.23498058 9.70932007 5.57113075 14.07514477
+  end-slot
+  slot	61
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_A_40.xsi
+    Name	ladowanie_tel_niepoprawne_A_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.26432991 -3.36088443 -1.76874340 10.12928963 16.22709465 15.70077896
+    relativeBB -9.49830437 -12.38535309 -10.39684677 9.70883751 8.05566692 8.31042004
+  end-slot
+  slot	62
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_B_0.xsi
+    Name	ladowanie_tel_niepoprawne_B_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.73413086 0.27482009 -3.01158285 10.47276974 19.65052223 15.70077896
+    relativeBB -9.55960655 -12.12496948 -10.23498058 9.49421883 8.30200481 14.73933792
+  end-slot
+  slot	63
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_B_40.xsi
+    Name	ladowanie_tel_niepoprawne_B_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.73524570 -3.38579035 -1.69876838 10.47276974 16.28304672 15.70077896
+    relativeBB -9.55958271 -12.32061386 -10.49722099 9.49421501 7.86211920 8.30472660
+  end-slot
+  slot	64
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_C_0.xsi
+    Name	ladowanie_tel_niepoprawne_C_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.23275375 0.24878757 -3.04627609 9.47960281 18.16132545 15.70077896
+    relativeBB -8.92738914 -12.24403095 -10.23497295 9.48981380 6.05693817 13.96504021
+  end-slot
+  slot	65
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_C_40.xsi
+    Name	ladowanie_tel_niepoprawne_C_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.23275280 -3.94108200 -1.69334924 9.47721386 16.05961990 15.70077896
+    relativeBB -8.92738819 -12.68899632 -10.89232826 9.48939610 7.86212778 8.30454350
+  end-slot
+  slot	66
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_D_0.xsi
+    Name	ladowanie_tel_niepoprawne_D_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.32730198 0.24119741 -2.98629808 9.61594868 18.01826859 15.70077896
+    relativeBB -9.03146935 -11.99937153 -10.23498058 9.72956181 5.73418331 14.14916229
+  end-slot
+  slot	67
+    File	SKOKI\ladowanie\ladowanie_tel_niepoprawne_D_40.xsi
+    Name	ladowanie_tel_niepoprawne_D_40
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.32793236 -3.91899085 -1.67598176 9.61378860 16.02014160 16.68016434
+    relativeBB -9.03146935 -13.09075546 -10.61316109 9.72927952 8.95950317 8.56287766
+  end-slot
+  slot	68
+    File	SKOKI\Upadki\Upadek_ladowanie_D_0.xsi
+    Name	Upadek_ladowanie_D_0
+    Time	8.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.77283573 -1.32272148 -13.49181652 9.52512836 17.96916771 15.77765274
+    relativeBB -9.64107323 -12.07158279 -13.50330639 11.88652420 14.01391506 9.49569416
+  end-slot
+  slot	69
+    File	SKOKI\Upadki\Upadek_ladowanie_D_40.xsi
+    Name	Upadek_ladowanie_D_40
+    Time	8.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.77637386 -5.58027220 -10.17829132 9.53260326 15.21982479 17.55702591
+    relativeBB -9.64242840 -9.62214470 -11.38176918 11.88626385 15.25449848 7.63402414
+  end-slot
+  slot	70
+    File	SKOKI\Upadki\Upadek_ladowanie_B_0.xsi
+    Name	Upadek_ladowanie_B_0
+    Time	10
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -10.46932602 -1.52635336 -9.90692234 11.77900219 17.87478065 15.70077896
+    relativeBB -11.80979729 -11.80110359 -13.46209717 12.62283707 14.54806328 15.90455627
+  end-slot
+  slot	71
+    File	SKOKI\Upadki\Upadek_ladowanie_B_40.xsi
+    Name	Upadek_ladowanie_B_40
+    Time	10
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -10.72304726 -8.06491661 -7.42686844 12.41563129 15.21982479 16.65792847
+    relativeBB -11.80979919 -11.14808655 -10.93670654 13.73714256 17.09941292 14.07079506
+  end-slot
+  slot	72
+    File	SKOKI\Upadki\Upadek_ladowanie_A_0.xsi
+    Name	Upadek_ladowanie_A_0
+    Time	10
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -19.73167801 -1.51227331 -16.04342461 13.00723076 18.22929192 15.70077801
+    relativeBB -22.51600838 -11.76469517 -13.38837242 13.35522461 14.34413433 21.14025307
+  end-slot
+  slot	73
+    File	SKOKI\Upadki\Upadek_ladowanie_A_40.xsi
+    Name	Upadek_ladowanie_A_40
+    Time	10
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -19.73305702 -6.73683739 -12.41508102 13.00723267 15.21982479 16.13296700
+    relativeBB -22.51586914 -11.37362957 -11.03457355 13.35522461 14.29576778 18.76616096
+  end-slot
+  slot	74
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_H_0.xsi
+    Name	ladowanie_no_tel_niepoprawne_H_0
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.06969070 0.27828071 -2.51573658 9.34206963 19.17325020 15.89231491
+    relativeBB -9.04088783 -12.01289654 -10.26566696 9.37087250 11.62833214 8.27119637
+  end-slot
+  slot	75
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_H_40.xsi
+    Name	ladowanie_no_tel_niepoprawne_H_40_temp
+    Time	3
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.06969166 -2.34837532 -0.81911331 9.34206963 15.72079182 17.33613968
+    relativeBB -9.04088879 -10.75743771 -10.92551517 9.37087250 11.56482315 7.91556215
+  end-slot
+  slot	76
+    File	SKOKI\Inne\Skoczek_menu.xsi
+    Name	Skoczek_menu
+    Time	7
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.80606365 -0.05655515 -1.97895193 4.83759308 18.72858047 3.64494038
+    relativeBB -6.88691807 -12.83068371 -1.17003846 3.66135073 5.96512794 4.35135603
+  end-slot
+  slot	77
+    File	SKOKI\Inne\Odpinanie_wiazan.xsi
+    Name	Odpinanie_wiazan
+    Time	7
+    Interp-time	0.6000000238418579
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	85
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.44916534 -0.45248166 -4.46219730 4.95410824 19.26946640 14.22772789
+    relativeBB -5.11235428 -13.14826202 -3.55081439 5.15767193 10.07201004 15.98459816
+  end-slot
+  slot	78
+    File	SKOKI\Hamowanie_happy_A_40.xsi
+    Name	Hamowanie_happy_A_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27134037 -3.12250161 -1.08419681 8.32431793 16.11882401 17.61873055
+    relativeBB -8.19866753 -13.08986092 -9.14780998 8.73105431 6.80498981 10.04107094
+  end-slot
+  slot	79
+    File	SKOKI\Hamowanie_happy_B_40.xsi
+    Name	Hamowanie_happy_B_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27180195 -3.12218380 -1.08419681 9.26319218 19.47016716 16.92130470
+    relativeBB -8.19916344 -13.08986092 -9.14780998 9.19930935 10.17923260 9.75785732
+  end-slot
+  slot	80
+    File	SKOKI\Hamowanie_happy_C_40.xsi
+    Name	Hamowanie_happy_C_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.27218723 -3.12250161 -1.08419681 8.63074112 18.49552536 16.92013550
+    relativeBB -8.20104980 -13.08986092 -9.14780998 8.59800053 8.78163052 9.59988213
+  end-slot
+  slot	81
+    File	SKOKI\Hamowanie_neutralne_A_40.xsi
+    Name	Hamowanie_neutralne_A_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55765152 -3.12097740 -1.08165789 9.20432377 15.03489590 14.62511158
+    relativeBB -8.44019604 -13.09002304 -9.14874649 8.76812172 4.95952511 6.89817810
+  end-slot
+  slot	82
+    File	SKOKI\Hamowanie_neutralne_B_40.xsi
+    Name	Hamowanie_neutralne_B_40
+    Time	9.5
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55577564 -2.98719168 -3.59911489 9.10605049 15.41894913 14.62518883
+    relativeBB -8.43656826 -13.47088432 -8.56368542 8.76812077 4.59638405 7.94290829
+  end-slot
+  slot	83
+    File	SKOKI\Hamowanie_neutralne_C_40.xsi
+    Name	Hamowanie_neutralne_C_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.75592899 -3.29280257 -0.73627472 9.31373787 14.36806965 14.57182980
+    relativeBB -9.07026386 -12.98267746 -8.85136986 8.80957508 4.54618359 6.71124601
+  end-slot
+  slot	84
+    File	SKOKI\Hamowanie_neutralne_D_40.xsi
+    Name	Hamowanie_neutralne_D_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.64976883 -3.12790942 -1.08470678 9.20548344 15.03142357 14.67340660
+    relativeBB -8.61810207 -13.09632683 -9.14734745 8.57927322 4.95096111 6.90052366
+  end-slot
+  slot	85
+    File	SKOKI\Hamowanie_unhappy_A_40.xsi
+    Name	Hamowanie_unhappy_A_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.77134705 -3.12069273 -1.08419681 9.33480263 15.03489590 14.58015919
+    relativeBB -8.45322037 -13.08986092 -9.14780998 8.76884365 4.95952511 6.94371128
+  end-slot
+  slot	86
+    File	SKOKI\Hamowanie_unhappy_B_40.xsi
+    Name	Hamowanie_unhappy_B_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.88204956 -3.12069273 -1.08419681 8.80129623 15.03489590 14.62221718
+    relativeBB -8.45002937 -13.08986092 -9.14780998 8.76944637 4.95952511 7.31332779
+  end-slot
+  slot	87
+    File	SKOKI\Upadki\Upadek_totalny_A_40.xsi
+    Name	Upadek_totalny_A_40
+    Time	8.8125
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	4
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -14.35147476 -10.74092197 -8.50102329 42.17929840 16.31325531 20.28028488
+    relativeBB -13.86317444 -12.11765289 -13.21994114 44.90105438 12.93269634 13.32448101
+  end-slot
+  slot	88
+    File	SKOKI\Upadki\Upadek_totalny_B_40.xsi
+    Name	Upadek_totalny_B_40
+    Time	10.5
+    Interp-time	0.6000000238418579
+    Release-time	0.6000000238418579
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	1
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -25.45767212 -8.57900238 -8.60952187 22.54337692 19.57322693 21.25596237
+    relativeBB -27.57772255 -13.09137249 -12.43783474 27.46419525 12.98561478 13.24241066
+  end-slot
+  slot	89
+    File	SKOKI\Inne\Odpinanie_wiazan_40.xsi
+    Name	Odpinanie_wiazan_40
+    Time	8.125
+    Interp-time	0.6000000238418579
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.52518225 -1.34732628 -1.70550549 4.93344593 16.10610008 13.60137844
+    relativeBB -4.94264746 -11.47601986 -9.60643101 5.17186308 11.11177063 10.73996162
+  end-slot
+  slot	90
+    File	SKOKI\Hamowanie_happy_A_40_mirror.xsi
+    Name	Hamowanie_happy_A_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.28155613 -3.11798549 -1.10055816 8.34230709 15.65081024 17.61653328
+    relativeBB -8.68829250 -13.08285141 -9.16396427 8.26963520 6.33697510 10.03887367
+  end-slot
+  slot	91
+    File	SKOKI\Hamowanie_happy_A_mirror.xsi
+    Name	Hamowanie_happy_A_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.26469517 0.25386062 -6.38104105 8.34146786 21.04734230 7.39836931
+    relativeBB -8.67148209 -12.41854572 -4.92323208 8.26879597 9.20608044 7.76561451
+  end-slot
+  slot	92
+    File	SKOKI\Hamowanie_happy_B_40_mirror.xsi
+    Name	Hamowanie_happy_B_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.20743561 -3.11733603 -1.10055816 8.34275532 19.45008850 16.91654778
+    relativeBB -9.14355278 -13.08285141 -9.16396427 8.27011776 10.15915394 9.75177860
+  end-slot
+  slot	93
+    File	SKOKI\Hamowanie_happy_C_40_mirror.xsi
+    Name	Hamowanie_happy_C_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55837536 -3.11798549 -1.10055816 8.34313202 18.50682831 16.91113472
+    relativeBB -8.52374172 -13.08285141 -9.16396427 8.27174759 8.79293346 9.59088135
+  end-slot
+  slot	94
+    File	SKOKI\Hamowanie_neutralne_C_40_mirror.xsi
+    Name	Hamowanie_neutralne_C_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.28827858 -3.29340434 -0.74187350 9.78919315 14.42478371 14.61231422
+    relativeBB -8.74167728 -12.97259903 -8.83355522 9.11174011 4.60422611 6.68633795
+  end-slot
+  slot	95
+    File	SKOKI\Hamowanie_happy_C_mirror.xsi
+    Name	Hamowanie_happy_C_mirror
+    Time	8.380000114440918
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.55836201 0.25385988 -6.38361883 8.34313202 22.08564758 7.25304222
+    relativeBB -8.52373409 -12.41854668 -5.57704973 8.27175140 9.83250427 7.57927799
+  end-slot
+  slot	96
+    File	SKOKI\Hamowanie_neutralne_A_40_mirror.xsi
+    Name	Hamowanie_neutralne_A_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17731857 -3.11765027 -1.10377586 8.62582779 15.23056221 14.66478539
+    relativeBB -8.69971561 -13.08346272 -9.16906929 8.50555611 6.59489727 6.69825840
+  end-slot
+  slot	97
+    File	SKOKI\Hamowanie_neutralne_A_mirror.xsi
+    Name	Hamowanie_neutralne_A_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17736244 0.24743044 -6.38373041 8.62587452 18.29929161 7.26131582
+    relativeBB -8.69970512 -12.42457676 -4.92421246 8.50557041 5.73405266 7.99691057
+  end-slot
+  slot	98
+    File	SKOKI\Hamowanie_neutralne_B_40_mirror.xsi
+    Name	Hamowanie_neutralne_B_40_mirror
+    Time	9.5
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.10547256 -2.98239636 -3.54926729 8.62398434 15.38016701 14.66486549
+    relativeBB -8.69971466 -13.46410179 -8.51383781 8.50201511 6.59491539 7.14443111
+  end-slot
+  slot	99
+    File	SKOKI\Hamowanie_neutralne_C_mirror.xsi
+    Name	Hamowanie_neutralne_C_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.28827763 0.09405068 -7.14931870 9.78919125 18.30958366 7.25071907
+    relativeBB -8.74167728 -12.41809273 -6.67014551 9.11174011 5.73847485 7.76921797
+  end-slot
+  slot	100
+    File	SKOKI\Hamowanie_happy_B_mirror.xsi
+    Name	Hamowanie_happy_B_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.20742226 0.25364891 -6.40069866 8.34275532 22.39261246 7.25193739
+    relativeBB -9.14354610 -12.41854668 -5.45105696 8.27011776 10.52556610 7.69567823
+  end-slot
+  slot	101
+    File	SKOKI\Hamowanie_neutralne_D_40_mirror.xsi
+    Name	Hamowanie_neutralne_D_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17894363 -3.12313509 -1.10106528 8.71817589 15.22854328 14.63373280
+    relativeBB -8.51391220 -13.08930779 -9.16349316 8.68650913 6.59282398 6.71792126
+  end-slot
+  slot	102
+    File	SKOKI\Hamowanie_neutralne_D_mirror.xsi
+    Name	Hamowanie_neutralne_D_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17889404 0.21347535 -6.38114357 8.71815777 18.28257942 7.26696348
+    relativeBB -8.51392460 -12.44588947 -4.91661358 8.68649769 5.73208427 7.99514294
+  end-slot
+  slot	103
+    File	SKOKI\Hamowanie_unhappy_A_40_mirror.xsi
+    Name	Hamowanie_unhappy_A_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.30827808 -3.11619020 -1.10055816 8.83846855 14.98034000 14.62017727
+    relativeBB -8.70044327 -13.08285141 -9.16396427 8.51743221 4.90845776 6.91875076
+  end-slot
+  slot	104
+    File	SKOKI\Hamowanie_unhappy_A_mirror.xsi
+    Name	Hamowanie_unhappy_A_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.30833721 0.25364974 -6.38357067 8.83851910 18.29929161 7.23878717
+    relativeBB -8.70043182 -12.41854572 -4.92395020 8.51744366 5.79947472 7.67302513
+  end-slot
+  slot	105
+    File	SKOKI\Hamowanie_unhappy_B_40_mirror.xsi
+    Name	Hamowanie_unhappy_B_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.73297405 -3.11619020 -1.10055816 8.94921684 14.98034000 14.66182137
+    relativeBB -8.70112324 -13.08285141 -9.16396427 8.51433945 4.90845776 7.32350254
+  end-slot
+  slot	106
+    File	SKOKI\Hamowanie_unhappy_B_mirror.xsi
+    Name	Hamowanie_unhappy_B_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.73295498 0.25364974 -6.38357067 8.94927120 18.29929161 7.21897840
+    relativeBB -8.70111084 -12.41854572 -4.92395020 8.51434994 5.80481911 7.66002560
+  end-slot
+  slot	107
+    File	SKOKI\Inne\Odpinanie_wiazan_B_0.xsi
+    Name	Odpinanie_wiazan_B
+    Time	10
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	60
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.51832819 -0.52683371 -4.47414637 6.06049490 19.56382370 5.55574560
+    relativeBB -4.68086243 -13.26084995 -3.55439067 6.16538239 10.15405941 6.33522797
+  end-slot
+  slot	108
+    File	SKOKI\Inne\Odpinanie_wiazan_B_40.xsi
+    Name	Odpinanie_wiazan_B_40
+    Time	16.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.51619291 -1.64184904 -2.07875586 6.05598927 15.40642929 14.13636494
+    relativeBB -4.67981768 -11.70523643 -9.78502655 6.16140366 10.45041561 6.22384834
+  end-slot
+  slot	109
+    File	SKOKI\Inne\End_idle_A.xsi
+    Name	End_idle_A
+    Time	6.46875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.33106232 -0.06174680 -2.34493351 10.44765568 22.11519814 4.32131720
+    relativeBB -6.28772926 -12.83828545 -1.53186727 9.49623013 9.35072422 4.97509098
+  end-slot
+  slot	110
+    File	SKOKI\Inne\End_idle_B.xsi
+    Name	End_idle_B
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.81107330 -0.14090425 -2.26902723 5.61336374 18.72068596 5.15048981
+    relativeBB -5.30378151 -12.86729050 -1.42857957 5.05884552 5.99197769 5.81067276
+  end-slot
+  slot	111
+    File	SKOKI\Inne\End_idle_C.xsi
+    Name	End_idle_C
+    Time	9.5
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.93691349 -0.89121127 -15.39134121 5.89575720 22.86551666 -6.48563814
+    relativeBB -4.58913517 -13.37375069 -4.41633129 4.65312004 10.36582279 3.85568333
+  end-slot
+  slot	112
+    File	SKOKI\Inne\End_idle_D.xsi
+    Name	End_idle_D
+    Time	6
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.01790333 -0.07765308 -4.29710579 4.67727518 23.22954750 5.31158876
+    relativeBB -4.60081244 -12.83371067 -3.31033444 5.09304905 10.57444000 5.95967579
+  end-slot
+  slot	113
+    File	SKOKI\Inne\End_idle_E.xsi
+    Name	End_idle_E
+    Time	6.46875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.32782364 -0.05426227 -1.87188327 4.68081951 18.34538651 3.57259464
+    relativeBB -6.27177000 -12.83596325 -1.38638043 3.55802011 5.56143188 4.12067080
+  end-slot
+  slot	114
+    File	SKOKI\Inne\End_wywrotka_idle_A.xsi
+    Name	End_wywrotka_idle_A
+    Time	7.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.92539501 -29.88010979 -10.63573456 7.65722418 8.73685169 6.73227167
+    relativeBB -6.82992983 -33.26020813 -4.13740778 6.87425041 5.91855717 12.91669846
+  end-slot
+  slot	115
+    File	SKOKI\Inne\End_wywrotka_idle_A_40.xsi
+    Name	End_wywrotka_idle_A_40
+    Time	7.375
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.92539501 -29.84560776 -7.39376211 7.65722418 12.80357075 6.85966587
+    relativeBB -6.82992983 -36.61975098 -4.57633877 6.87425041 5.98622799 9.99318123
+  end-slot
+  slot	116
+    File	SKOKI\Hamowanie_neutralne_B_mirror.xsi
+    Name	Hamowanie_neutralne_B_mirror
+    Time	9.5
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.10543633 0.18082587 -8.79800415 8.62409115 18.19517708 7.32910728
+    relativeBB -8.69968891 -12.32881737 -6.53685570 8.50204563 5.73405457 8.09832382
+  end-slot
+  slot	117
+    File	SKOKI\Inne\End_wywrotka_idle_B.xsi
+    Name	End_wywrotka_idle_B
+    Time	10.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -7.19116783 -25.58393860 -15.37541008 5.62733793 18.72458839 1.42193496
+    relativeBB -7.13098717 -38.66452789 -6.06087685 6.22302389 5.79599571 12.58730507
+  end-slot
+  slot	118
+    File	SKOKI\Inne\End_wywrotka_idle_B_40.xsi
+    Name	End_wywrotka_idle_B_40
+    Time	10.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -7.19482565 -25.58476830 -13.74559212 5.62949944 18.72510719 8.20080185
+    relativeBB -7.13098764 -40.69989777 -16.19849777 6.22302341 5.74957561 8.83528328
+  end-slot
+  slot	119
+    File	SKOKI\Inne\End_wywrotka_idle_C.xsi
+    Name	End_wywrotka_idle_C
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.98757362 -25.58337784 -15.37576580 8.35511398 18.55263519 4.79923105
+    relativeBB -5.95904064 -38.39253616 -6.06091785 5.77551508 5.72930813 14.11376381
+  end-slot
+  slot	120
+    File	SKOKI\Inne\End_wywrotka_idle_C_40.xsi
+    Name	End_wywrotka_idle_C_40
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.98372507 -25.63343811 -13.74559212 8.34764957 16.64227486 10.20935059
+    relativeBB -5.95896482 -37.87305832 -19.30229950 5.77494144 5.69858074 11.71539307
+  end-slot
+  slot	121
+    File	SKOKI\ladowanie\ladowanie_no_tel_niepoprawne_H_40_plecy.xsi
+    Name	ladowanie_no_tel_niepoprawne_H_40
+    Time	4
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.04418373 -2.18805075 -13.74559212 8.96131802 15.67631817 17.40089798
+    relativeBB -9.00264549 -11.26253414 -25.13556480 8.99590588 6.69408035 7.40559053
+  end-slot
+  slot	122
+    File	SKOKI\Inne\Skoczek_menu_gest_A.xsi
+    Name	Skoczek_menu_gest_A
+    Time	4.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.77752209 -0.06830455 -2.23917913 8.23701859 19.58023834 4.97406530
+    relativeBB -6.94792366 -12.87181282 -1.52966607 7.14211512 6.80104065 5.73298264
+  end-slot
+  slot	123
+    File	SKOKI\Inne\Skoczek_menu_gest_B.xsi
+    Name	Skoczek_menu_gest_B
+    Time	3.1875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.77752209 -0.07149697 -1.94849670 5.39772606 18.77825546 3.58530807
+    relativeBB -7.12860489 -12.92000580 -1.29060125 3.88080907 5.93686867 4.30307579
+  end-slot
+  slot	124
+    File	SKOKI\Inne\Skoczek_menu_gest_C.xsi
+    Name	Skoczek_menu_gest_C
+    Time	5.75
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -6.49861622 -0.05211543 -2.87663960 5.70111752 18.71710968 3.69556904
+    relativeBB -7.73790026 -12.83139515 -2.28242421 3.82636666 5.93951988 4.26689672
+  end-slot
+  slot	125
+    File	SKOKI\Hamowanie_correct_A.xsi
+    Name	Hamowanie_correct_A
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.57312584 0.02994689 -6.56310415 9.25655174 18.30960464 5.73989725
+    relativeBB -8.44020844 -12.54455948 -6.23088598 8.76661968 5.73218918 7.61284971
+  end-slot
+  slot	126
+    File	SKOKI\Hamowanie_correct_A_40.xsi
+    Name	Hamowanie_correct_A_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.57307911 -3.12097740 -1.08165789 9.25650692 15.03489590 14.62401485
+    relativeBB -8.44019604 -13.09002304 -9.14874649 8.76663303 4.95952511 6.38750267
+  end-slot
+  slot	127
+    File	SKOKI\Hamowanie_correct_A_mirror.xsi
+    Name	Hamowanie_correct_A_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.22908497 0.24743044 -6.52063942 8.64100647 18.29929161 5.70778942
+    relativeBB -8.69821644 -12.42457676 -6.18906546 8.50557041 5.73420334 7.58484459
+  end-slot
+  slot	128
+    File	SKOKI\Hamowanie_correct_A_40_mirror.xsi
+    Name	Hamowanie_correct_A_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.22904205 -3.11765027 -1.10377586 8.64095974 14.98034000 14.66368961
+    relativeBB -8.69822693 -13.08346272 -9.16906929 8.50555611 4.90845776 6.42720699
+  end-slot
+  slot	129
+    File	SKOKI\Hamowanie_correct_B.xsi
+    Name	Hamowanie_correct_B
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.64366722 0.04112453 -6.56321049 9.38795757 18.30960464 7.48237753
+    relativeBB -8.44020748 -12.54896355 -6.23106766 8.76810837 5.82342148 7.91103649
+  end-slot
+  slot	130
+    File	SKOKI\Hamowanie_correct_B_40.xsi
+    Name	Hamowanie_correct_B_40
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -8.64362049 -3.12097740 -1.08165789 9.38790035 15.03489590 14.62510967
+    relativeBB -8.44019508 -13.09002304 -9.14874649 8.76812077 4.95952511 6.57631016
+  end-slot
+  slot	131
+    File	SKOKI\Hamowanie_correct_B_mirror.xsi
+    Name	Hamowanie_correct_B_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17776203 0.24743143 -6.52026033 8.65096188 18.29929161 7.26139784
+    relativeBB -8.64871311 -12.42457771 -6.18853426 8.61242580 5.82184219 7.70819044
+  end-slot
+  slot	132
+    File	SKOKI\Hamowanie_correct_B_40_mirror.xsi
+    Name	Hamowanie_correct_B_40_mirror
+    Time	8.375
+    Interp-time	0.3499999940395355
+    Release-time	0.3499999940395355
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -9.17772007 -3.11765027 -1.10377586 8.65092850 14.98034000 14.48685074
+    relativeBB -8.64872360 -13.08346272 -9.16906929 8.61241245 4.90845776 6.69822979
+  end-slot
+  slot	133
+    File	SKOKI\Inne\End_idle_A_g.xsi
+    Name	End_idle_A_g
+    Time	6.46875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.33085585 -0.06174680 -5.36527014 10.44765568 22.11519814 4.32131720
+    relativeBB -6.28760147 -12.83828545 -4.48985577 9.49623013 9.35072422 4.97509098
+  end-slot
+  slot	134
+    File	SKOKI\Inne\End_idle_B_g.xsi
+    Name	End_idle_B_g
+    Time	8
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.81107903 -0.14090425 -2.26902723 5.61336374 18.72389793 5.15056658
+    relativeBB -5.30378819 -12.86729050 -1.42857957 5.05884552 5.99518967 5.81074953
+  end-slot
+  slot	135
+    File	SKOKI\Inne\End_idle_C_g.xsi
+    Name	End_idle_C_g
+    Time	9.5
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -4.93691349 -0.89121127 -15.39134121 5.89575720 22.86551666 -6.48563814
+    relativeBB -4.58913517 -13.37375069 -4.41633129 4.65312004 10.36582279 3.85568333
+  end-slot
+  slot	136
+    File	SKOKI\Inne\End_idle_D_g.xsi
+    Name	End_idle_D_g
+    Time	6
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.01790333 -0.07765308 -4.29710579 4.67727518 23.22954750 5.31158876
+    relativeBB -4.60081244 -12.83371067 -3.31033444 5.09304905 10.57444000 5.95967579
+  end-slot
+  slot	137
+    File	SKOKI\Inne\End_idle_E_g.xsi
+    Name	End_idle_E_g
+    Time	6.46875
+    Interp-time	0.300000011920929
+    Release-time	0.25
+    Randomizer	0
+    Velocity	0
+    Direction	0
+    Looped	0
+    Start	0
+    End	100
+    Time-offset	0
+    AnimSounds
+*version 1
+*soundKeys 0
+*endblock
+*materials 0
+*endblock
+*sounds 0
+*endblock
+*end
+    bbox02 -5.32782364 -0.05426227 -1.87188327 4.68081951 18.34538651 3.57259464
+    relativeBB -6.27177000 -12.83596325 -1.38638043 3.55802011 5.56143188 4.12067080
+  end-slot
+end-animations
+
+meshes
+  slot 0
+    file Skoczek-0.xsi
+    dist 0
+  end-slot
+meshes-end
+
+material-params
+material-params-version 1
+  material
+    texture-file-name	SkoczekBodySurf.tga
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs CharacterA1_HQPerPixelDiffuseAndSpecularEnvMap
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+    DiffuseMultiplier 2.000000
+    SpecularScale 0.750000
+    SpecularExponent 32.000000
+    ReflectionIntensity 0.250000
+    Texture2_NormalMap NormalMap\SKI\SkoczekBodyNormHQ.tga
+    Texture3_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    texture-file-name	SkoczekGoogleSurf.tga
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	0
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs EnvMapNoLightmap
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+    ReflectionDrift 0 0 0 0
+    ReflectionIntenstiy 1.000000
+    BlendingFactor 1.000000
+    Texture2_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs CharacterA1_HQPerPixelDiffuseAndSpecularEnvMap
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+    DiffuseMultiplier 2.000000
+    SpecularScale 0.750000
+    SpecularExponent 32.000000
+    ReflectionIntensity 0.250000
+    Texture2_NormalMap NormalMap\SKI\SkoczekBodyNormHQ.tga
+    Texture3_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs CharacterA1_HQPerPixelDiffuseAndSpecularEnvMap
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+    DiffuseMultiplier 2.000000
+    SpecularScale 1.000000
+    SpecularExponent 32.000000
+    ReflectionIntensity 0.500000
+    Texture2_NormalMap NormalMap\SKI\SkoczekGoogleNormHQ.tga
+    Texture3_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs CharacterA1_HQPerPixelDiffuseAndSpecular
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.000000
+    DiffuseMultiplier 1.300000
+    SpecularScale 0.200000
+    SpecularExponent 50.000000
+    Texture2_NormalMap NormalMap\SKI\BarmanHeadNormHQ.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    texture-file-name	SkoczekKaskSurfLN.tga
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs CharacterA1_HQPerPixelDiffuseAndSpecularEnvMap
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+    DiffuseMultiplier 1.000000
+    SpecularScale 1.000000
+    SpecularExponent 75.000000
+    ReflectionIntensity 0.500000
+    Texture2_NormalMap NormalMap\SKI\SkoczekKaskNormLNHQ.tga
+    Texture3_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	1
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 4
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Light
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 4
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs Character_EnvMapNoLightmap
+		 shader-def-alpha-write 1
+      variables
+    Alpha_test_level 0.200000
+    ReflectionDrift 0 0 0 0
+    ReflectionIntenstiy 2.000000
+    BlendingFactor -0.400000
+    Texture2_EnvMap CubeMaps\CubeMap_Sky_Day_02_HARD.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+end-material-params
+
+num-of-associated-cameras 3
+  associated_camera Stroj -0.2388193011283875 13.15646648406982 -1.636913537979126 7.045773506164551 30.61483383178711 0 15.17295551300049 0
+  associated_camera Kask -1.877085208892822 18.12256050109863 -3.606324911117554 11.86719799041748 38.11481475830078 0 4.470716953277588 1
+  associated_camera Narty 0.5944467186927795 13.42862701416016 -1.095326900482178 5.438631057739258 -31.5280647277832 0 15.30992221832275 2

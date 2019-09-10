@@ -1,0 +1,26 @@
+
+vec3 vertexDiffuseSingleLight(vec3 position, vec3 normal, vec3 lightPos, vec3 lightColor, vec3 lightAtt)
+{
+    vec3 dir=lightPos-position;
+    float len=length(dir);
+    dir/=len;
+    
+    float attenuation=(lightAtt.x+len*(lightAtt.y+len*lightAtt.z));
+    float factor=saturate(dot(normal,dir))/attenuation;
+    return lightColor.xyz*factor;
+}
+
+uniform vec4 Ambient;
+uniform vec4 LightLocalPositionTable[MAX_LIGHTS];
+uniform vec4 LightAttenuationTable[MAX_LIGHTS];
+uniform vec4 LightColorTable[MAX_LIGHTS];
+
+
+vec3 vertexDiffuse(vec3 position, vec3 normal)
+{
+    vec3 diffuse=Ambient.xyz;
+    for(int i=0;i<MAX_LIGHTS;++i)
+        diffuse+=vertexDiffuseSingleLight(position,normal,LightLocalPositionTable[i].xyz,LightColorTable[i].xyz,LightAttenuationTable[i].xyz);
+    return diffuse;
+}
+

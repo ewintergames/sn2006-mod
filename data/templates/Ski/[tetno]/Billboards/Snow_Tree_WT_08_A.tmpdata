@@ -1,0 +1,92 @@
+template
+    Type 67108866
+    Name Drzewo_B_01:36
+    Version 0
+    Format_version 3
+    Last_modified tetno
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 0.1000000014901161 0.1000000014901161 1 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 0
+    Special_effects 
+    Never_blend_automatically 0
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    LUA_params_callback 
+    Group_membership_allowed 0
+    Battle_group_membership_allowed 0
+    Advanced_shader 
+    Texture_file Bilboards\Snow_Grass\Snow_Tree_WT_08_A.tga
+    Reflection_texture_file 
+    Face_camera 2
+    Two_sided 1
+    Color 0.8156863451004028 0.847058892250061 0.8509804606437683 1
+    Tiles 1.000000
+    Size 77.000000
+    Aspect 2.700000
+    Offset 0.000000
+    Alpha_test 1
+    Alpha_write 0
+    Color_write 1
+    Alpha_test_level 0.010000
+    Fogged 1
+    Depth_test 1
+    Depth_write 0
+    Clamp_texture 1
+    Forced_sort_mode 6
+    Blend_function 4
+    Use_y_angle_only 0
+    Ignore_face_camera_in_nodes 0
+    Node_1_angle 90.000000
+    Node_1_color 1 1 1 1
+    Node_2_angle 90.000000
+    Node_2_color 1 1 1 0
+    Texture_center_U 0.500000
+    Texture_center_V 0.100000
+    Special_blend_mode 0
+    Cast_lightmap_shadow 1
+    Reflection_source_distance 5.000000
+    Reflection_rectangle_aspect 1.000000
+    Reflection_texture_size 1.000000
+    Reflection_texture_aspect 1.000000
+    Reflection_texture_Uofs 0.000000
+    Reflection_texture_Vofs 0.000000
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Delay_time_after_cycle 0.000000
+    Delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+    Texture_U_drift 0.000000
+    Texture_V_drift 0.000000
+    Texture_U_repeat 0
+    Texture_V_repeat 0
+    Texture_animation_cycles 0.000000
+    Vertex_anim 
+    Vertex_Animation_X_Speed 0.340000
+    Vertex_Animation_X_Amplitude 0.210000
+    Vertex_Animation_Y_Speed 0.000000
+    Vertex_Animation_Y_Amplitude 0.000000
+    Vertex_Animation_Z_Speed 0.000000
+    Vertex_Animation_Z_Amplitude 0.000000
+    Center_blend_start 0.000000
+    Center_blend_end 0.000000
+    Distance_blend_start 10000.000000
+    Distance_blend_end 15000.000000
+  end-variables

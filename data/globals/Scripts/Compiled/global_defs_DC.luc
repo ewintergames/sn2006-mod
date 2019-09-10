@@ -1,0 +1,100 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-12-2018 Time: 23:46:21
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+if not (gDefsLoaded) then
+	true=1;
+	false=IDT_Nil;
+	gDefsLoaded=true;
+	CVector3["ZERO"]=CVector3(CVector3["instance"], 0, 0, 0);
+	Vector["ZERO"]=Vector(Vector["instance"], 0, 0, 0, 0);
+	CVector2["ZERO"]=CVector2(CVector2["instance"], 0, 0);
+	gSceneIterator=CSceneIterator(CSceneIterator["instance"], GS_UPDATE);
+	gObjectSetIterator=CObjectSetIterator(CObjectSetIterator["instance"], "");
+	CLOSE_COMBAT=0;
+	RANGED=1;
+	MA_NONE=0;
+	MA_DEAD=1;
+	MA_ROTATE_TOWARDS_OBJECT=2;
+	MA_ATTACK_OBJECT=3;
+	MA_MOVE_TOWARDS_OBJECT=4;
+	MA_MOVE_ON_PATH=5;
+	MA_RUN_AWAY_FROM_OBJECT=6;
+	MA_WANDER_AIMLESSLY=7;
+	MA_SINGLE_ATTACK=8;
+	MA_FLY_OVER_PATH=9;
+	MA_SAFE_POSITION=10;
+	PMA_ATTACK_DRAW=1;
+	PMA_ATTACK_FIRE=2;
+	PMA_ATTACK_MOVE=3;
+	PMA_ATTACK_TEASE=4;
+	PMA_ATTACK_STOP=5;
+	PMA_DO=0;
+	PMA_WAIT=1;
+	PMA_ACT=2;
+	PMA_BACK_TO_WALL=3;
+	BEHAVIOUR_NONE=0;
+	BEHAVIOUR_SIMPLE=1;
+	BEHAVIOUR_TEASE=2;
+	BEHAVIOUR_HITANDHIDE=3;
+	TEASE_STANDARD=0;
+	TEASE_CIRCLES=1;
+	TEASE_RANDOM=2;
+	MDA_ROTATE=1;
+	MDA_MOVE=2;
+	SUPER_ATTACK="";
+	ITEM_LOCATION_NONE=0;
+	ITEM_LOCATION_BACKPACK=1;
+	ITEM_LOCATION_L_HAND=2;
+	ITEM_LOCATION_R_HAND=3;
+	REAL_TILE_SIZE=5;
+	MB_WANDER_NEAR_STARTING_POINT_OFTEN_TIME=5;
+	MB_WANDER_NEAR_STARTING_POINT_RARELY_TIME=20;
+	PERFECT_RANGE_CLOSE=0,25;
+	PERFECT_RANGE_RANGED=0,75;
+	MAX_TARGETTER_ANGLE_FOR_PLAYER=10;
+	MAX_TARGETTER_ANGLE=10;
+	WAIT_FOR_CLEAN_PATH_TIME=2;
+	RAND_DIRECTION_SIDEWAYS={CVector3(CVector3["instance"], 0, 0, 1),
+		CVector3(CVector3["instance"], 0, 0, -1),
+		CVector3(CVector3["instance"], 0, 0, 1),
+		CVector3(CVector3["instance"], 0, 0, -1)};
+	RAND_DIRECTION_INWARDS={CVector3(CVector3["instance"], 1, 0, 0),
+		CVector3(CVector3["instance"], 1, 0, 0),
+		CVector3(CVector3["instance"], 0, 0, 1),
+		CVector3(CVector3["instance"], 0, 0, -1)};
+	RAND_DIRECTION_OUTWARDS={CVector3(CVector3["instance"], -1, 0, 0),
+		CVector3(CVector3["instance"], -1, 0, 0),
+		CVector3(CVector3["instance"], 0, 0, 1),
+		CVector3(CVector3["instance"], 0, 0, -1)};
+	MINIMAL_HIT=0,01;
+	DAMAGE_STANDARD=0;
+	DAMAGE_DROWNING=1;
+	DAMAGE_POISON=2;
+	DAMAGE_FIRE=3;
+	DAMAGE_FREEZE=4;
+	DAMAGE_FORBIDATTACK=5;
+	DAMAGE_BLINDNESS=6;
+	DAMAGE_DEAFNESS=7;
+	DAMAGE_MAGIC=8;
+	DAMAGE_HYPNOSIS=9;
+	DAMAGE_EARTHBURNING=10;
+	DAMAGE_NAMES={"Standard",
+		"Drowning",
+		"Poison",
+		"Fire",
+		"Freeze",
+		"ForbidAttack",
+		"Blindness",
+		"Deafness",
+		"Magic",
+		"Hypnosis",
+		"Earthburning"};
+	gWeaponTypes={White=0,
+	Pistol=1,
+	Gun=2,
+	Sp1=3};
+end
+
+

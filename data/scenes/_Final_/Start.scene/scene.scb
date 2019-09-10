@@ -1,0 +1,183 @@
+scene
+; file scenes\_Final_\Start.scene
+; version 0.5
+; date 2005-10-21 12:53
+; user Dyziek
+scene-id 200500100021001200530015
+object-count 1
+Format-version 2
+template-count 1
+using-template Null 2 0 n/a
+terrain
+	0
+end-terrain
+AI-map-defined
+layer Default 0 0 1
+object 2
+  based-on-template Null
+  parent 0
+  variables
+    Name Null-Menu
+    Position 3775 0 2755 1
+    Rotation 0 0 0 1
+    Scale 1 1 1 1
+    Hidden 0
+    Optimized 0
+    Optimized_source 0
+    Frozen 0
+    Layer 0
+    Schematic_collapsed 0
+    Schematic_position_X 0.000000
+    Schematic_position_Y 0.000000
+    Object_class_modifier 
+    LUA_class 
+    LUA_initializer 
+    LUA_params 
+    Icon_string 
+    Render_text 
+  end-variables
+
+
+Object-sets-begin
+version 1
+0
+Object-sets-end
+cameras
+   camera 0 0 2
+    cameraType 2
+    cameraKind 0
+    camPosition 3775 0 2755 1
+    camRotation 0 0 0 1
+    camZoom 17.320509
+    width 410
+    height 295
+    aspect 1.389830
+    renderMode 4
+    drawMode 49187
+end-variables
+   camera 1 0 4
+    cameraType 4
+    cameraKind 9
+    camPosition 3775 0 2755 1
+    camRotation 328.037353515625 219.3460693359375 0 1
+    camZoom 17.320509
+    width 410
+    height 295
+    aspect 1.389830
+    renderMode 4
+    drawMode 114723
+    camFOV 0.785398
+end-variables
+   camera 2 0 1
+    cameraType 1
+    cameraKind 6
+    camPosition 3775 0 2755 1
+    camRotation -17.19000053405762 0 0 1
+    camZoom 17.320509
+    width 410
+    height 297
+    aspect 1.380471
+    renderMode 4
+    drawMode 49187
+end-variables
+   camera 3 0 4
+    cameraType 4
+    cameraKind 7
+    camPosition 3775 0 2755 1
+    camRotation -14.36485099792481 1362.498046875 0 -18073800
+    camZoom 269.201538
+    width 823
+    height 614
+    aspect 1.340391
+    renderMode 4
+    drawMode 114723
+    camFOV 0.523599
+end-variables
+end-cameras
+Freespace-map-defined
+settings
+    Name Current scene
+    Disable_AI_Map 0
+    Scene_ambient_color 0.2000000029802322 0.2000000029802322 0.2000000029802322 1
+    Game_ambient_color 0.2000000029802322 0.2000000029802322 0.2000000029802322 1
+    No_lightmap_ambient_color 0.2000000029802322 0.2000000029802322 0.2000000029802322 1
+    Fog_mode 0
+    Fog_color 0 0 0 1
+    Linear_fog_start 10.000000
+    Linear_fog_end 500.000000
+    Visibility_end 500.000000
+    Aiming_limit 1000.000000
+    Lightmap_blur_radius 3.000000
+    Lightmap_soft_samples_scale 0.500000
+    Terrain_lightmap_size 128
+    Lightmap_compression 1
+    Screen_tesselation_factor 1
+    Effect_color 0.5 0.5 0.5 0.5
+    Glow_detection_shader 
+    Sep0 
+    Number_of_glow_passes 2
+    Glow_blur_shader FSE_Gauss
+    Glow_blur_shader:Alpha_test_level 0.000000
+    Glow_blur_shader:Glow_filter_factor 1.000000
+    Glow_blur_shader:Horizontal_filter_start_direction 1 0 0 0
+    Glow_blur_shader:Horizontal_filter_delta 1 0 0 0
+    Glow_blur_shader:Vertical_filter_start_direction 0 1 0 0
+    Glow_blur_shader:Vertical_filter_delta 0 1 0 0
+    Sep2 
+    Full_screen_shader 
+    Visible_terrain_size 1
+    Terrain_degradation_factor 1
+    Terrain_cell_size 10.000000
+    Shadow_color 0 0 0 0.5
+    EAX_Manager_Database eaxmanager.eal
+    Background_color 0.4000000059604645 0.4000000059604645 0.4000000059604645 0
+    Alternative_background_color 0 0 0 1
+    Render_sky 0
+    Sky_cylinder_down_limit 0.000000
+    Sky_cylinder_up_limit 5.000000
+    Sky_cylinder_down_radius 10.000000
+    Sky_cylinder_up_radius 10.000000
+    Sep1 
+    Sky_cylinder_basic_shader #Sky-Basic
+    Sky_cylinder_basic_shader:Alpha_test_level 0.200000
+    Sky_cylinder_basic_shader:Texture_1 
+    Sky_cylinder_basic_shader:Texture_1_scale 1 1 0 0
+    Sky_cylinder_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_1_drift 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2 
+    Sky_cylinder_basic_shader:Texture_2_scale 1 1 0 0
+    Sky_cylinder_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_cylinder_basic_shader:Texture_2_drift 0 0 0 0
+    Sep2 
+    Sky_ceiling_level 5.000000
+    Sky_ceiling_inner_radius 7.000000
+    Sky_ceiling_outer_radius 10.000000
+    Sep3 
+    Sky_ceiling_basic_shader #Sky-Basic
+    Sky_ceiling_basic_shader:Alpha_test_level 0.200000
+    Sky_ceiling_basic_shader:Texture_1 
+    Sky_ceiling_basic_shader:Texture_1_scale 1 1 0 0
+    Sky_ceiling_basic_shader:Texture_1_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_1_drift 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_2 
+    Sky_ceiling_basic_shader:Texture_2_scale 1 1 0 0
+    Sky_ceiling_basic_shader:Texture_2_offset 0 0 0 0
+    Sky_ceiling_basic_shader:Texture_2_drift 0 0 0 0
+    SAVE_maximized_viewport 3
+    SAVE_central_point_X 17.162485
+    SAVE_central_point_Y 54.046242
+    SAVE_visibleRolledView 2
+    SAVE_left_docking_window_size 199
+    SAVE_rolledViewsVisible 1
+    Lightmap_shadowing 1
+    Lightmap_soft_shadowing 0
+    Lightmap_soft_shadow_scale_samples_nr 0
+    Lightmap_terrain_shadowing 0
+    Lightmap_dust 1
+    Lightmap_supersampling 0
+    Lightmap_blur 0
+    Initial_X_position_on_Schematic_View 60.000000
+    Initial_Y_position_on_Schematic_View 0.000000
+end-variables
+
+end-settings

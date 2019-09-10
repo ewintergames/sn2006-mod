@@ -1,0 +1,517 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 01:07:44
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+gLua(gLua["RegisterClass"], "CLESlideShowScreen", "CLEUserInterfaceScreen");
+
+function CLEUserInterfaceScreen["OnSaveGame"](self) end
+
+
+function CLEUserInterfaceScreen["OnSwitchLevel"](self) end
+
+
+function CLEUserInterfaceScreen["OnWeaponChanged"](self) end
+
+
+function CLEUserInterfaceScreen["IsStandardInputDisabled"](self) end
+
+
+function CLEUserInterfaceScreen["OnRefresh"](self) end
+
+
+function CLEUserInterfaceScreen["OnProcessInput"](self) end
+
+
+function CLEUserInterfaceScreen["OnObjectDeleted"](self, obj) end
+
+
+function CLEUserInterfaceScreen["OnSetDialogText"](self, flags, speaker) end
+
+
+function CLEUserInterfaceScreen["OnEndScheme"](self) end
+
+
+function CLEUserInterfaceScreen["OnMouseMove"](self, x, y) end
+
+
+function CLEUserInterfaceScreen["OnInitialize"](self)
+	self["ActiveDialogWindow"]=1;
+	self["DialogSpeakerName"]={};
+	self["DialogText"]={};
+	if not (self["SubtitleTextPosition"]) then
+		self["SubtitleTextPosition"]=CVector2(CVector2["instance"], 18, 655);
+	end
+	
+	local pos=self["SubtitleTextPosition"];
+	local i=IDT_Nil;
+	for i=1, 2 do
+		self["DialogText"][i]=CLEUserInterfaceTextWindow(CLEUserInterfaceTextWindow["new"]);
+		self["DialogText"][i](self["DialogText"][i]["SetFont"], "SUBTITLE");
+		self["DialogText"][i](self["DialogText"][i]["SetPosition"], pos["x"], pos["y"]);
+		self["DialogText"][i](self["DialogText"][i]["SetLineSpacing"], 0,95);
+		self["DialogText"][i](self["DialogText"][i]["Hide"]);
+		if (self["SubtitleWindowParent"]) then
+			self["SubtitleWindowParent"](self["SubtitleWindowParent"]["AddChild"], self["DialogText"][i]);
+			self["DialogText"][i](self["DialogText"][i]["SetSize"], (self["SubtitleWindowParent"](self["SubtitleWindowParent"]["SizeX"]) - (2 * pos["x"])), ((self["SubtitleWindowParent"](self["SubtitleWindowParent"]["SizeY"]) - pos["y"]) - 10));
+		else
+			self(self["Add"], self["DialogText"][i]);
+			self["DialogText"][i](self["DialogText"][i]["SetSize"], (1024 - (2 * pos["x"])), 100);
+		end
+		
+	end
+	
+	self["FadingRect"]=CLEUserInterfaceElement(CLEUserInterfaceElement["new"]);
+	self["FadingRect"](self["FadingRect"]["SetColor"], 0, 0, 0, 0);
+	self["FadingRect"](self["FadingRect"]["SetSize"], 1024, 768);
+	self["FadingRect"](self["FadingRect"]["SetFocusable"], false);
+	self["FadingRect"](self["FadingRect"]["Hide"]);
+	self(self["Add"], self["FadingRect"]);
+	if (gFixMode) then
+		self["PreviewText"]=CLEUserInterfaceText(CLEUserInterfaceText["new"], "LOCALIZATION KIT - NOT FOR DISTRIBUTION");
+		self["PreviewText"](self["PreviewText"]["SetFont"], "FEDERATION_BIG2");
+		self["PreviewText"](self["PreviewText"]["SetPosition"], 1020, 0);
+		self["PreviewText"](self["PreviewText"]["SetColor"], 1, 1, 1, 0,2);
+		self["PreviewText"](self["PreviewText"]["SetAlignment"], UITEXTALIGN_RIGHT);
+		self(self["Add"], self["PreviewText"]);
+	end
+	
+	self(self["UnacquireTextures"]);
+	self["ActiveUISoundChannel"]=0;
+
+end
+
+
+function CLEUserInterfaceScreen["OnCutsceneBegin"](self)
+	self["DialogText"][1](self["DialogText"][1]["SetText"], IDT_Nil);
+	self["DialogText"][2](self["DialogText"][2]["SetText"], IDT_Nil);
+
+end
+
+
+function CLEUserInterfaceScreen["OnInstantCutsceneEnd"](self)
+	local t=self["ActiveDialogWindow"];
+	self["DialogText"][t](self["DialogText"][t]["RemoveAllUIActions"]);
+	self["DialogText"][t](self["DialogText"][t]["Hide"]);
+
+end
+
+
+function CLEUserInterfaceScreen["OnCutsceneEnd"](self)
+	local t=self["ActiveDialogWindow"];
+	self["DialogText"][t](self["DialogText"][t]["RemoveAllUIActions"]);
+	self["DialogText"][t](self["DialogText"][t]["Hide"]);
+
+end
+
+
+function CLEUserInterfaceScreen["OnSetDialogText"](self, flags, speaker, lifeTime)
+	if (flags) and (flags=="") then
+		if (gDebug(gDebug["GetFloatFeelAttribute"], "Game", "Subtitle")==1) then
+			local act=self["ActiveDialogWindow"];
+			local inact=(2 - act);
+			local delay=0;
+			local color=IDT_Nil;
+			if (self["DialogText"][inact](self["DialogText"][inact]["IsVisible"])) then
+				delay=0,1;
+				color=Vector(Vector["instance"], self["DialogText"][inact](self["DialogText"][inact]["GetColor"]));
+				color["w"]=0;
+				self["DialogText"][inact](self["DialogText"][inact]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], delay, color));
+				self["DialogText"][inact](self["DialogText"][inact]["AddUIAction"], CLEUIActionShowHide(CLEUIActionShowHide["new"], 0, false));
+			end
+			
+			color=Vector(Vector["instance"], self["DialogText"][act](self["DialogText"][act]["GetColor"]));
+			color["w"]=0;
+			self["DialogText"][act](self["DialogText"][act]["RemoveAllUIActions"]);
+			self["DialogText"][act](self["DialogText"][act]["SetColorV"], color);
+			if (delay>0) then
+				self["DialogText"][act](self["DialogText"][act]["AddUIAction"], CLEUIAction(CLEUIAction["new"], delay));
+			end
+			
+			self["DialogText"][act](self["DialogText"][act]["AddUIAction"], CLEUIActionShowHide(CLEUIActionShowHide["new"], 0, true));
+			color["w"]=1;
+			self["DialogText"][act](self["DialogText"][act]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], 0,3, color));
+			self["DialogText"][act](self["DialogText"][act]["SetText"], IDT_Nil);
+			if not (lifeTime) then
+				if (type(speaker)=="number") then
+					lifeTime=speaker;
+					speaker=IDT_Nil;
+				end
+				
+			end
+			
+			if not (speaker) or not (speaker["NoSubtitles"]) then
+				self(self["AppendDialogText"], self["DialogText"][act]);
+			end
+			
+			do return true end;
+			
+		end
+		
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["OnBecomeActive"](self, previous)
+	self["PreviousUISoundChannel"]=gGame(gGame["GetUISoundChannel"]);
+	gGame(gGame["SetUISoundChannel"], self["ActiveUISoundChannel"]);
+
+end
+
+
+function CLEUserInterfaceScreen["OnBecomeInactive"](self, next)
+	local t=self["ActiveDialogWindow"];
+	self["DialogText"][t](self["DialogText"][t]["RemoveAllUIActions"]);
+	self["DialogText"][t](self["DialogText"][t]["Hide"]);
+	if (self["PreviousUISoundChannel"]) then
+		gGame(gGame["SetUISoundChannel"], self["PreviousUISoundChannel"]);
+		self["PreviousUISoundChannel"]=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["OnBeforeRender"](self) end
+
+
+function CLEUserInterfaceScreen["InstantFadeIn"](self)
+	self["FadingRect"](self["FadingRect"]["RemoveAllUIActions"]);
+	self["FadingRect"](self["FadingRect"]["SetColor"], 0, 0, 0, 0);
+	self["FadingRect"](self["FadingRect"]["Hide"]);
+	if (self["ClearFullScreenFlag"]) then
+		self(self["SetFullScreen"], false);
+		self["ClearFullScreenFlag"]=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["FadeIn"](self, tm)
+	if not (tm) then
+		tm=0,3;
+	end
+	
+	self["FadeColor"](self["FadeColor"]["Set"], 0, 0, 0, 0);
+	self["FadeTime"]=tm;
+	self(self["OnFade"]);
+
+end
+
+
+function CLEUserInterfaceScreen["FadeOut"](self, tm, color)
+	if not (tm) then
+		tm=0,3;
+	end
+	
+	if (color) then
+		self["FadeColor"](self["FadeColor"]["Set"], color);
+	else
+		self["FadeColor"](self["FadeColor"]["Set"], 0, 0, 0, 1);
+	end
+	
+	self["FadeTime"]=tm;
+	self(self["OnFade"]);
+
+end
+
+
+function CLEUserInterfaceScreen["InstantFadeOut"](self, color)
+	if (color) then
+		self["FadeColor"](self["FadeColor"]["Set"], color);
+	else
+		self["FadeColor"](self["FadeColor"]["Set"], 0, 0, 0, 1);
+	end
+	
+	self["FadingRect"](self["FadingRect"]["SetColorV"], self["FadeColor"]);
+	self["FadingRect"](self["FadingRect"]["Show"]);
+
+end
+
+
+function CLEUserInterfaceScreen["OnFade"](self, keepPreviousActions)
+	if not (keepPreviousActions) then
+		self["FadingRect"](self["FadingRect"]["RemoveAllUIActions"]);
+	end
+	
+	self["FlashScreenActive"]=false;
+	self["FadingRect"](self["FadingRect"]["Show"]);
+	if (self["FadeDelay"]) then
+		if (self["FadeDelay"]>0) then
+			self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIAction(CLEUIAction["new"], self["FadeDelay"]));
+		end
+		
+	end
+	
+	self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], self["FadeTime"], self["FadeColor"]));
+	if (self["FadeColor"]["w"]<=0) then
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionShowHide(CLEUIActionShowHide["new"], 0, false));
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["FlashScreen"](self, color, attackTime, sustainTime, releaseTime)
+	if (self["FadingRect"](self["FadingRect"]["IsUIActionActive"])) and (self["FlashScreenActive"]) then
+		self["FlashScreenActive"]=true;
+		self["FadingRect"](self["FadingRect"]["RemoveAllUIActions"]);
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], attackTime, color));
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIAction(CLEUIAction["new"], sustainTime));
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], releaseTime, color["x"], color["y"], color["z"], 0, true, UIACTION_HALFSINE));
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], 0, 0, 0, 0, 0));
+		self["FadingRect"](self["FadingRect"]["AddUIAction"], CLEUIActionShowHide(CLEUIActionShowHide["new"], 0, false));
+		self["FadingRect"](self["FadingRect"]["Show"]);
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["IsFadingComplete"](self)
+	self(self["ReturnBool"], (not self["FadingRect"](self["FadingRect"]["IsUIActionActive"])));
+
+end
+
+
+function CLEUserInterfaceScreen["OnAfterRender"](self)
+	local c=self["FadingRect"](self["FadingRect"]["GetColor"]);
+	if (c["w"]==1) then
+		if (self["FadingRect"](self["FadingRect"]["IsVisible"])) then
+			if not (self(self["IsFullScreen"])) then
+				self["ClearFullScreenFlag"]=true;
+				self(self["SetFullScreen"], true);
+			else
+				if (self["ClearFullScreenFlag"]) then
+					self(self["SetFullScreen"], false);
+					self["ClearFullScreenFlag"]=IDT_Nil;
+				end
+				
+			end
+			
+		end
+		
+		if (self["FadingRect"](self["FadingRect"]["IsVisible"])) then
+			if (c["w"]==0) then
+				if not (self["FadingRect"](self["FadingRect"]["IsUIActionActive"])) then
+					gConsole(gConsole["print"], COLOR_RED, "Fade rect visible with w=0!!!");
+					self["FadingRect"](self["FadingRect"]["Hide"]);
+				end
+				
+			end
+			
+		end
+		
+		if (self["AfterFadeGoToScreen"]) then
+			if not (self["FadingRect"](self["FadingRect"]["IsUIActionActive"])) then
+				self["FadeColor"]["w"]=0;
+				self["FadingRect"](self["FadingRect"]["SetColorV"], self["FadeColor"]);
+				self["FadingRect"](self["FadingRect"]["Hide"]);
+				if (self["ClearFullScreenFlag"]) then
+					self(self["SetFullScreen"], false);
+					self["ClearFullScreenFlag"]=IDT_Nil;
+				end
+				
+				local screen=self["AfterFadeGoToScreen"];
+				self["AfterFadeGoToScreen"]=IDT_Nil;
+				gConsole(gConsole["print"], "Fade to: "..tostring(screen));
+				gGame(gGame["AddInterfaceScreen"], screen);
+			end
+			
+		end
+		
+		if (self["AfterFadeAction"]) then
+			if not (self["FadingRect"](self["FadingRect"]["IsUIActionActive"])) then
+				local act=self["AfterFadeAction"];
+				self["AfterFadeAction"]=IDT_Nil;
+				gConsole(gConsole["print"], "Action: "..screen);
+				igScreenCaller=self;
+				dostring("local self=igScreenCaller; "..screen);
+				igScreenCaller=IDT_Nil;
+			end
+			
+		end
+		
+
+end
+
+
+function CLEUserInterfaceScreen["FadeToScreen"](self, screen, tm, dl, color)
+	if not (tm) then
+		tm=0,2;
+	end
+	
+	if not (dl) then
+		dl=0;
+	end
+	
+	if not (color) then
+		self["FadeColor"](self["FadeColor"]["Set"], 0, 0, 0, 1);
+	else
+		self["FadeColor"](self["FadeColor"]["Set"], color);
+	end
+	
+	self["FadeDelay"]=dl;
+	self["FadeTime"]=tm;
+	self(self["OnFade"]);
+	self["AfterFadeGoToScreen"]=screen;
+	gConsole(gConsole["print"], "After fade screen: "..tostring(getUIScreenName(self["AfterFadeGoToScreen"])));
+
+end
+
+
+function CLEUserInterfaceScreen["Message"](self, msg, tm)
+	if not (tm) then
+		tm=8;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceScreen["BigProgramError"](self, text)
+	if not (self["BigErrorText"]) then
+		self["BigErrorText"]=CLEUserInterfaceText(CLEUserInterfaceText["new"], IDT_Nil);
+		self["BigErrorText"](self["BigErrorText"]["SetFont"], "FEDERATION_BIG2");
+		self["BigErrorText"](self["BigErrorText"]["SetAlignment"], UITEXTALIGN_CENTER, UITEXTALIGN_CENTER);
+		self["BigErrorText"](self["BigErrorText"]["SetPosition"], (1024 / 2), (768 / 2));
+		self(self["Add"], self["BigErrorText"]);
+	end
+	
+	self["BigErrorText"](self["BigErrorText"]["SetText"], text);
+	self["BigErrorText"](self["BigErrorText"]["Show"]);
+
+end
+
+
+function reportCursorPosition()
+	local scr=gGame(gGame["GetCurrentScreen"]);
+	if (scr) then
+		local pos=scr(scr["GetCursorPosition"]);
+		gConsole(gConsole["print"], "Cursor: "..pos["x"]..", "..pos["y"]);
+	end
+	
+
+end
+
+
+function switchToSlideShowScreen(screenQueue, finishCode)
+	if not (gInterfaceScreens["SlideShow"]) then
+		gInterfaceScreens["SlideShow"]=CLESlideShowScreen(CLESlideShowScreen["new"]);
+	end
+	
+	gInterfaceScreens["SlideShow"]["Queue"]=screenQueue;
+	gInterfaceScreens["SlideShow"]["FinishCode"]=finishCode;
+	gGame(gGame["GetCurrentScreen"])(gGame(gGame["GetCurrentScreen"])["FadeToScreen"], gInterfaceScreens["SlideShow"]);
+
+end
+
+
+function CLESlideShowScreen["new"](self)
+	local p=CLEUserInterfaceScreen(CLEUserInterfaceScreen["new"]);
+	p=tolua["cast"](p, "CLESlideShowScreen");
+	p(p["SetTag"], "CLESlideShowScreen");
+	p(p["OnInitialize"]);
+	return p;
+	
+
+end
+
+
+function CLESlideShowScreen["OnInitialize"](self)
+	self(self["PauseAware"], false);
+	self(self["SetFullScreen"], true);
+	self["SlidePic"]=CLEUserInterfacePicture(CLEUserInterfacePicture["new"], IDT_Nil);
+	self["SlidePic"](self["SlidePic"]["Hide"]);
+	self(self["Add"], self["SlidePic"]);
+	CLEUserInterfaceScreen["OnInitialize"](self);
+
+end
+
+
+function CLESlideShowScreen["ShowNextPicture"](self)
+	self["QueueIndex"]=(self["QueueIndex"] + 1);
+	if (self["Queue"]) then
+		if (self["QueueIndex"]<=getn(self["Queue"])) then
+			local pic=self["Queue"][self["QueueIndex"]];
+			self["SlidePic"](self["SlidePic"]["RemoveAllUIActions"]);
+			self["SlidePic"](self["SlidePic"]["SetTexture"], pic["Texture"]);
+			if (pic["FullScreen"]) then
+				self["SlidePic"](self["SlidePic"]["OverridePictureSize"], 1024, 768);
+			end
+			
+			self["SlidePic"](self["SlidePic"]["SetPosition"], ((1024 - self["SlidePic"](self["SlidePic"]["SizeX"])) / 2), ((768 - self["SlidePic"](self["SlidePic"]["SizeY"])) / 2));
+			self["SlidePic"](self["SlidePic"]["SetColor"], 1, 1, 1, 0);
+			local fadeIn=pic["FadeIn"];
+			if not (fadeIn) then
+				fadeIn=0,5;
+			end
+			
+			self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], fadeIn, 1, 1, 1, 1));
+			local still=pic["Still"];
+			if not (still) then
+				still=5;
+			end
+			
+			self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIAction(CLEUIAction["new"], still));
+			if (pic["FadeOutCode"]) then
+				self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIActionStartStop(CLEUIActionStartStop["new"], 0, pic["FadeOutCode"]));
+			end
+			
+			local fadeOut=pic["FadeOut"];
+			if not (fadeOut) then
+				fadeOut=0,5;
+			end
+			
+			self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIActionColor(CLEUIActionColor["new"], fadeOut, 1, 1, 1, 0));
+			if (pic["Pause"]) then
+				self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIAction(CLEUIAction["new"], pic["Pause"]));
+			end
+			
+			self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIActionStartStop(CLEUIActionStartStop["new"], 0, "self:GetScreen().NextPictureRequest=true"));
+			self["SlidePic"](self["SlidePic"]["AddUIAction"], CLEUIActionShowHide(CLEUIActionShowHide["new"], 0, false));
+			self["SlidePic"](self["SlidePic"]["Show"]);
+			do return true end;
+			
+		end
+		
+	end
+	
+	return false;
+	
+
+end
+
+
+function CLESlideShowScreen["OnBecomeActive"](self, prev)
+	CLEUserInterfaceScreen["OnBecomeActive"](self, prev);
+	self["QueueIndex"]=0;
+	self(self["ShowNextPicture"]);
+
+end
+
+
+function CLESlideShowScreen["ProcessInput"](self)
+	self(self["ReturnBool"], true);
+
+end
+
+
+function CLESlideShowScreen["OnBeforeRender"](self)
+	if (self["NextPictureRequest"]) then
+		self["NextPictureRequest"]=false;
+		if (self(self["ShowNextPicture"])) or (self["FinishCode"]) then
+			igCLESlideShowScreenCaller=self;
+			dostring("local self=igCLESlideShowScreenCaller; "..self["FinishCode"]);
+			igCLESlideShowScreenCaller=IDT_Nil;
+		end
+		
+	end
+	
+
+end
+
+

@@ -1,0 +1,564 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 01:03:29
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+gWaterSplashEffectData={};
+gWaterSplashEffectData["SpecialEffect"]="WaterSplash";
+gWaterSplashEffectData["Sounds"]={"impacts/physic-items/object_into_water-splash1",
+	"impacts/physic-items/object_into_water-splash2"};
+gWaterSplashEffectData["RagdollSounds"]={"impacts/physic-items/ragdoll_into_water-splash"};
+gWaterSplashEffectData["RagdollBodies"]={};
+gWaterSplashEffectData["RagdollBodies"]["mdl.jnt_klata"]=true;
+gWaterSplashEffectData["RagdollBodies"]["mdl.r_stopa"]=true;
+gWaterSplashEffectData["RagdollBodies"]["mdl.l_dlon"]=true;
+
+function CMeshObject["AddToSoundContactProcessingFlags"](self, flag)
+	if not (self["SoundCPFlags"]) then
+		self["SoundCPFlags"]=0;
+	end
+	
+	self["SoundCPFlags"]=bor(self["SoundCPFlags"], flag);
+	local flags=self(self["GetContactProcessingFlags"]);
+	flags=bor(flags, self["SoundCPFlags"]);
+	self(self["SetContactProcessingFlags"], flags);
+
+end
+
+
+function CMeshObject["OnCreatePhysicsInst"](self)
+	CBaseObject["OnCreatePhysicsInst"](self);
+	if (self["SoundCPFlags"]) then
+		self(self["AddToSoundContactProcessingFlags"], 0);
+	end
+	
+
+end
+
+
+function CMeshObject["OnDestroyPhysicsInst"](self)
+	CBaseObject["OnDestroyPhysicsInst"](self);
+	self(self["InvalidatePhysicsSound"], true);
+
+end
+
+
+function CMeshObject["OnLevelReloaded"](self)
+	CBaseObject["OnLevelReloaded"](self);
+	if (self["LoopedSound"]) then
+		gSoundEngine(gSoundEngine["_PreloadFreeWave"], self["LoopedSound"]..".wav", true);
+		if (self["LoopedSoundActive"]) then
+			local freqRand=IDT_Nil;
+			if (self["LoopedWaveFreqencyRandomizer"]) then
+				freqRand=self["LoopedWaveFreqencyRandomizer"];
+			else
+				freqRand=0;
+			end
+			
+			self(self["PlayWave"], self["LoopedSound"], true, 1, freqRand);
+		end
+		
+	end
+	
+	self(self["PreloadSoundDBAssets"]);
+	self(self["InvalidatePhysicsSound"]);
+
+end
+
+
+function CMeshObject["ContactsCallback"](self, dynamic, avgPosition, avgNormal, collider)
+	self(self["ProcessContactsSound"], avgNormal);
+
+end
+
+
+function CMeshObject["ContactHitCallback"](self, hit, dynamic, hitPos, normal, bodyName, collider, colliderBodyName)
+	self(self["ProcessHitSound"], hit, hitPos, normal, bodyName, collider, colliderBodyName);
+
+end
+
+
+function CMeshObject["ContactSlideCallback"](self, slide, dynamic, pos, normal, bodyName, collider, colliderBodyName)
+	self(self["ProcessSlideSound"], slide, pos, normal, bodyName, collider, colliderBodyName);
+
+end
+
+
+function CMeshObject["ContactEndCallback"](self)
+	self(self["ProcessContactEndSound"]);
+
+end
+
+
+function CMeshObject["ContactSlideEndCallback"](self)
+	self(self["ProcessSlideEndSound"]);
+
+end
+
+
+function CMeshObject["SetupSoundCallbacks"](self) end
+
+
+function CMeshObject["GetWaterSplashRagdollBodies"](self)
+	return gWaterSplashEffectData["RagdollBodies"];
+	
+
+end
+
+
+function CMeshObject["WaterSplashCallback"](self, waterPoint, waterNormal, bodyName)
+	self(self["InvalidatePhysicsSound"]);
+	if (self["NoPhysicsSound"]) then
+		do return end;
+		
+	end
+	
+	if (gObjectManager) then
+		local startEffect=IDT_Nil;
+		local soundsTable=IDT_Nil;
+		if (self(self["IsUsingDoll"])) then
+			local bodies=self(self["GetWaterSplashRagdollBodies"]);
+			if (bodies) then
+			end
+			
+			startEffect=bodies[bodyName];
+			if (startEffect) then
+				if not (bodies(self, self["IsInWater"])) then
+					self["WaterSplashForRagdoll"]=false;
+				end
+				
+				if not (self["WaterSplashForRagdoll"]) then
+					self["WaterSplashForRagdoll"]=true;
+					soundsTable=gWaterSplashEffectData["RagdollSounds"];
+				end
+				
+			end
+			
+		else
+			startEffect=true;
+			soundsTable=gWaterSplashEffectData["Sounds"];
+		end
+		
+		if (startEffect) then
+			gObjectManager(gObjectManager["StartSpecialEffect"], gWaterSplashEffectData["SpecialEffect"], 2, 0, NULL, waterPoint);
+			if (soundsTable) then
+				local soundsNo=getn(soundsTable);
+				local waveFile=soundsTable[random(bodies)];
+				self(self["PlayWave"], soundsNo);
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["CreateInsideItems"](self, itemsList, extendX, extendZ, ofsX, ofsY, ofsZ)
+	if (itemsList) and (extendX) and (extendZ) then
+		if not (ofsX) then
+		end
+		
+		ofsX=0;
+		if not (ofsY) then
+		end
+		
+		ofsY=0;
+		if not (ofsZ) then
+		end
+		
+		ofsZ=0;
+		local count=getn(itemsList);
+		local layers=ceil((count / 4));
+		gConsole(gConsole["print"], COLOR_ORANGE, "Create "..count.." items in "..layers.." layers");
+		local delta1={{x=0,
+		z=0}};
+		local delta2={{x=-1,
+		z=0},
+			{x=1,
+		z=0}};
+		local delta4={{x=1,
+		z=1},
+			{x=-1,
+		z=1},
+			{x=-1,
+		z=-1},
+			{x=1,
+		z=-1}};
+		local deltas={delta1,
+			delta2,
+			delta4,
+			delta4};
+		local ofsV=CVector3(CVector3["instance"]);
+		local itemIndex=1;
+		for i=1, layers do
+			local inLayer=min(4, count);
+			count=(count - inLayer);
+			local delta=deltas[inLayer];
+			for k=1, inLayer do
+				local itemInfo=itemsList[itemIndex];
+				itemIndex=(itemIndex + 1);
+				local itemDelta=delta[k];
+				ofsV(ofsV["Set"], ((itemDelta["x"] * extendX) + ofsX), (ofsY * ((layers - i) + 1)), ((itemDelta["z"] * extendZ) + ofsZ));
+				if not (itemInfo["VisibleTemplate"]) then
+					if not (igSupplyItemIcons3D[itemInfo["Name"]]) then
+						local visibleTemplate=itemInfo["Name"];
+					end
+					
+				end
+				
+				itemInfo["Object"]=gObjectManager(gObjectManager["CreateObject"], visibleTemplate, self, ofsV);
+				if (itemInfo["Object"]) then
+				else
+					gConsole(gConsole["print"], COLOR_RED, self["Name"]..":Can't create inside item "..tostring(itemInfo["Name"]));
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["CreateDynamicLight"](self) end
+
+
+function CMeshObject["ActivateRandomAnimation"](self, animSet, script, loop)
+	local tm=0;
+	if (getn(animSet)>0) then
+		local no=random(getn(animSet));
+		if (animSet[no]["System"]) then
+			tm=self(self["ActivateSystemAnimation"], animSet[no]["Name"], loop, script);
+			if (tm==0) then
+				if (script) then
+					gMeshObjectCaller=self;
+					dostring("local self=gMeshObjectCaller; "..script);
+					gMeshObjectCaller=IDT_Nil;
+				else
+					local flags=ACTANIM_SOUND;
+					if (loop) then
+						flags=bor(flags, ACTANIM_LOOP);
+					end
+					
+					tm=self(self["ActivateAnimation"], animSet[no]["Name"], flags, script);
+				end
+				
+			end
+			
+		end
+		
+		self(self["Debug"], "Animation:", animSet[no]["Name"]);
+	else
+		self(self["Error"], "Empty animation set");
+	end
+	
+	return tm;
+	
+
+end
+
+
+function CMeshObject["PlayAnimationQueue"](self, queue, loop, flags)
+	self(self["Debug"], "Begin animation queue");
+	if (self["AnimationQueue"]) then
+		self(self["BreakAnimationQueue"]);
+	end
+	
+	self["AnimationQueue"]=queue;
+	self["AnimationQueueIndex"]=0;
+	self["NextAnimationQueueIndex"]=0;
+	self["AnimationQueueLoop"]=loop;
+	self["NoIdleAnimOld"]=self["NoIdleAnim"];
+	self["NoIdleAnim"]=true;
+	if (flags) then
+		self["AnimationQueueFlags"]=flags;
+	else
+		self["AnimationQueueFlags"]=0;
+	end
+	
+	self(self["AdvanceNextAnimationQueueIndex"]);
+	self(self["PlayNextAnimation"]);
+
+end
+
+
+function CMeshObject["PlayNextAnimation"](self)
+	local tm=0;
+	self(self["Debug"], "NextAnim!");
+	if not (self["AnimationQueue"]) or (self["AnimationQueueIndex"]) then
+		if (self["AnimationQueueIndex"]>0) then
+			if (self["AnimationQueue"][self["AnimationQueueIndex"]]["Action"]) then
+				gAnimCaller=self;
+				dostring("local self=gAnimCaller; "..self["AnimationQueue"][self["AnimationQueueIndex"]]["Action"]);
+				gAnimCaller=IDT_Nil;
+			end
+			
+		end
+		
+		self["AnimationQueueIndex"]=self["NextAnimationQueueIndex"];
+		if (self["AnimationQueueIndex"]<=getn(self["AnimationQueue"])) then
+			do
+				local anim=self["AnimationQueue"][self["AnimationQueueIndex"]];
+				self(self["AdvanceNextAnimationQueueIndex"]);
+				local timeCut=0;
+				local releaseTime=0,25;
+				if (anim["FadeOutTime"]) then
+					releaseTime=anim["FadeOutTime"];
+					if not (anim["MC"]) then
+						timeCut=anim["FadeOutTime"];
+					end
+					
+				end
+				
+				local flags=bor(ACTANIM_SOUND, self["AnimationQueueFlags"]);
+				if (anim["Loop"]) then
+					flags=bor(flags, ACTANIM_LOOP);
+				end
+				
+				if (anim["NoInterpolation"]) then
+					flags=bor(flags, ACTANIM_NOINTERP, ACTANIM_IMMEDIATE);
+				end
+				
+				local timeScale=IDT_Nil;
+				if (anim["TimeScale"]) then
+					timeScale=anim["TimeScale"];
+				else
+					timeScale=1;
+				end
+				
+				local tmp=self["AnimationQueueIndex"];
+				self["AnimationQueueIndex"]=IDT_Nil;
+				local animName=IDT_Nil;
+				if not (anim["System"]) or (self["ResolveSystemAnimation"]) then
+					animName=self(self["ResolveSystemAnimation"], anim["Name"]);
+				else
+					animName=anim["Name"];
+				end
+				
+				tm=self(self["ActivateAnimation"], animName, flags, IDT_Nil, IDT_Nil, timeScale, 0, -1, releaseTime);
+				tm=max(0, (tm - timeCut));
+				self(self["Debug"], "Anim:", animName, ", time: ", (tm + timeCut), ", cut: ", timeCut);
+				if not (anim["Loop"]) then
+					self(self["AddTimerCall"], "PlayNextAnimation", tm);
+				end
+				
+				if (anim["StartAction"]) then
+					igAnimName=animName;
+					igAnimCaller=self;
+					dostring("local self=igAnimCaller; "..anim["StartAction"]);
+					igAnimCaller=IDT_Nil;
+					igAnimName=IDT_Nil;
+				end
+				
+				self["AnimationQueueIndex"]=tmp;
+			else
+				local backToIdle=false;
+				if (getn(self["AnimationQueue"])<1) or not (self["AnimationQueue"][getn(self["AnimationQueue"])]["Still"]) then
+					anim=true;
+				end
+				
+				self["AnimationQueue"]=IDT_Nil;
+				self["AnimationQueueIndex"]=IDT_Nil;
+				self["NoIdleAnim"]=self["NoIdleAnimOld"];
+				self["NoIdleAnimOld"]=IDT_Nil;
+				if (anim) then
+					self(self["Debug"], "Anim queue finished");
+				end
+				
+			end
+			
+		end
+		
+		return tm;
+		
+
+end
+
+
+function CMeshObject["AdvanceNextAnimationQueueIndex"](self)
+	if (self["NextAnimationQueueIndex"]<=0) or not (self["AnimationQueue"][self["NextAnimationQueueIndex"]]["Repeat"]) then
+		if (band(self["AnimationQueueFlags"], ACTANIM_RANDOMREPEAT)==0) then
+			self["NextAnimationQueueIndex"]=(self["NextAnimationQueueIndex"] + 1);
+			if (self["NextAnimationQueueIndex"]>getn(self["AnimationQueue"])) and (self["AnimationQueueLoop"]) then
+				self["NextAnimationQueueIndex"]=1;
+			else
+				if (self["NextAnimationQueueIndex"]>0) then
+					if (self["AnimationQueue"][self["NextAnimationQueueIndex"]]["NoRandomRepeat"]) then
+						self["NextAnimationQueueIndex"]=(self["NextAnimationQueueIndex"] + 1);
+						if (self["NextAnimationQueueIndex"]>getn(self["AnimationQueue"])) then
+							self["NextAnimationQueueIndex"]=1;
+						else
+							self["NextAnimationQueueIndex"]=random(getn(self["AnimationQueue"]));
+						end
+						
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+
+end
+
+
+function CMeshObject["BreakAnimationQueue"](self, noIdleAnim)
+	self(self["Debug"], "BreakAnimationQueue");
+	if (self["AnimationQueue"]) then
+		self["AnimationQueue"]=IDT_Nil;
+		self["AnimationQueueIndex"]=IDT_Nil;
+		self["AnimationQueueLoop"]=IDT_Nil;
+		self["AnimationQueueFlags"]=IDT_Nil;
+		self(self["DeleteTimerCalls"], "PlayNextAnimation");
+		self["NoIdleAnim"]=self["NoIdleAnimOld"];
+		self["NoIdleAnimOld"]=IDT_Nil;
+		if not (noIdleAnim) then
+			self(self["ActivateAnimation"], IDT_Nil);
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["DummyAnimationCallback"](self)
+	if (self["DummyAnimationCode"]) then
+		igDACCaller=self;
+		dostring("local self=igDACCaller; "..self["DummyAnimationCode"]);
+		igDACCaller=IDT_Nil;
+	end
+	
+
+end
+
+
+function CMeshObject["Disappear"](self, tm)
+	if not (tm) then
+		tm=2;
+	end
+	
+	self(self["BlendObject"], tm, 1, true);
+	self(self["AddTimerCall"], "DeleteMe", (tm + 0,1));
+
+end
+
+
+function CMeshObject["PhysicsUpdateCallback"](self)
+	if (self["NoGravityMult"]) then
+		self(self["SetAntiGravityForce"], self["NoGravityMult"]);
+	end
+	
+
+end
+
+
+function CMeshObject["NoGravity"](self, a)
+	self["NoGravityMult"]=a;
+
+end
+
+
+function CMeshObject["FadeInEffect"](self, resetValue)
+	if (self["MaxEffectValue"]) then
+		if (self["EffectValue"]>self["MaxEffectValue"]) then
+			self(self["Hide"], false);
+			self["EffectValue"]=(self["EffectValue"] - self["EffectSpeed"]);
+			if (self["EffectValue"]<self["MaxEffectValue"]) then
+				self["EffectValue"]=self["MaxEffectValue"];
+			end
+			
+			self(self["SetSolidShaderFloatParameter"], 1, self["EffectValue"]);
+			self(self["AddTimerCall"], "self:FadeInEffect()", 0,01);
+		else
+			if (self["ResetValue"]) then
+				self["EffectValue"]=self["ResetValue"];
+			end
+			
+			self["MaxEffectValue"]=IDT_Nil;
+			self(self["Hide"], true);
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["FadeOutEffect"](self)
+	if (self["MaxEffectValue"]) then
+		if (self["EffectValue"]<self["MaxEffectValue"]) then
+			self(self["Hide"], false);
+			self["EffectValue"]=(self["EffectValue"] + self["EffectSpeed"]);
+			self(self["SetSolidShaderFloatParameter"], 1, self["EffectValue"]);
+			if (self["EffectValue"]>self["MaxEffectValue"]) then
+				self["EffectValue"]=self["MaxEffectValue"];
+			end
+			
+			self(self["AddTimerCall"], "self:FadeOutEffect()", 0,01);
+		else
+			self(self["Hide"], true);
+			self["MaxEffectValue"]=IDT_Nil;
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["SolidShaderFadeOutEffect"](self)
+	if (self["MaxEffectValue"]) then
+		if (self["EffectValue"]<self["MaxEffectValue"]) then
+			self(self["Hide"], false);
+			self["EffectValue"]=(self["EffectValue"] + self["EffectSpeed"]);
+			self(self["SetSolidShaderFloatParameter"], 1, self["EffectValue"]);
+			if (self["EffectValue"]>self["MaxEffectValue"]) then
+				self["EffectValue"]=self["MaxEffectValue"];
+			end
+			
+			self(self["AddTimerCall"], "self:SolidShaderFadeOutEffect()", 0,1);
+		end
+		
+	end
+	
+
+end
+
+
+function CMeshObject["SolidShaderFadeEffect"](self, val, tm)
+	self(self["Hide"], false);
+	self["StartTime"]=CGameTime(CGameTime["instance"], gGame["CurrentFrameTime"]);
+	self["EffectTime"]=tm;
+	self["TargetValue"]=val;
+	self["EffectStartValue"]=self["EffectValue"];
+	if (tm==0) then
+		self["EffectValue"]=val;
+	else
+		self(self["UpdateShaderFadeValue"]);
+	end
+	
+	self(self["SetSolidShaderFloatParameter"], 1, self["EffectValue"]);
+
+end
+
+
+function CMeshObject["UpdateShaderFadeValue"](self)
+	local t=(gGame["CurrentFrameTime"](gGame["CurrentFrameTime"]["TimeDifference"], self["StartTime"]) / self["EffectTime"]);
+	if (t<=1) then
+		self["EffectValue"]=(self["EffectStartValue"] + ((self["TargetValue"] - self["EffectStartValue"]) * t));
+		self(self["SetSolidShaderFloatParameter"], 1, self["EffectValue"]);
+		self(self["AddTimerCall"], "self:UpdateShaderFadeValue()", 0);
+	else
+		self(self["SetSolidShaderFloatParameter"], 1, self["TargetValue"]);
+	end
+	
+
+end
+
+

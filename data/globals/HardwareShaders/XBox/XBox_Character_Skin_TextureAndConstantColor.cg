@@ -1,0 +1,48 @@
+// #class XBox,Object,Skinning
+
+struct App2Vert
+{
+    float4 position     : POSITION;
+    float2 uv0          : TEXCOORD0;
+    float4 weight       : TEXCOORD2;
+    float4 indices      : COLOR0;
+};
+
+struct Vert2Frag
+{
+    float4 position     : POSITION;
+    float2 uv0          : TEXCOORD0;
+    float4 diffuse      : COLOR0;
+};
+
+#ifdef __CGC__
+#define MAX_SKINNING_BONES  30
+#else
+#define MAX_SKINNING_BONES  40
+#endif
+
+#include "../skinning.cginc"
+
+// #default Color = 1 1 1 1 
+
+void vertex(in App2Vert vin, out Vert2Frag vout,
+#ifdef __CGC__
+        uniform float4x4 ModelViewProjMatrix, 
+        uniform float4 VectorParam0_Color,
+        uniform float3x4 BoneMatrices[MAX_SKINNING_BONES]
+#else
+        uniform float4x4 ModelViewProjMatrix : register(c-96), 
+        uniform float4 VectorParam0_Color : register(c-92),
+        uniform float4 BoneMatrices[MAX_SKINNING_BONES][3] : register(c-36)
+#endif
+        )
+{
+    float3 position;
+    
+    SkinPositionOnly(position,vin.position,vin.indices,vin.weight,BoneMatrices);
+
+    vout.position = mul(ModelViewProjMatrix, float4(position,1));
+    vout.uv0 = vin.uv0;
+    vout.diffuse = VectorParam0_Color;
+}
+

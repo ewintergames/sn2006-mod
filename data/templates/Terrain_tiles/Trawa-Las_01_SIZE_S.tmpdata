@@ -1,0 +1,41 @@
+template
+    Type 34
+    Name Trawa-Las_01_SIZE_S:1
+    Version 0
+    Format_version 3
+    Last_modified tetno
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 1 0 0 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 0
+    Special_effects 
+    Never_blend_automatically 0
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    LUA_params_callback 
+    Group_membership_allowed 0
+    Battle_group_membership_allowed 0
+    Texture Terrain\Trawa\Trawa-Las_01_SIZE_S.tga
+    Environment_material 
+    Normal_map_texture 
+    Size_x 2
+    Size_y 2
+    Single_texture_shader 
+    Separator1 
+    Dual_texture_shader 
+  end-variables

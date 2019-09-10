@@ -1,0 +1,274 @@
+settings
+    Name Globals
+    Music_files_extension ogg
+    Maximum_number_of_effects_per_frame 10000
+    Thousands_particle_vertices_per_frame 30
+    Maximum_number_of_particle_effects_per_frame 50
+    Thousands_effects_vertices_per_frame 30
+    Standalone_build 
+    FinalGame_Maximum_number_of_effects_per_frame 150
+    FinalGame_Thousands_particle_vertices_per_frame 40
+    FinalGame_Maximum_number_of_particle_effects_per_frame 50
+    FinalGame_Thousands_effects_vertices_per_frame 30
+    Shoulder_left_pos 0 0.8799999952316284 0 1
+    Shoulder_left_rot -15 60 0 1
+    Shoulder_left_zoom 11.600000
+    Shoulder_right_pos 0 0.8799999952316284 0 1
+    Shoulder_right_rot -15 -60 0 1
+    Shoulder_right_zoom 11.600000
+    Head_left_up_pos 0 0.8799999952316284 0 1
+    Head_left_up_rot -20 35 0 1
+    Head_left_up_zoom 11.600000
+    Head_left_down_pos 0 0.8799999952316284 0 1
+    Head_left_down_rot 20 35 0 1
+    Head_left_down_zoom 11.600000
+    Head_right_up_pos 0 0.8799999952316284 0 1
+    Head_right_up_rot -20 -35 0 1
+    Head_right_up_zoom 11.600000
+    Head_right_down_pos 0 0.8799999952316284 0 1
+    Head_right_down_rot 20 -35 0 1
+    Head_right_down_zoom 11.600000
+    Face_direct_hit_pos 0 0.7099999785423279 4 1
+    Face_direct_hit_rot 0 0 0 1
+    Face_direct_hit_zoom 8.700000
+    Mouse_sensitivity_Y 0.200000
+    Mouse_sensitivity_X 0.200000
+    Mouse_sensitivity_min 60.000000
+    Mouse_sensitivity_max 900.000000
+    Mouse_cursor_min_speed 0.000000
+    Mouse_cursor_max_speed 250.000000
+    Mouse_sensivity_min_scale 0.200000
+    Mouse_sensivity_max_scale 1.000000
+    Mouse_dbl_click_time 0.200000
+    Mouse_axis_units_mult 1.000000
+    Mouse_wheel_units_mult 0.008400
+    Allow_y_rotation 1
+    Allow_x_rotation 0
+    Isometric_camera_x_rotation -55.000000
+    Isometric_camera_min_x_rotation -5.000000
+    Isometric_camera_distance 170.000000
+    Isometric_camera_min_distance 40.000000
+    Mouse_wheel_zoom_sensitivity -10.000000
+    Zoom_controls_x_rotation 1
+    X_rotation_controls_zoom 0
+    TPP_FOV 45.000000
+    TPP_near_clip_plane 2.200000
+    TPP_height 17.400000
+    Disable_characters_colliding_with_camera 1
+    Camera_collisions_distance 0.000000
+    Max_blend_distance 20.000000
+    Camera_fw_translation 40.000000
+    Camera_crouch_y_translation -5.000000
+    Enable_camera_collisions 0
+    Blend_objects_colliding_with_camera 1
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Use_nonlinear_camera_movement 1
+    NL_rotation_and_zoom 0
+    Distance_to_jump 100.000000
+    Camera_mov_acceleration 10.000000
+    Camera_mov_deceleration 22.000000
+    Camera_mov_max_velocity 10.000000
+    Camera_vel_deceleration 10.000000
+    Camera_rot_acceleration 0.000000
+    Camera_rot_deceleration 0.000000
+    Camera_rot_max_velocity 0.000000
+    Camera_zoom_acceleration 0.000000
+    Camera_zoom_deceleration 0.000000
+    Camera_zoom_max_velocity 0.000000
+    Game_name Skoki Narciarskie 2006
+    Item_floating_height 0.000000
+    Flying_max_curve_radius 30.000000
+    Max_pickup_distance 15.000000
+    Max_pickup_angle 60.000000
+    Targeting_time 0.200000
+    Character_early_collision_radius 30.000000
+    Max_accuracy_dispersion 0.000000
+    Min_accuracy_dispersion 100.000000
+    Visibility_spread 2.000000
+    Visibility_arm_down_displacement -2.000000
+    Lips_amplitude_multiplicator 2.000000
+    Lips_amplitude_Falloff_time 0.400000
+    Lips_smoothing_time 0.020000
+    Combat_effects 
+    Special_effects 
+    Hit_mark_start_blend_time 60.000000
+    Hit_mark_blend_time 60.000000
+    Camera_mode_switch_billboards_blend 1.000000
+    Heat_seek_scan_range 120.000000
+    Autotargetter_move_time 0.200000
+    Full_screen_glow_texture_size 512
+    Invalid_weight_threshold 0.020000
+    Max_bones_per_vertex 4
+    Animation_key_tolerance_translation 0.000000
+    Animation_key_tolerance_rotation 0.000000
+    Shadow_gradient_factor 2.000000
+    Max_shadow_smooting_samples 8
+    Shadow_smoothing_factor 0.300000
+    Max_shadow_len_factor 0.700000
+    Shadow_blend_start 1300.000000
+    Shadow_blend_end 1800.000000
+    Shadow_volume_blend_begin 30.000000
+    Shadow_volume_blend_end 49.000000
+    Shadow_volume_len 50.000000
+    Circle_shadow_intensity_multiplier 0.500000
+    Shadow_depth_bias 0.000000
+    Shadow_depth_alpha_bias 2.000000
+    Mesh_shadow_texture_size 512
+    Character_shadow_texture_size 128
+    Player_character_shadow_texture_size 128
+    Vehicle_shadow_texture_size 256
+    GameType 0
+    Doll_Collides_With_Character 0
+    Acceleration 3.000000
+    VelocityLinear 5.000000
+    VelocityRotation 5.000000
+    AliveTime 0.700000
+    Explosion_vertical_velocity 0.500000
+    Vehicle_max_yaxis_angle 25.000000
+    Vehicle_yaxis_force 15.000000
+    Vehicle_fallen_max_time 5.000000
+    Vehicle_fallen_max_up_height 5.000000
+    Car_fake_shadow_contact_normal_limit -0.700000
+    Car_fake_shadow_nocontact_max_time 0.250000
+    Car_fake_shadow_blend_time 0.500000
+    Cutscene_speech_subtitle_hide_delay 2.000000
+    Cutscene_scene_sounds_volume_fade 0.500000
+    Time_Step 0.020000
+    Min_Time_Step 0.002000
+    Safe_time_mode 0
+    Limit_body_velocity 1
+    Physics_World_Epsilon 0.001000
+    Physics_World_Gamma 0.200000
+    Physics_World_Max_LCP_Iterations 10
+    Contact_Collision_Min_Interval 0.100000
+    Optimized_BB_diffrence 0.700000
+    DrewnoDrewno 
+    DrewnoDrewno_Friction 40.000000
+    DrewnoDrewno_Restitution 0.010000
+    DrewnoDrewno_MaxAdhesiveForce 0.000000
+    DrewnoDrewno_Softness 0.000000
+    LodLod 
+    LodLod_Friction 0.200000
+    LodLod_Restitution 0.000010
+    LodLod_MaxAdhesiveForce 0.000000
+    LodLod_Softness 0.000000
+    MetalMetal 
+    MetalMetal_Friction 30.000000
+    MetalMetal_Restitution 0.010000
+    MetalMetal_MaxAdhesiveForce 0.000000
+    MetalMetal_Softness 0.000000
+    DrewnoLod 
+    DrewnoLod_Friction 0.200000
+    DrewnoLod_Restitution 0.010000
+    DrewnoLod_MaxAdhesiveForce 0.000000
+    DrewnoLod_Softness 0.000000
+    DrewnoMetal 
+    DrewnoMetal_Friction 30.000000
+    DrewnoMetal_Restitution 0.000010
+    DrewnoMetal_MaxAdhesiveForce 0.000000
+    DrewnoMetal_Softness 0.000000
+    GumGum 
+    GumGum_Friction 1500.000000
+    GumGum_Restitution 0.010000
+    GumGum_MaxAdhesiveForce 0.000000
+    GumGum_Softness 0.000000
+    DrewnoGum 
+    DrewnoGum_Friction 1500.000000
+    DrewnoGum_Restitution 0.010000
+    DrewnoGum_MaxAdhesiveForce 0.000000
+    DrewnoGum_Softness 0.000000
+    GumMetal 
+    GumMetal_Friction 40.000000
+    GumMetal_Restitution 0.010000
+    GumMetal_MaxAdhesiveForce 0.000000
+    GumMetal_Softness 0.000000
+    GumLod 
+    GumLod_Friction 20.000000
+    GumLod_Restitution 0.010000
+    GumLod_MaxAdhesiveForce 0.000000
+    GumLod_Softness 0.000000
+    VehicleVehicle 
+    VehicleVehicle_Friction 100.000000
+    VehicleVehicle_Restitution 0.000000
+    VehicleVehicle_MaxAdhesiveForce 0.000000
+    VehicleVehicle_Softness 0.000000
+    VehicleDrewno 
+    VehicleDrewno_Friction 100.000000
+    VehicleDrewno_Restitution 0.000000
+    VehicleDrewno_MaxAdhesiveForce 0.000000
+    VehicleDrewno_Softness 0.000000
+    VehicleMetal 
+    VehicleMetal_Friction 100.000000
+    VehicleMetal_Restitution 0.000000
+    VehicleMetal_MaxAdhesiveForce 0.000000
+    VehicleMetal_Softness 0.000000
+    VehicleGum 
+    VehicleGum_Friction 100.000000
+    VehicleGum_Restitution 0.000000
+    VehicleGum_MaxAdhesiveForce 0.000000
+    VehicleGum_Softness 0.000000
+    VehicleLod 
+    VehicleLod_Friction 0.000000
+    VehicleLod_Restitution 0.000000
+    VehicleLod_MaxAdhesiveForce 0.000000
+    VehicleLod_Softness 0.000000
+    Gum2Metal 
+    Gum2Metal_Friction 30.000000
+    Gum2Metal_Restitution 0.200000
+    Gum2Metal_MaxAdhesiveForce 0.000000
+    Gum2Metal_Softness 0.000000
+    Gum2Lod 
+    Gum2Lod_Friction 20.000000
+    Gum2Lod_Restitution 0.200000
+    Gum2Lod_MaxAdhesiveForce 0.000000
+    Gum2Lod_Softness 0.000000
+    Gum2Drewno 
+    Gum2Drewno_Friction 200.000000
+    Gum2Drewno_Restitution 0.200000
+    Gum2Drewno_MaxAdhesiveForce 0.000000
+    Gum2Drewno_Softness 0.000000
+    LodMetal 
+    LodMetal_Friction 0.200000
+    LodMetal_Restitution 0.010000
+    LodMetal_MaxAdhesiveForce 0.000000
+    LodMetal_Softness 0.000000
+    PlayerDrewno 
+    PlayerDrewno_Friction 0.200000
+    PlayerDrewno_Restitution 0.010000
+    PlayerDrewno_MaxAdhesiveForce 0.000000
+    PlayerDrewno_Softness 0.000000
+    PlayerLod 
+    PlayerLod_Friction 0.200000
+    PlayerLod_Restitution 0.010000
+    PlayerLod_MaxAdhesiveForce 0.000000
+    PlayerLod_Softness 0.000000
+    PlayerMetal 
+    PlayerMetal_Friction 0.200000
+    PlayerMetal_Restitution 0.010000
+    PlayerMetal_MaxAdhesiveForce 0.000000
+    PlayerMetal_Softness 0.000000
+    PlayerVehicle 
+    PlayerVehicle_Friction 0.200000
+    PlayerVehicle_Restitution 0.010000
+    PlayerVehicle_MaxAdhesiveForce 0.000000
+    PlayerVehicle_Softness 0.000000
+    Water 
+    Water_Friction 0.200000
+    Water_Restitution 0.010000
+    Water_MaxAdhesiveForce 1.000000
+    Water_Softness 1.000000
+    Water_bouyancy 1.000000
+    Water_drag 10.000000
+    Water_splash_velocity_steal 0.800000
+end-variables
+
+    Name User interface
+    Commercial_screen_params P0Delay=0.0 P0In=0.5 P0Still=3 P0Out=0.5 P1Delay=0.0 P1In=0.5 P1Still=3 P1Out=0.5 P2Delay=0.0 P2In=0.5 P2Still=3.5 P2Out=0.5
+    Commercial_screen_music music\skoki-logo
+    Commercial_screen_loop_music music\skoki-menu
+    Commercial_screen_background_color 1 1 1 1
+    Commercial_screen_fade_color 1 1 1 1
+    Min_display_time 10.000000
+end-variables
+

@@ -1,0 +1,355 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-19-2018 Time: 01:06:14
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+gInterfaceReloaded=true;
+if not (gGlobalInterfaceLoaded) then
+	gGlobalInterfaceLoaded=true;
+	gKeyboard={Inventory={Code=0,
+	GameFeelEntry="Inventory_key"},
+	SecondInventory={Code=0},
+	RemoveWeapon={Code=0,
+	GameFeelEntry="Remove_weapon_key",
+	MultiKey=1},
+	Action={Code=0,
+	GameFeelEntry="Action",
+	MultiKey=1},
+	MoveForward={Code=0,
+	GameFeelEntry="Move_forward"},
+	MoveBackward={Code=0,
+	GameFeelEntry="Move_backward"},
+	StepLeft={Code=0,
+	GameFeelEntry="Step_left"},
+	StepRight={Code=0,
+	GameFeelEntry="Step_right"},
+	Pickup={Code=0,
+	GameFeelEntry="Pickup_key",
+	MultiKey=1},
+	QuickUse={Code=0,
+	GameFeelEntry="Quick_slot_use_modifier",
+	MultiKey=1},
+	Crouch={Code=0,
+	GameFeelEntry="Crouch_modifier",
+	MultiKey=1},
+	MovementModifier={Code=0,
+	MultiKey=1},
+	Jump={Code=0,
+	GameFeelEntry="Jump",
+	MultiKey=1},
+	QuickLoad={Code=0,
+	GameFeelEntry="Quick_load"},
+	QuickSave={Code=0,
+	GameFeelEntry="Quick_save"},
+	Screenshot={Code=0,
+	GameFeelEntry="Screenshot"},
+	Reload={Code=0,
+	GameFeelEntry="Reload_key",
+	MultiKey=1},
+	TPPMode={Code=0,
+	MultiKey=1},
+	SniperView={Code=0,
+	MultiKey=1},
+	Pause={Code=STDKEY_P},
+	MoveSpecial={Code=0,
+	GameFeelEntry="Run_modifier",
+	MultiKey=1},
+	SpeedUpMovement={Code=0,
+	GameFeelEntry="SpeedUpMovement_key",
+	MultiKey=1},
+	SlowDownMovement={Code=0,
+	GameFeelEntry="SlowDownMovement_key",
+	MultiKey=1},
+	FirstAction={Code=0,
+	GameFeelEntry="FirstAction_key",
+	MultiKey=1},
+	SecondAction={Code=0,
+	GameFeelEntry="SecondAction_key",
+	MultiKey=1},
+	HandBrake={Code=0,
+	GameFeelEntry="Hand_brake_key",
+	MultiKey=2},
+	UseItem={Code=0,
+	GameFeelEntry="UseItem",
+	MultiKey=1},
+	CoverFire={Code=0,
+	GameFeelEntry="Cover_action_key"}};
+	igKeyCode2Id={};
+	for i, v in globals() do
+		if (type(i)=="string") then
+			if (strfind(i, "STDKEY_", 1, 1)==1) then
+				igKeyCode2Id[v]=i;
+			end
+			
+		end
+		
+	end
+	
+	gAutoRun=false;
+end
+
+
+function CLEUserInterfaceScreen["OnChar"](self, nChar) end
+
+
+function CLEUserInterfaceElement["OnSaveGame"](self) end
+
+
+function CLEUserInterfaceElement["OnSwitchLevel"](self) end
+
+
+function CLEUserInterfaceElement["OnBeforeRender"](self)
+	if (self["BeforeRenderCallback"]) then
+		igOnBRCaller=self;
+		dostring("local self=igOnBRCaller; "..self["BeforeRenderCallback"]);
+		igOnBRCaller=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceElement["OnAfterRender"](self)
+	if (self["AfterRenderCallback"]) then
+		igOnBRCaller=self;
+		dostring("local self=igOnBRCaller; "..self["AfterRenderCallback"]);
+		igOnBRCaller=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceElement["OnGetFocus"](self)
+	if (self["GetFocusCallback"]) then
+		igOnGFCaller=self;
+		dostring("local self=igOnGFCaller; "..self["GetFocusCallback"]);
+		igOnGFCaller=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceElement["OnLooseFocus"](self)
+	if (self["LooseFocusCallback"]) then
+		igOnLFCaller=self;
+		dostring("local self=igOnLFCaller; "..self["GetLooseCallback"]);
+		igOnLFCaller=IDT_Nil;
+	end
+	
+
+end
+
+
+function CLEUserInterfaceElement["OnBeforeShow"](self) end
+
+
+function CLEUserInterfaceElement["OnBeforeHide"](self) end
+
+
+function CLEUserInterfaceElement["OnLClick"](self) end
+
+
+function CLEUserInterfaceElement["OnLDblClick"](self) end
+
+
+function CLEUserInterfaceElement["OnRClick"](self) end
+
+
+function CLEUserInterfaceElement["OnBeginDrag"](self) end
+
+
+function CLEUserInterfaceElement["OnEndDrag"](self, destination) end
+
+
+function CLEUserInterfaceElement["OnObjectDeleted"](self, obj) end
+
+
+function CLEUserInterfaceElement["OnScreenResolutionChanged"](self) end
+
+
+function CLEUIAction["OnStart"](self) end
+
+
+function CLEUIAction["OnExecute"](self) end
+
+
+function CLEUIAction["OnFinish"](self) end
+
+
+function readKeyboardConfiguration()
+	gKeyboard["EnterTPPMode"]={Code=STDKEY_SPACE};
+	gKeyboard["CancelAction"]={Code=STDKEY_ESCAPE};
+	gKeyboard["Pause"]={Code=STDKEY_P};
+	local keyConfig=gDebug(gDebug["GetStringFeelAttribute"], "Game", "Keyboard_configuration");
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i, v in gKeyboard do
+		if (v["GameFeelEntry"]) then
+			v["Code"]=gDebug(gDebug["GetFloatFeelAttribute"], "Game", v["GameFeelEntry"]);
+		end
+		
+	end
+	
+	if not (keyConfig) or (keyConfig~="") then
+		dostring(keyConfig);
+	end
+	
+	gKeyboard["WeaponShortcuts"]={};
+	local i=IDT_Nil;
+	for i=1, 10 do
+		gKeyboard["WeaponShortcuts"][i]=gDebug(gDebug["GetFloatFeelAttribute"], "Game", "Quick_slot_"..i);
+	end
+	
+
+end
+
+
+function saveKeyboardConfiguration()
+	local s="";
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	for i, v in gKeyboard do
+		if (v["Code"]) then
+			s=s.."gKeyboard."..i..".Code="..v["Code"]..";";
+		end
+		
+		if (v["GameFeelEntry"]) then
+			gDebug(gDebug["SetFeelAttribute"], "Game", v["GameFeelEntry"], ""..v["Code"]);
+		end
+		
+	end
+	
+	s=s.."gAutoRun="..tostring(gAutoRun)..";";
+	gDebug(gDebug["SetFeelAttribute"], "Game", "Keyboard_configuration", s);
+
+end
+
+
+function uiRestart()
+	local loadSaveScreen=IDT_Nil;
+	if (gInterfaceScreens) then
+		if (gGame(gGame["GetCurrentScreen"])==gInterfaceScreens["LoadSave"]) then
+			wf_print("Active load/save screen found");
+			loadSaveScreen=gInterfaceScreens["LoadSave"];
+			gInterfaceScreens["LoadSave"]=IDT_Nil;
+		else
+			wf_print("Setting nil screen");
+			gGame(gGame["AddInterfaceScreen"], IDT_Nil);
+		end
+		
+		for i, v in gInterfaceScreens do
+			v(v["delete"]);
+		end
+		
+	end
+	
+	gInterfaceScreens={};
+	if not (loadSaveScreen) then
+	end
+	
+	gInterfaceScreens={MainScreen=CLEMainScreen(CLEMainScreen["new"]),
+	LoadSave=CLELoadSaveScreen(CLELoadSaveScreen["new"]),
+	Pause=CLEPauseScreen(CLEPauseScreen["new"]),
+	Menu=CLEMenuScreen(CLEMenuScreen["new"]),
+	Cutscene=CLECutsceneScreen(CLECutsceneScreen["new"])};
+	InitProjectSpecificScreens();
+	if (gInterfaceScreens["Menu"]) then
+		if (loadSaveScreen) then
+			gInterfaceScreens["Menu"]["FirstStart"]=false;
+		elseif (obj("Null-Menu")) then
+			gInterfaceScreens["Menu"]["VeryFirstStart"]=true;
+			gInterfaceScreens["Menu"]["FirstStart"]=true;
+			if (switchToOpeningScreen) then
+				obj("Null-Menu")(obj("Null-Menu")["AddTimerCall"], "switchToOpeningScreen()", 0);
+			else
+				obj("Null-Menu")(obj("Null-Menu")["AddTimerCall"], "gGame:AddInterfaceScreen(gInterfaceScreens.Menu)", 0);
+			end
+			
+		else
+			if (gSceneLoader["Mode"]==SM_LOAD_SAVEGAME) or (gSceneLoader["Mode"]==SM_SWITCH_TO_SAVEGAME) then
+				gInterfaceScreens["LoadSave"](gInterfaceScreens["LoadSave"]["SetMode"], gUIHWLoadSaveScreenModes["Loading"]);
+				gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["LoadSave"]);
+			else
+				if (getPlayer()) then
+					gInterfaceScreens["Menu"]["FirstStart"]=false;
+				end
+				
+				if (gInterfaceReloaded) then
+					gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["MainScreen"]);
+					if (gGame["Control"](gGame["Control"]["GetPlayerVehicle"])) then
+						switchToVehicleScreen();
+					else
+						gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["Menu"]);
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+	if (loadSaveScreen) then
+		loadSaveScreen(loadSaveScreen["FadeToScreen"], gInterfaceScreens["MainScreen"]);
+	else
+		gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["MainScreen"]);
+	end
+	
+
+end
+
+
+function uiOff()
+	gGame(gGame["AddInterfaceScreen"], IDT_Nil);
+
+end
+
+
+function getUIScreenName(screen)
+	if (screen) then
+		local i=IDT_Nil;
+		local v=IDT_Nil;
+		for i, v in gInterfaceScreens do
+			if (v==screen) then
+				do return i end;
+				
+			end
+			
+		end
+		
+	end
+	
+	return IDT_Nil;
+	
+
+end
+
+
+function getUIScreenByName(name)
+	if (name) then
+		return gInterfaceScreens[name];
+		
+	else
+		return IDT_Nil;
+		
+	end
+	
+
+end
+
+
+function SwitchToCutsceneUI(begin)
+	gConsole(gConsole["print"], "SwitchToCutsceneUI"..tostring(begin));
+	if (begin) then
+		gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["Cutscene"]);
+	else
+		gGame(gGame["AddInterfaceScreen"], gInterfaceScreens["MainScreen"]);
+	end
+	
+
+end
+
+

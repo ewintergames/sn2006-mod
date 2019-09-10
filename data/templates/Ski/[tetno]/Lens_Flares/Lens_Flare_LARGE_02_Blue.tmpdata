@@ -1,0 +1,155 @@
+template
+    Type 1140850690
+    Name lf1:7
+    Version 0
+    Format_version 3
+    Last_modified tetno
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 0.1000000014901161 0.1000000014901161 1 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 0
+    Special_effects 
+    Never_blend_automatically 0
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 0
+    LUA_params_def 
+    LUA_params_callback 
+    Group_membership_allowed 1
+    Battle_group_membership_allowed 0
+    Advanced_shader 
+    Texture_file flares\Lens_Flare_01\Lens_Flare_A_Part_00.tga
+    Reflection_texture_file 
+    Face_camera 1
+    Two_sided 0
+    Color 0.5058823823928833 0.6117647290229797 0.6549019813537598 0.3019607961177826
+    Tiles 1.000000
+    Size 444.000000
+    Aspect 1.000000
+    Offset 0.000000
+    Alpha_test 1
+    Alpha_write 0
+    Color_write 1
+    Alpha_test_level 0.010000
+    Fogged 1
+    Depth_test 1
+    Depth_write 0
+    Clamp_texture 1
+    Forced_sort_mode 0
+    Blend_function 2
+    Use_y_angle_only 0
+    Ignore_face_camera_in_nodes 0
+    Node_1_angle 90.000000
+    Node_1_color 1 1 1 1
+    Node_2_angle 90.000000
+    Node_2_color 1 1 1 0
+    Texture_center_U 0.500000
+    Texture_center_V 0.500000
+    Special_blend_mode 0
+    Cast_lightmap_shadow 0
+    Reflection_source_distance 5.000000
+    Reflection_rectangle_aspect 1.000000
+    Reflection_texture_size 1.000000
+    Reflection_texture_aspect 1.000000
+    Reflection_texture_Uofs 0.000000
+    Reflection_texture_Vofs 0.000000
+    Flare_animation_mode 0
+    Flare_animation_square_fill 0.500000
+    Flare_animation_cycle_time 1.000000
+    Delay_time_after_cycle 0.000000
+    Delay_time_after_cycle_rnd 0.000000
+    Flare_animation_time_offset 0.000000
+    Flare_secondary_color 1 1 1 0.1000000014901161
+    Texture_U_drift 0.000000
+    Texture_V_drift 0.000000
+    Texture_U_repeat 0
+    Texture_V_repeat 0
+    Texture_animation_cycles 0.000000
+    Vertex_anim 
+    Vertex_Animation_X_Speed 0.000000
+    Vertex_Animation_X_Amplitude 0.000000
+    Vertex_Animation_Y_Speed 0.000000
+    Vertex_Animation_Y_Amplitude 0.000000
+    Vertex_Animation_Z_Speed 0.000000
+    Vertex_Animation_Z_Amplitude 0.000000
+    Center_blend_start 0.000000
+    Center_blend_end 0.000000
+    Distance_blend_start 0.000000
+    Distance_blend_end 0.000000
+    Crap_align -17958194
+    Scale_main_billboard_intensity 1
+    Zero_intensity_radius 512.000000
+    Full_intensity_radius 0.000000
+    Intensity_radius_aspect 2.000000
+    Software_lightquad_screen_size 1.000000
+    Hardware_lightquad_screen_size 14.000000
+    Texture_file_1 flares\Lens_Flare_01\Lens_Flare_A_Part_02.tga
+    Blend_mode_1 2
+    Color_1 0.8352941870689392 0.8156863451004028 0.6078431606292725 0.1725490242242813
+    Position_1 0.400000
+    Size_1 100.000000
+    Aspect_1 1.000000
+    Alpha_test_ref_val_1 0.003920
+    Texture_file_2 flares\Lens_Flare_01\Lens_Flare_A_Part_03.tga
+    Blend_mode_2 2
+    Color_2 0.7137255072593689 0.7764706611633301 0.8274510502815247 0.1607843190431595
+    Position_2 -0.600000
+    Size_2 400.000000
+    Aspect_2 1.000000
+    Alpha_test_ref_val_2 0.003920
+    Texture_file_3 flares\Lens_Flare_01\Lens_Flare_A_Part_00.tga
+    Blend_mode_3 2
+    Color_3 0.572549045085907 0.7215686440467835 0.7529412508010864 0.3019607961177826
+    Position_3 1.000000
+    Size_3 444.000000
+    Aspect_3 1.000000
+    Alpha_test_ref_val_3 0.003920
+    Texture_file_4 flares\Lens_Flare_01\Lens_Flare_A_Part_05.tga
+    Blend_mode_4 2
+    Color_4 0.2666666805744171 0.501960813999176 0.7333333492279053 0.4352941513061523
+    Position_4 -0.340000
+    Size_4 25.000000
+    Aspect_4 1.000000
+    Alpha_test_ref_val_4 0.003920
+    Texture_file_5 flares\Lens_Flare_01\Lens_Flare_A_Part_03.tga
+    Blend_mode_5 2
+    Color_5 1 1 1 0.08235294371843338
+    Position_5 -2.000000
+    Size_5 777.000000
+    Aspect_5 1.000000
+    Alpha_test_ref_val_5 0.003920
+    Texture_file_6 Bilboards\DIAB_Bilboard_Dot_Fade_Linear_01.tga
+    Blend_mode_6 2
+    Color_6 1 1 1 1
+    Position_6 1.000000
+    Size_6 621.000000
+    Aspect_6 0.025000
+    Alpha_test_ref_val_6 0.003920
+    Texture_file_7 
+    Blend_mode_7 2
+    Color_7 1 1 1 1
+    Position_7 -1.000000
+    Size_7 100.000000
+    Aspect_7 1.000000
+    Alpha_test_ref_val_7 0.003920
+    Texture_file_8 
+    Blend_mode_8 2
+    Color_8 1 1 1 1
+    Position_8 -1.000000
+    Size_8 100.000000
+    Aspect_8 1.000000
+    Alpha_test_ref_val_8 0.003920
+  end-variables

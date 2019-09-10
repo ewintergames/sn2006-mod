@@ -1,0 +1,256 @@
+template
+    Type 8
+    Name ~PL_Barak_02-1865
+    Version 0
+    Format_version 6
+    Last_modified 
+    Sound_range 200.000000
+    Sound_small_range_in_perc 10.000000
+    Speech_volume_multiplicator 1.000000
+    Default_speech_audio_channel -1
+    Wireframe_color 0 0 0 1
+    LUA_initializer 
+    LUA_class 
+    Object_usable 0
+    Object_targetable 0
+    Object_noticable 0
+    Manual_targeting_only 0
+    Object_class 
+    Unique 1
+    Special_effects 
+    Never_blend_automatically 0
+    Blending_time 0.500000
+    Blending_value 0.500000
+    Special_blend_mode 0
+    Editor_only 0
+    Pickup_distance 0.000000
+    Max_selection_distance 20.000000
+    TemporaryTemplate 1
+    LUA_params_def 
+    LUA_params_callback 
+    Group_membership_allowed 0
+    Battle_group_membership_allowed 0
+    Is_tile 1
+    Has_geometry 1
+    Collision_Type 1
+    DC_material 0
+    Collision_with_LOS_only 0
+    Collision_with_NPC_only 0
+    Special_for_charecter 0
+    Disable_collision_with_static_geometry 0
+    Player_can_push 1
+    Freeze_on_init 1
+    Freeze_rotation 0
+    Is_Band 0
+    Bouyancy_type 0
+    Bouyancy_multiplier 1.000000
+    Water_normal_scale 1.000000
+    Mass 10.000000
+    Mass_offset 0 0 0 1
+    Bounce 0.200000
+    Scale_size 1 1 1 1
+    Override_collision_bbox 0
+    Collision_bbox_min 0 0 0 1
+    Collision_bbox_max 0 0 0 1
+    AngularVelocityDamping 0.020000
+    LinearVelocityDamping 0.010000
+    Static_collision_velocity_lose 0.000000
+    Dynamic_collision_velocity_steal 0.000000
+    Explosion_wave_multiplier 1.000000
+    Impulse_multiplier 1.000000
+    Critical_hit_impulse_multiplier 2.000000
+    Critical_hit_extra_vertical_impulse 0.000000
+    Karma_asset_database 
+    Karma_asset_name 
+    Asset_mass 50.000000
+    Asset_angular_velocity_damping 0.020000
+    Asset_linear_velocity_damping 0.010000
+    Asset_impulse_multiplier 1.000000
+    Use_asset_immediatelly 0
+    Fast_moving_body 0
+    Ragdoll 
+    Acceleration 3.000000
+    VelocityLinear 5.000000
+    VelocityRotation 5.000000
+    AliveTime 0.700000
+    Min_hit_impulse 0.000000
+    Enable_hit_callback 0
+    Body_mass_clamp 0.000000
+    Body_inertia_clamp 0.000000
+    Inertia 
+    Change_Inertia_Tensor 0
+    ScaleInertia 1 1 1 1
+    Walkable 0
+    Bridge_restriction 0
+    Ladder_And_Wall_properties 
+    Is_Ladder 0
+    Is_Wall 0
+    Is_SmallWall 0
+    Is_Fence 0
+    AIPath_DynamicBlockade 0
+    Corner_DistanceXmin 5.000000
+    Corner_DistanceXmax 5.000000
+    Corner_DistanceZmin 5.000000
+    Corner_DistanceZmax 5.000000
+    Near_Distance 1.500000
+    Disable_Camera_Collision 0
+    BoundingBox_Camera_Collision 0
+    Lightmap_resolution_x 9
+    Lightmap_resolution_y 8
+    Cast_lightmap_shadow 1
+    Lightmap_shadow_alpha_usage 0
+    Lightmap_shadow_alpha_multiplicator 1.000000
+    Lightmap_shadow_alpha_offset 0.000000
+    Receive_lightmap_shadow 1
+    Received_lightmap_shadow_blur 1
+    Receive_dynamic_shadows 1
+    Dynamic_shadow 0
+    Shadow_gradient_factor 1.000000
+    Dynamic_ambient_multiplicator 1.000000
+    Dynamic_light_multiplicator 1.000000
+    Ignore_uv_mapping 0
+    Optimizable_hierarchy 1
+    Random_destruction_shader 0
+    ImportedFromFile 
+    Scale 1.000000
+    Distance_blend_start 0.000000
+    Distance_blend_end 0.000000
+    Use_Z_fill_for_blending 1
+    Depth_offset 0.000000
+    Allow_hit_marks 1
+    Collision_geometry_may_be_animated 1
+    Smoothing_groups_max_normal_diff 45.000000
+    Animation_sharing_group_id 
+  end-variables
+animations
+end-animations
+
+meshes
+  slot 0
+    file ~PL_Barak_02-1865.mesh
+    dist 0
+  end-slot
+meshes-end
+
+material-params
+material-params-version 1
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	0
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Lightmap
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs EnvMapLightmap3
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.100000
+    ReflectionDrift 0 0 0 0
+    ReflectionIntenstiy 1.000000
+    BlendingFactor 1.000000
+    Texture2_EnvMap CubeMaps\Sample_CubeMap.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    texture-file-name	Barak01.tga
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	0
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Lightmap
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs EnvMapLightmap3
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 1.000000
+    ReflectionDrift 0 0 0 0
+    ReflectionIntenstiy 1.000000
+    BlendingFactor 1.000000
+    Texture2_EnvMap Cube_Maps\Sample_CubeMap.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+  material
+    two-sided	0
+    color-write	1
+    z-write	1
+    obstacle	0
+    forced-sort-mode	0
+    lightmap-shadow	1
+    enabled	1
+  end-material
+  material-shader-definitions
+    shader-definition-begin
+    shader-definition-name Standard
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs #Texture&Lightmap
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.200000
+      end-variables
+    shader-definition-end
+    shader-definition-begin
+    shader-definition-name Advanced
+      shader-def-visible 1
+      shader-def-blend-mode 0
+      shader-def-alpha-test 0
+      shader-def-receive-shadow 0
+      shader-def-hs EnvMapLightmap3
+		 shader-def-alpha-write 0
+      variables
+    Alpha_test_level 0.100000
+    ReflectionDrift 0 0 0 0
+    ReflectionIntenstiy 1.000000
+    BlendingFactor 1.000000
+    Texture2_EnvMap CubeMaps\Sample_CubeMap.tga
+      end-variables
+    shader-definition-end
+  material-shader-definitions-end
+end-material-params
+

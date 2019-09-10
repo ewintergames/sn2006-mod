@@ -1,0 +1,15 @@
+
+uniform mat4 BoneMatrices[MAX_SKINNING_BONES];
+attribute vec4 BoneIndices;
+attribute vec4 BlendWeights;
+
+vec3 SkinPosition()
+{
+    vec4 inPos=gl_Vertex;
+    ivec4 inds=ivec4(BoneIndices);
+    vec4 pos=(BoneMatrices[inds.x]*inPos)*BlendWeights.x;
+    pos+=(BoneMatrices[inds.y]*inPos)*BlendWeights.y;
+    pos+=(BoneMatrices[inds.z]*inPos)*BlendWeights.z;
+    pos+=(BoneMatrices[inds.w]*inPos)*BlendWeights.w;
+    return pos.xyz;
+}

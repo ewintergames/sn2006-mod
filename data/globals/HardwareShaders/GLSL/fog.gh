@@ -1,0 +1,20 @@
+
+float fogFactor(vec3 position, vec3 eyePosition, vec4 fogRange)
+{
+    return saturate((length(position-eyePosition)-fogRange.x)/fogRange.z);
+}
+
+vec4 fogSolid(vec4 pixelColor, vec4 fogColor, float fogFactor)
+{
+    return vec4(mix(pixelColor.xyz, fogColor.xyz, fogFactor),pixelColor.w);
+}
+
+vec4 fogAlpha(vec4 pixelColor, vec4 fogColor, float fogFactor)
+{
+    return mix(pixelColor, fogColor, fogFactor);
+}
+
+vec4 fogAdditive(vec4 pixelColor, float fogFactor)
+{
+    return vec4(pixelColor.xyz*(1.0-fogFactor),pixelColor.w);
+}

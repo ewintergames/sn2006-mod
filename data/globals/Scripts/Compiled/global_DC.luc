@@ -1,0 +1,1377 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 11-18-2018 Time: 23:47:30
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+if not (gGlobalLoaded) then
+	gGlobalLoaded=true;
+end
+
+if (gGlobalScriptsLoaded) then
+	wf_print("[global scripts already loaded]");
+	if (gObjects) and (gSceneLoader["Mode"]==SM_SWITCH_TO_SCENE) or (gSceneLoader["Mode"]==SM_SWITCH_TO_SAVEGAME) then
+		gObjects={};
+	end
+	
+	if (uiRestart) then
+		uiRestart();
+	else
+		gGlobalScriptsLoaded=1;
+		gDifficultyLevel=0;
+		gTempVector3=CVector3(CVector3["instance"]);
+		gTempVector=Vector(Vector["instance"]);
+		M_PI=3,14159265358979;
+		M_HALF_PI=1,5707963267949;
+		if not (gGameCloseCallbacks) then
+			gGameCloseCallbacks={};
+		end
+		
+		gLua(gLua["PlayFile"], "global_defs");
+		gLua(gLua["PlayFile"], "global_debug");
+		
+function registerClassEx(className, baseClassName, initCalls, newArgs, superClassNewArgs)
+	if not (newArgs) then
+		newArgs="";
+	end
+	
+	if not (superClassNewArgs) then
+		superClassNewArgs=newArgs;
+	end
+	
+	dostring("gLua:RegisterClass('"..className.."', '"..baseClassName.."'); function "..className..":new("..newArgs..") local p = "..baseClassName..":new("..superClassNewArgs.."); p = tolua.cast(p, '"..className.."'); p:SetTag('"..className.."'); "..initCalls.." return p; end; ");
+
+end
+
+		
+function wf_print(string)
+	if (gOutputToEngineConsole) then
+		gConsole(gConsole["print"], COLOR_BLUE, string);
+	end
+	
+	if (gOutputToGameConsole) then
+		gConsole(gConsole["gcprint"], string);
+	end
+	
+
+end
+
+		
+function wf_error(string)
+	if (gOutputToEngineConsole) then
+		gConsole(gConsole["print"], COLOR_RED, string);
+	end
+	
+	if (gOutputToGameConsole) then
+		gConsole(gConsole["gcprint"], string);
+	end
+	
+	gDebug(gDebug["PrintDebugInfo"]);
+	if (gDebug["BreakOnError"]) then
+		gGame(gGame["MakeDebugBreak"]);
+	end
+	
+	if (gDebug["PauseOnError"]) then
+		gGame(gGame["PauseGame"], true);
+	end
+	
+
+end
+
+		_ALERT=wf_print;
+		_ERRORMESSAGE=wf_error;
+		
+function tfind(t, v)
+	local i=IDT_Nil;
+	local iv=IDT_Nil;
+	for i, iv in t do
+		if (iv==v) then
+			do return i end;
+			
+		end
+		
+	end
+	
+	return IDT_Nil;
+	
+
+end
+
+		
+function tdup(t)
+	local d={};
+	for i, iv in t do
+		d[i]=iv;
+	end
+	
+	return d;
+	
+
+end
+
+		
+function sign(f)
+	if (f>0) then
+		return 1;
+		
+	elseif (f<0) then
+		return -1;
+		
+	else
+		return 0;
+		
+	end
+	
+
+end
+
+		
+function listTable(t, recurrent, prefix)
+	if not (prefix) then
+		prefix="";
+	end
+	
+	if (type(t)=="table") then
+		for k, v in t do
+			gConsole(gConsole["print"], prefix.."."..tostring(k).." = "..tostring(v));
+			if (recurrent) then
+				if (type(k)=="table") then
+					listTable(k, true, prefix.."[key]");
+				end
+				
+			end
+			
+			if (recurrent) then
+				if (type(v)=="table") then
+					listTable(v, true, prefix..tostring(k));
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+		
+function getPlayer()
+	return gObjectManager["PlayerCharacters_first"];
+	
+
+end
+
+		
+function obj(name)
+	gObjectManager(gObjectManager["FindObjectByName"], name);
+
+end
+
+		
+function id2obj(id)
+	gObjectManager(gObjectManager["FindObjectByID"], id);
+
+end
+
+		
+function reload()
+	gGlobalScriptsLoaded=false;
+	gLua(gLua["PlayFile"], "global");
+
+end
+
+		
+function initScene()
+	local obj=gObjectManager(gObjectManager["FindObjectByClass"], "SceneController");
+	if (obj) then
+		obj(obj["OnInit"]);
+	end
+	
+
+end
+
+		
+function getProjectName()
+	gDebug(gDebug["GetStringFeelAttribute"], "Directories", "Project_name");
+
+end
+
+		
+function sign(a)
+	if (a==0) then
+		return 0;
+		
+	elseif (a>0) then
+		return 1;
+		
+	else
+		return -1;
+		
+	end
+	
+
+end
+
+		
+function round_up(val, eps)
+	return (ceil((val / eps)) * eps);
+	
+
+end
+
+		
+function round(val, eps)
+	return (floor(((val + (0,5 * eps)) / eps)) * eps);
+	
+
+end
+
+		if (gObjects) and (gSceneLoader["Mode"]==SM_SWITCH_TO_SCENE) or (gSceneLoader["Mode"]==SM_SWITCH_TO_SAVEGAME) then
+			gObjects={};
+		end
+		
+		
+function destroy(object)
+	deleteclone(object);
+	local r=getregistry("tolua_tbl_mate");
+	r[object]=IDT_Nil;
+
+end
+
+		
+function validateObject(obj, children)
+	if (obj) then
+		if (gObjects[obj["Name"]]~=obj) then
+			gConsole(gConsole["print"], COLOR_RED, "Error! Inconsistency in gObjects table: "..obj["Name"].." -> "..tostring(obj));
+			if (gObjects[obj["Name"]]) then
+				gConsole(gConsole["print"], COLOR_RED, gObjects[obj["Name"]]["Name"].." -> "..tostring(gObjects[obj["Name"]]));
+			else
+				gConsole(gConsole["print"], COLOR_RED, "nil!");
+			end
+			
+		end
+		
+		if (children) then
+			local o=obj["objfirst"];
+			while (o) do
+				validateObject(o, true);
+				o=o["next"];
+			end
+			
+		end
+		
+	end
+	
+
+end
+
+		
+function CObjectManager["GameClose"](self)
+	gGame(gGame["AddInterfaceScreen"], IDT_Nil);
+	if (gInterfaceScreens) then
+		local i=IDT_Nil;
+		local v=IDT_Nil;
+		for i, v in gInterfaceScreens do
+			v(v["delete"]);
+		end
+		
+		gInterfaceScreens={};
+	end
+	
+	gObjects={};
+	gLua(gLua["CallGC"]);
+
+end
+
+		
+function CObjectManager["FindObjectByClass"](self, c)
+	gSceneIterator(gSceneIterator["Restart"], GS_UPDATE);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		if (obj(obj["TestClass"], c)) then
+			do return obj end;
+			
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+	end
+	
+	return IDT_Nil;
+	
+
+end
+
+		
+function CObjectManager["FindNearestObjectByClass"](self, source, c)
+	local bestDistance=100000000;
+	local result=IDT_Nil;
+	gSceneIterator(gSceneIterator["Restart"], GS_UPDATE);
+	local obj=gSceneIterator(gSceneIterator["Next"]);
+	while (obj) do
+		if not (obj(obj["TestClass"], c)) or (obj~=source) then
+			local dist=distance(source, obj);
+			if (dist<bestDistance) then
+				bestDistance=dist;
+				result=obj;
+			end
+			
+		end
+		
+		obj=gSceneIterator(gSceneIterator["Next"]);
+	end
+	
+	return result;
+	
+
+end
+
+		
+function CObjectManager["FindNearestPathByClass"](self, source, c)
+	local bestDistance=100000000;
+	local result=IDT_Nil;
+	local obj=gObjectManager["Paths_first"];
+	while (obj) do
+		if not (obj(obj["TestClass"], c)) or (obj~=source) then
+			local dist=distance(source, obj);
+			if (dist<bestDistance) then
+				bestDistance=dist;
+				result=obj;
+			end
+			
+		end
+		
+		obj=obj["Paths_next"];
+	end
+	
+	return result;
+	
+
+end
+
+		
+function CObjectManager["OnSwitchLevel"](self)
+	gObjects={};
+	gLua(gLua["CallGC"]);
+
+end
+
+		
+function CTemplateManager["GetTemplateShortFileName"](self, id)
+	local tmpName=self(self["GetTemplateFileName"], id);
+	if (tmpName) then
+		local done=false;
+		while not (done) do
+			local ind=strfind(tmpName, "\", 1, 1);
+			if (ind) then
+				tmpName=strsub(tmpName, (ind + 1));
+			else
+				done=true;
+			end
+			
+		end
+		
+		local ind=strfind(tmpName, ".tmpdata");
+		if (ind) then
+			tmpName=strsub(tmpName, 1, (ind - 1));
+		end
+		
+	end
+	
+	return tmpName;
+	
+
+end
+
+		
+function CBaseObject["IsObject"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsItem"](self)
+	return false;
+	
+
+end
+
+		
+function CItemObject["IsItem"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsWeapon"](self)
+	return false;
+	
+
+end
+
+		
+function CWeaponObject["IsWeapon"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsWeaponAmmo"](self)
+	return false;
+	
+
+end
+
+		
+function CWeaponModuleObject["IsWeaponAmmo"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsCharacter"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsParticle"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseCharacterObject["IsCharacter"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsFlag"](self)
+	return false;
+	
+
+end
+
+		
+function CFlagObject["IsFlag"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsTestBox"](self)
+	return false;
+	
+
+end
+
+		
+function CTestBoxObject["IsTestBox"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsLight"](self)
+	return false;
+	
+
+end
+
+		
+function CLightObject["IsLight"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["IsHealingItem"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsCamera"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsAlarmCamera"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsGate"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["OnGenerateNoise"](self, range)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsRCDevice"](self)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["IsZoneBox"](self)
+	return false;
+	
+
+end
+
+		
+function CCameraObject["IsCamera"](self)
+	return true;
+	
+
+end
+
+		
+function CBaseObject["GameUpdateCallback"](self) end
+
+		
+function CBaseObject["LocationUpdateCallback"](self) end
+
+		
+function CBaseObject["RenderCallback"](self) end
+
+		
+function CBaseObject["OnAttackRollMiss"](self, receiver) end
+
+		
+function CBaseObject["OnCreatePhysicsInst"](self) end
+
+		
+function CBaseObject["OnDestroyPhysicsInst"](self) end
+
+		
+function CBaseObject["InvalidateObject"](self, obj) end
+
+		
+function CBaseObject["CanExplode"](self, action, damageRequired)
+	return false;
+	
+
+end
+
+		
+function CBaseObject["SetTopLadder"](self, object) end
+
+		
+function CBaseObject["SetBottomLadder"](self, object) end
+
+		
+function CBaseObject["RequestLaddersInfo"](self, player) end
+
+		
+function CBaseObject["TeleportedByPlayer"](self, previousPosition) end
+
+		
+function CBaseObject["OnRenderTextureUpdateContent"](self, rtid) end
+
+		
+function CBaseObject["OnRenderingDeviceLost"](self) end
+
+		
+function CBaseObject["OnGetFocus"](self)
+	self(self["DeleteTimerCalls"], "OnLooseFocusDoCallbackScript");
+	if (self["OnGetFocusCallback"]) then
+		igFocusCaller=self;
+		dostring("local self=igFocusCaller; "..self["OnGetFocusCallback"]);
+		igFocusCaller=IDT_Nil;
+	end
+	
+
+end
+
+		
+function CBaseObject["OnLooseFocusDoCallbackScript"](self)
+	if (self["OnLooseFocusCallback"]) then
+		igFocusCaller=self;
+		dostring("local self=igFocusCaller; "..self["OnLooseFocusCallback"]);
+		igFocusCaller=IDT_Nil;
+	end
+	
+
+end
+
+		
+function CBaseObject["OnLooseFocus"](self)
+	if (self["OnLooseFocusCallbackDelay"]) then
+		self(self["AddTimerCall"], "OnLooseFocusDoCallbackScript", self["OnLooseFocusCallbackDelay"]);
+	else
+		self(self["OnLooseFocusDoCallbackScript"]);
+	end
+	
+
+end
+
+		
+function CBaseObject["GetBoolTemplateAttribute"](self, name)
+	local a=self(self["GetFloatTemplateAttribute"], name);
+	if (a==1) then
+		return true;
+		
+	else
+		return false;
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["ForEachChildDo"](self, code)
+	if (code) then
+		local obj=self["objfirst"];
+		while (obj) do
+			gForEachChildDoCaller=obj;
+			dostring("local self=gForEachChildDoCaller; "..code);
+			gForEachChildDoCaller=IDT_Nil;
+			obj=obj["next"];
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["BlendAndDeleteMe"](self, tm, delay)
+	if not (delay) then
+		delay=0;
+	end
+	
+	self(self["AddTimerCall"], "self:BlendObject("..tm..",1,BO_DOWNTREE)", delay);
+	self(self["AddTimerCall"], "DeleteMe", ((delay + tm) + 0,1));
+
+end
+
+		
+function CBaseObject["PlayRandomSoundSimple"](self, sounds, loop, vol, noFreqShift)
+	local ret=IDT_Nil;
+	if (sounds) then
+		if (getn(sounds)>0) then
+			if not (vol) then
+				vol=1;
+			end
+			
+			ret=self(self["PlayWave"], sounds[random(getn(sounds))], loop, vol, 0, (not noFreqShift));
+		end
+		
+	end
+	
+	return ret;
+	
+
+end
+
+		
+function CBaseObject["PlayRandomSpeechSimple"](self, sounds)
+	local ret=IDT_Nil;
+	if (sounds) then
+		if (getn(sounds)>0) then
+			if not (vol) then
+				vol=1;
+			end
+			
+			ret=self(self["PlaySpeech"], sounds[random(getn(sounds))]);
+		end
+		
+	end
+	
+	return ret;
+	
+
+end
+
+		
+function CBaseObject["PlayRandomSound"](self, sounds, loop, wait, isSpeech, noTimeUpdate, volume)
+	local ret=IDT_Nil;
+	if not (isSpeech) or (igNoSpeech) then
+		do return ret end;
+		
+	end
+	
+	if (sounds) then
+		if (getn(sounds)>0) then
+			if not (volume) then
+				volume=1;
+			end
+			
+			if not (self["LastSoundTime"]) then
+				self["LastSoundTime"]=CGameTime(CGameTime["instance"]);
+				self["LastSoundTime"](self["LastSoundTime"]["SetAdd"], gGame["CurrentFrameTime"], -1000);
+			end
+			
+			if not (wait) or not (self["MinSoundTimeDifference"]) then
+				self["MinSoundTimeDifference"]=3;
+			end
+			
+			if (wait) and (self["LastSoundTime"](self["LastSoundTime"]["TimeDifference"], gGame["CurrentFrameTime"])<-self["MinSoundTimeDifference"]) then
+				ret=self(self["PlayWave"], sounds[random(getn(sounds))], loop, volume);
+				if not (noTimeUpdate) then
+					self["LastSoundTime"](self["LastSoundTime"]["Set"], gGame["CurrentFrameTime"]);
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+	return ret;
+	
+
+end
+
+		
+function CBaseObject["PlayRandomSpeech"](self, sounds, noWait, minTime, noTimeUpdate, noPositioning)
+	if (igNoSpeech) then
+		do return end;
+		
+	end
+	
+	if (sounds) then
+		if (getn(sounds)>0) then
+			if not (self["LastSoundTime"]) then
+				self["LastSoundTime"]=CGameTime(CGameTime["instance"]);
+				self["LastSoundTime"](self["LastSoundTime"]["SetAdd"], gGame["CurrentFrameTime"], -1000);
+			end
+			
+			if not (noWait) then
+				if not (self["MinSoundTimeDifference"]) then
+					self["MinSoundTimeDifference"]=0,8;
+				end
+				
+				if not (minTime) then
+					minTime=self["MinSoundTimeDifference"];
+				end
+				
+			end
+			
+			if not (noWait) and (self["LastSoundTime"](self["LastSoundTime"]["TimeDifference"], gGame["CurrentFrameTime"])<-minTime) then
+				local speech=sounds[random(getn(sounds))];
+				if (speech) then
+					local cond=igSpeechConditions[speech];
+					if (cond) then
+						local res=dostring("return ("..cond..")");
+						if not (res) then
+							speech=IDT_Nil;
+						end
+						
+					end
+					
+				end
+				
+				if (speech) then
+					if (self["EnsureMimicry"]) then
+						self(self["EnsureMimicry"], 10);
+					end
+					
+					self(self["PlaySpeech"], speech, (not noPositioning));
+					if not (noTimeUpdate) then
+						self["LastSoundTime"](self["LastSoundTime"]["Set"], gGame["CurrentFrameTime"]);
+					end
+					
+					do return true end;
+					
+				end
+				
+			else
+				self(self["Debug"], "Speech rejected because of time constrain");
+			end
+			
+		end
+		
+	end
+	
+	return false;
+	
+
+end
+
+		
+function CBaseObject["PlayRandomSound2D"](self, sounds, loop, volume)
+	if (sounds) then
+		if (getn(sounds)>0) then
+			if not (volume) then
+				volume=1;
+			end
+			
+			self(self["Play2D"], sounds[random(getn(sounds))], loop, volume);
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["PreloadSounds"](self, sounds, _2d)
+	if (sounds) then
+		local i=IDT_Nil;
+		for i=1, getn(sounds) do
+			gSoundEngine(gSoundEngine["_PreloadFreeWave"], sounds[i]..".wav", (not _2d));
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["PreloadSoundsTable"](self, table, _2d)
+	if (table) then
+		local i=IDT_Nil;
+		local v=IDT_Nil;
+		for i, v in table do
+			self(self["PreloadSounds"], v, _2d);
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["Debug"](self, ...)
+	if not (gDebug["AllowDebugTexts"]) or (self["DebugMode"]) then
+		local txt=self["Name"]..":";
+		local i=IDT_Nil;
+		for i=1, getn(arg) do
+			txt=txt.." "..tostring(arg[i]);
+		end
+		
+		txt=txt.." ("..format("%.2f", gGame["CurrentFrameTime"](gGame["CurrentFrameTime"]["tonumber"]))..")";
+		gConsole(gConsole["print"], COLOR_GREEN, txt);
+	end
+	
+
+end
+
+		
+function CBaseObject["PreloadTemplate"](self, name)
+	local id=gTemplateManager(gTemplateManager["FindTemplateByFileName"], name);
+	if (id<0) or not (gTemplateManager(gTemplateManager["IsTemplateReady"], id)) then
+		local o=gObjectManager(gObjectManager["CreateObject"], name, IDT_Nil, CVector3["ZERO"]);
+		if (o) then
+			gObjectManager(gObjectManager["DeleteObject"], o);
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["Error"](self, text)
+	gConsole(gConsole["print"], COLOR_RED, self["Name"]..": "..text);
+
+end
+
+		CBaseObject["CallTmp"]=IDT_Nil;
+		
+function CBaseObject["SetLuaParamsDefaultValues"](self, paramsDef)
+	paramsDef= gsub(paramsDef, "\\n", [[
+]]);
+	local chunk="CBaseObject.CallTmp={"..paramsDef.."}";
+	dostring(chunk, "Build Lua Params definition table for "..self["Name"]);
+	for i=1, getn(CBaseObject["CallTmp"]) do
+		local pdef=CBaseObject["CallTmp"][i];
+		if not (pdef["param"]) or (pdef["defVal"]) then
+			self[pdef["param"]]=pdef["defVal"];
+		end
+		
+	end
+	
+	CBaseObject["CallTmp"]=IDT_Nil;
+
+end
+
+		
+function CBaseObject["PlayInitializer"](self)
+	local ini=self(self["GetStringTemplateAttribute"], "LUA_initializer");
+	if not (ini) or (ini~="") then
+		if (gDebug["ReportInitializers"]) then
+			wf_print(self["Name"].." executes LUA initializer (template)");
+		end
+		
+		ini= gsub(ini, "\\n", [[
+]]);
+		CBaseObject["CallTmp"]=self;
+		dostring("local self = CBaseObject.CallTmp; "..ini, "Initializer (template) for "..self["Name"]);
+		CBaseObject["CallTmp"]=IDT_Nil;
+	end
+	
+	local ini=self(self["GetStringObjectAttribute"], "LUA_initializer");
+	if not (ini) or (ini~="") then
+		if (gDebug["ReportInitializers"]) then
+			wf_print(self["Name"].." executes LUA initializer (object)");
+		end
+		
+		ini= gsub(ini, "\\n", [[
+]]);
+		CBaseObject["CallTmp"]=self;
+		dostring("local self = CBaseObject.CallTmp; "..ini, "Initializer (object) for "..self["Name"]);
+		CBaseObject["CallTmp"]=IDT_Nil;
+	end
+	
+	local ini=self(self["GetStringTemplateAttribute"], "LUA_params_def");
+	if not (ini) or (ini~="") then
+		if (gDebug["ReportInitializers"]) then
+			wf_print(self["Name"].." executes LUA initializer (template LUA params def)");
+		end
+		
+		self(self["SetLuaParamsDefaultValues"], ini);
+	end
+	
+	local ini=self(self["GetStringObjectAttribute"], "LUA_params");
+	if not (ini) or (ini~="") then
+		if (gDebug["ReportInitializers"]) then
+			wf_print(self["Name"].." executes special LUA initializer (params)");
+		end
+		
+		ini= gsub(ini, "\\n", [[
+]]);
+		CBaseObject["CallTmp"]=self;
+		dostring("local self = CBaseObject.CallTmp; "..ini, "Initializer (params) for "..self["Name"]);
+		CBaseObject["CallTmp"]=IDT_Nil;
+	end
+	
+
+end
+
+		
+function CBaseObject["PerformAction"](self, objName, actText)
+	dostring("gObjectManager:FindObjectByName('"..objName.."'):"..actText);
+
+end
+
+		
+function CBaseObject["GameStart"](self, switch)
+	if not (gObjects[self["Name"]]) then
+		gObjects[self["Name"]]=self;
+	else
+		if (gObjects[self["Name"]]~=self) then
+			gConsole(gConsole["print"], COLOR_RED, "Error - inconsistency in gObjects table, object: "..self["Name"]..", "..gObjects[self["Name"]]["Name"]);
+		end
+		
+	end
+	
+	if (switch) then
+		do return end;
+		
+	end
+	
+	self["DebugMode"]=true;
+
+end
+
+		
+function CBaseObject["OnInit"](self)
+	if (self(self["TestClass"], "+SceneController")) then
+		gSceneController=self;
+	end
+	
+	self(self["PlayInitializer"]);
+
+end
+
+		
+function CBaseObject["OnInitLevel"](self) end
+
+		
+function CBaseObject["OnEnable"](self) end
+
+		
+function CBaseObject["OnDisable"](self) end
+
+		
+function CBaseObject["OnNotify"](self, event) end
+
+		
+function CBaseObject["OnSwitchLevel"](self, newLevelName) end
+
+		
+function CBaseObject["OnHit"](self, attacker, power, triangleFlags, weapon) end
+
+		
+function CBaseObject["OnHitObject"](self, object, power, triangleFlags) end
+
+		
+function CBaseObject["OnHitByWave"](self, power, normalizedPower, attacker) end
+
+		
+function CBaseObject["OnPhysicsMotorMoveBeginCallback"](self, motorName) end
+
+		
+function CBaseObject["OnPhysicsMotorMoveEndCallback"](self, motorName) end
+
+		
+function CBaseObject["OnPhysicsMotorCallback"](self, motorName, position) end
+
+		
+function CBaseObject["OnPhysicsMotorMoveCallback"](self, motorName, position, oldPosition) end
+
+		
+function CBaseObject["OnTotalEnable"](self) end
+
+		
+function CBaseObject["OnTotalDisable"](self) end
+
+		
+function CBaseObject["SetupJointsInitialPosition"](self) end
+
+		
+function CBaseObject["OnLevelReloaded"](self)
+	if (self["SfxToRestart"]) then
+		self(self["StartSpecialEffect"], self["SfxToRestart"]);
+	end
+	
+
+end
+
+		
+function CBaseObject["DeleteMe"](self)
+	gObjectManager(gObjectManager["DeleteObject"], self);
+
+end
+
+		
+function CBaseObject["OnDelete"](self)
+	self(self["Invalidate"]);
+	gObjects[self["Name"]]=IDT_Nil;
+
+end
+
+		
+function CBaseObject["OnPhysicsOffscreenFreezeCallback"](self, freeze)
+	if (freeze==1) then
+		self(self["TryToDeleteSoundStub"]);
+	else
+		if (self["StubDeletingActive"]) then
+			self["StubDeletingActive"]=false;
+			self(self["DeleteTimerCalls"], "TryToDeleteSoundStub");
+		end
+		
+	end
+	
+
+end
+
+		
+function CBaseObject["TryToDeleteSoundStub"](self)
+	if not (self(self["DeleteSoundStubIfIdle"])) then
+		self["StubDeletingActive"]=true;
+		self(self["AddTimerCall"], "TryToDeleteSoundStub", (1 + (0,2 * random())));
+	else
+		self["StubDeletingActive"]=false;
+	end
+	
+
+end
+
+		
+function CBaseObject["Invalidate"](self)
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	if (gInterfaceScreens) then
+		for i, v in gInterfaceScreens do
+			if (v["InvalidateObject"]) then
+				v(v["InvalidateObject"], self);
+			end
+			
+		end
+		
+	end
+	
+	if not (gSceneController) or (gSceneController["InvalidateObject"]) then
+		gSceneController(gSceneController["InvalidateObject"], self);
+	end
+	
+
+end
+
+		
+function CBaseObject["CallUIScreenFunction"](self, functionName)
+	local i=IDT_Nil;
+	local v=IDT_Nil;
+	gCallParameter=self;
+	if (gInterfaceScreens) then
+		for i, v in gInterfaceScreens do
+			gCallTmp=v;
+			dostring("if gCallTmp."..functionName.." then gCallTmp:"..functionName.."(gCallParameter); end; ");
+		end
+		
+	end
+	
+	gCallTmp=IDT_Nil;
+	gCallParameter=IDT_Nil;
+
+end
+
+		
+function CMeshObject["GameStart"](self, switch)
+	CBaseObject["GameStart"](self, switch);
+	if (switch) then
+		do return end;
+		
+	end
+	
+	self["LoopedAnimation"]=IDT_Nil;
+
+end
+
+		
+function CMeshObject["OnInit"](self)
+	CBaseObject["OnInit"](self);
+	if (self["LoopedAnimation"]) then
+		self(self["ActivateAnimation"], self["LoopedAnimation"], bor(ACTANIM_SOUND, ACTANIM_LOOP));
+	end
+	
+	self(self["SetupSoundCallbacks"]);
+
+end
+
+		
+function CMeshObject["OnUse"](self) end
+
+		
+function CItemObject["InventoryUse"](self, target) end
+
+		
+function CItemObject["OnPickedUp"](self) end
+
+		
+function CItemObject["OnDropped"](self) end
+
+		
+function CMeshObject["ContactsCallback"](self) end
+
+		
+function CBaseCharacterObject["OnAttacked"](self) end
+
+		
+function CBaseCharacterObject["OnAttacked2"](self) end
+
+		
+function CBaseCharacterObject["OnNoiseHeard"](self, noiseType, noisePosition, noiseRange, noiseVolume, isNearest, noiseSource) end
+
+		
+function CBaseCharacterObject["OnPlayerSeen"](self, player, glassOnTheWay, distance, distancePercentage, smoke) end
+
+		
+function CBaseCharacterObject["OnCorpseSeen"](self, character) end
+
+		
+function CBaseCharacterObject["OnTargettedByPlayer"](self) end
+
+		
+function CBaseCharacterObject["OnNoLongerTargettedByPlayer"](self) end
+
+		
+function CBaseCharacterObject["OnCharacterEarlyCollision"](self, chr) end
+
+		
+function CBaseCharacterObject["OnPlayerFled"](self) end
+
+		
+function CBaseCharacterObject["OnOutside"](self) end
+
+		
+function CBaseCharacterObject["OnInside"](self) end
+
+		
+function CBaseCharacterObject["OnWeaponDrawn"](self) end
+
+		
+function CBaseCharacterObject["OnCutsceneBegin"](self) end
+
+		
+function CBaseCharacterObject["OnCutsceneEnd"](self) end
+
+		
+function CBaseCharacterObject["OnDialogEnd"](self) end
+
+		
+function CBaseCharacterObject["OnAttackPerformed"](self) end
+
+		
+function CBaseCharacterObject["OnDamageStart"](self, dmgType) end
+
+		
+function CBaseCharacterObject["OnDamageStop"](self, dmgType) end
+
+		
+function CBaseCharacterObject["OnEnterAS0"](self) end
+
+		
+function CBaseCharacterObject["OnEnterAS1"](self) end
+
+		
+function CBaseCharacterObject["OnEnterAS2"](self) end
+
+		
+function CBaseCharacterObject["OnExitAS0"](self) end
+
+		
+function CBaseCharacterObject["OnExitAS1"](self) end
+
+		
+function CBaseCharacterObject["OnExitAS2"](self) end
+
+		
+function CBaseCharacterObject["OnObjectSeen"](self, obj) end
+
+		
+function CBaseCharacterObject["OnGenerateNoise"](self, range) end
+
+		
+function CBaseCharacterObject["OnPlayerLeftEnemyBox"](self, box) end
+
+		
+function CBaseCharacterObject["OnJumpEnd"](self) end
+
+		
+function CBaseCharacterObject["OnHitGround"](self, height) end
+
+		
+function CTestBoxObject["OnEnter"](self) end
+
+		
+function CTestBoxObject["OnActivateByLOS"](self, obj) end
+
+		
+function CTestBoxObject["OnExit"](self) end
+
+		
+function playInitialScript()
+	local scr=gDebug(gDebug["GetStringFeelAttribute"], "Game", "Initial_script_command");
+	if (scr) then
+		dostring(scr);
+	end
+	
+
+end
+
+		gLua(gLua["PlayFile"], "global_loadsave");
+		gLua(gLua["PlayFile"], "global_attackmanager");
+		gLua(gLua["PlayFile"], "global_mesh");
+		gLua(gLua["PlayFile"], "global_character");
+		gLua(gLua["PlayFile"], "global_character_player");
+		gLua(gLua["PlayFile"], "global_character_npc");
+		gLua(gLua["PlayFile"], "global_character_npc2");
+		gLua(gLua["PlayFile"], "global_character_npc3");
+		gLua(gLua["PlayFile"], "EnemySounds");
+		gLua(gLua["PlayFile"], "global_item");
+		gLua(gLua["PlayFile"], "global_weapon");
+		gLua(gLua["PlayFile"], "global_weaponammo");
+		gLua(gLua["PlayFile"], "global_gate");
+		gLua(gLua["PlayFile"], "global_flag");
+		gLua(gLua["PlayFile"], "global_testbox");
+		gLua(gLua["PlayFile"], "global_testbox2");
+		gLua(gLua["PlayFile"], "global_battlebox");
+		gLua(gLua["PlayFile"], "global_particle");
+		gLua(gLua["PlayFile"], "global_roomtestbox");
+		gLua(gLua["PlayFile"], "global_performance");
+		gLua(gLua["PlayFile"], "global_explosive");
+		gLua(gLua["PlayFile"], "global_glass");
+		gLua(gLua["PlayFile"], "global_gadget");
+		gLua(gLua["PlayFile"], "global_placeable");
+		gLua(gLua["PlayFile"], "global_teleportobject");
+		gLua(gLua["PlayFile"], "global_GameCamera");
+		gLua(gLua["PlayFile"], "global_car");
+		gLua(gLua["PlayFile"], "Global_SceneController");
+		gLua(gLua["PlayFile"], "Global_cutscene");
+		gLua(gLua["PlayFile"], "Global_Crane");
+		gLua(gLua["PlayFile"], "UIScreen-Screenshot");
+		gLua(gLua["PlayFile"], "Global_Sounds");
+		gLua(gLua["PlayFile"], "Global_SynchDataCtrl");
+		gLua(gLua["PlayFile"], "Global_EAX");
+		gLua(gLua["PlayFile"], "Global_NPCGroupManager");
+		if (gLua["Mode"]==LM_EDITOR) then
+			gLua(gLua["PlayFile"], "editor");
+		elseif (gLua["Mode"]==LM_GAME) then
+			gLua(gLua["PlayFile"], "global_interface_screen");
+			gLua(gLua["PlayFile"], "global_interface_element");
+			gLua(gLua["PlayFile"], "global_interface");
+			gLua(gLua["PlayFile"], "global_interface_action");
+		end
+		
+		if (getProjectName()=="Diabolique") then
+			gLua(gLua["PlayFile"], "Diabolique_Global");
+		else
+			if (getProjectName()=="Ski") then
+				gLua(gLua["PlayFile"], "Ski_Global");
+			end
+			
+		end
+		
+		if (gLua["Mode"]==LM_GAME) then
+			uiRestart();
+			gConsole(gConsole["print"], COLOR_BLUE, "Starting time is "..gGame["CurrentFrameTime"](gGame["CurrentFrameTime"]["tonumber"]));
+			gConsole(gConsole["print"], COLOR_BLUE, "LUA: Starting "..getProjectName());
+		end
+		
+		playInitialScript();
+	end
+	
+end
+
+
+function quickLoad()
+	local file=openfile(program_dir.."\quicksave!\saveparm.txt", "r");
+	if (file) then
+		closefile(file);
+		gInterfaceScreens["LoadSave"]["AfterFadeAction"]= [[gSceneLoader:LoadGame("quicksave!");]];
+		gInterfaceScreens["LoadSave"](gInterfaceScreens["LoadSave"]["SetMode"], gUIHWLoadSaveScreenModes["Loading"]);
+		gGame(gGame["GetCurrentScreen"])(gGame(gGame["GetCurrentScreen"])["FadeToScreen"], gInterfaceScreens["LoadSave"]);
+	end
+	
+
+end
+
+
+function QuickSave()
+	local pl=getPlayer();
+	if (pl) and not (pl["SaveGameDisabled"]) then
+		gInterfaceScreens["LoadSave"]["AfterFadeAction"]= [[gInterfaceScreens.Menu.PreviousScreen=gInterfaceScreens.LoadSave.PreviousScreen; gInterfaceScreens.Menu:DoSaveGame("quicksave!"); ]];
+		gInterfaceScreens["LoadSave"](gInterfaceScreens["LoadSave"]["SetMode"], gUIHWLoadSaveScreenModes["Saving"]);
+		local scr=gGame(gGame["GetCurrentScreen"]);
+		if (scr) then
+			scr(scr["FadeToScreen"], gInterfaceScreens["LoadSave"]);
+		else
+			gGame(gGame["AddInterfaceScreen"], scr);
+		end
+		
+	end
+	
+
+end
+
+
